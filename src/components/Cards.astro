@@ -1,0 +1,99 @@
+---
+const cards = [
+	{
+		title: 'Tienda',
+		description: 'Camisetas, accesorios y todo lo que necesitas para la rumba.',
+		href: 'https://tienda.rumbatienda.com',
+		accent: 'var(--salsa)',
+	},
+	{
+		title: 'Horario de clases',
+		description: 'Encuentra clases de salsa y bachata en Medellín, cada semana.',
+		href: 'https://rumba.rumbatienda.com',
+		accent: 'var(--bachata)',
+	},
+];
+---
+
+<section class="cards">
+	<div class="container">
+		<div class="cards-grid">
+			{
+				cards.map((card) => (
+					<a
+						href={card.href}
+						class="card"
+						style={`--accent: ${card.accent}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<h2 class="card-title">{card.title}</h2>
+						<p class="card-desc">{card.description}</p>
+						<span class="card-arrow">&rarr;</span>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.cards {
+		padding: var(--space-lg) var(--space-sm);
+	}
+
+	.cards-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-md);
+		max-width: 720px;
+		margin-inline: auto;
+	}
+
+	@media (min-width: 640px) {
+		.cards-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+		padding: var(--space-md);
+		background: var(--bg-card);
+		border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+		border-radius: 12px;
+		transition: border-color 0.2s, transform 0.2s;
+	}
+
+	.card:hover {
+		border-color: var(--accent);
+		transform: translateY(-2px);
+	}
+
+	.card-title {
+		font-family: var(--font-display);
+		font-size: 2rem;
+		color: var(--accent);
+		line-height: 1;
+	}
+
+	.card-desc {
+		color: var(--text-muted);
+		font-size: 1rem;
+		flex: 1;
+	}
+
+	.card-arrow {
+		font-size: 1.5rem;
+		color: var(--accent);
+		align-self: flex-end;
+		opacity: 0.5;
+		transition: opacity 0.2s;
+	}
+
+	.card:hover .card-arrow {
+		opacity: 1;
+	}
+</style>

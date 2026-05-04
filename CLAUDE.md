@@ -15,7 +15,7 @@ Umbrella landing page for `rumbatienda.com`. Routes visitors to Tienda (shop) or
 | `src/pages/index.astro` | Single page, composes all sections |
 | `src/layouts/Base.astro` | HTML shell, meta, OG, JSON-LD, analytics |
 | `src/components/Hero.astro` | Hero with tagline |
-| `src/components/Cards.astro` | Two CTA cards (Tienda, Horario) |
+| `src/components/Cards.astro` | Two CTA cards (Tienda, Rumba Medellin) |
 | `src/components/About.astro` | About Rumba Corp (ES + EN) |
 | `src/components/Footer.astro` | Contact, social, copyright |
 | `src/styles/global.css` | Design tokens, reset, utilities |

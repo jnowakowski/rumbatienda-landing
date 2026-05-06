@@ -39,9 +39,9 @@ Do NOT touch subdomain records (`rumba.`, `tienda.`, `og.`, `mta-sts.`).
 
 ## Analytics
 
-- GA4: `G-2D2GBD8R7D` (shared with rumba-site)
-- CF Web Analytics: `d95ee1d53b0548fabea5ee2442bb5f31` (shared)
-- Matomo: not integrated (server-side only on rumba-site)
+- GA4: `G-2K3BYEMTTQ` (primary, unified Rumbatienda CO) + `G-2D2GBD8R7D` (legacy, dual tracking active)
+- CF Web Analytics: `d95ee1d53b0548fabea5ee2442bb5f31`
+- Matomo: site 4 (client-side snippet in Base.astro)
 
 ## Branding
 

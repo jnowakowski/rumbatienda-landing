@@ -63,10 +63,10 @@ const ogImage = `${url}/og.png`;
 			})}
 		/>
 
-		<!-- Analytics: GA4 -->
+		<!-- Analytics: GA4 (legacy G-2D2GBD8R7D kept for migration, unified G-2K3BYEMTTQ is primary) -->
 		<script
 			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-2D2GBD8R7D"
+			src="https://www.googletagmanager.com/gtag/js?id=G-2K3BYEMTTQ"
 		></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -74,7 +74,22 @@ const ogImage = `${url}/og.png`;
 				window.dataLayer.push(args);
 			}
 			gtag('js', new Date());
+			gtag('config', 'G-2K3BYEMTTQ');
 			gtag('config', 'G-2D2GBD8R7D');
+		</script>
+
+		<!-- Analytics: Matomo (site 4, rumbatienda.com apex) -->
+		<script>
+			var _paq = window._paq = window._paq || [];
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//matomo-rumba.statsbox.ch/";
+				_paq.push(['setTrackerUrl', u+'matomo.php']);
+				_paq.push(['setSiteId', '4']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+			})();
 		</script>
 
 		<!-- Analytics: Cloudflare Web Analytics -->

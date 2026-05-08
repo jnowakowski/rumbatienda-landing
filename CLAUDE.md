@@ -1,6 +1,7 @@
-# rumbatienda-landing
+# rumbatienda.com
 
-Umbrella landing page for `rumbatienda.com`. Routes visitors to Tienda (shop) or Horario (class schedule).
+Apex landing page for the Rumba Corp ecosystem. Single page that routes visitors to Tienda (shop) or Rumba (dance schedule).
+Entry point for all organic/direct traffic to the rumbatienda.com domain.
 
 ## Stack
 
@@ -47,3 +48,7 @@ Do NOT touch subdomain records (`rumba.`, `tienda.`, `og.`, `mta-sts.`).
 
 Dark theme (#0A0A0E). Fonts: Bebas Neue (display), Barlow Condensed (body).
 Accents: salsa yellow (#FCD116), bachata pink (#FF4D8D), zouk cyan (#00CCCC).
+
+## Content rules
+
+- Never use em dashes, en dashes, or hyphens as text separators in content, code, comments, or docs. Use commas, periods, pipes (|), or middot (·) instead.

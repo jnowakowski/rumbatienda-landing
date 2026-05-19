@@ -1,67 +1,66 @@
 # rumbatienda.com
 
-Apex landing page for the Rumba Corp ecosystem. Single page that routes visitors to Tienda (shop) or Rumba (dance schedule).
-Entry point for all organic/direct traffic to the rumbatienda.com domain.
+Apex landing page for the Rumba Corp ecosystem. Single hand-coded HTML page
+that routes visitors to the two main subdomains: Tienda (shop) and Rumba
+Medellin (events). No framework, no build step.
 
-## Stack
+## What's here
 
-- Astro 6, TypeScript strict, static output
-- No frameworks, no Tailwind. Pure CSS with custom properties
-- Deploy: Cloudflare Pages (static)
-
-## Key files
-
-| File | Purpose |
-|---|---|
-| `src/pages/index.astro` | Single page, composes all sections |
-| `src/layouts/Base.astro` | HTML shell, meta, OG, JSON-LD, analytics |
-| `src/components/Hero.astro` | Hero with tagline |
-| `src/components/Cards.astro` | Two CTA cards (Tienda, Rumba Medellin) |
-| `src/components/About.astro` | About Rumba Corp (ES + EN) |
-| `src/components/Footer.astro` | Contact, social, copyright |
-| `src/styles/global.css` | Design tokens, reset, utilities |
-| `public/og.png` | Static OG image 1200x630 |
-
-## Deploy
-
-Deploys run automatically via GitHub Actions (`.github/workflows/deploy.yml`).
-Direct push to `main` is blocked by branch protection, all changes go through PRs.
-
-| Event | Target | URL |
-|---|---|---|
-| Push to feature branch | `preview` environment | `https://<branch>.rumbatienda-landing.pages.dev` (alias) and `https://<commit>.rumbatienda-landing.pages.dev` (immutable) |
-| Merge to `main` | `production` environment, restricted to `main` only | `https://rumbatienda.com` |
-
-The workflow uses Cloudflare's `wrangler pages deploy` with a scoped API token
-(Pages Write only). For each PR, a sticky comment posts the preview URL.
-
-Local emergency deploy (owner only, bypasses CI):
-```bash
-npm run build && npx wrangler pages deploy ./dist --project-name=rumbatienda-landing
+```
+public/
+  index.html       ← THE site, hand-coded, self-contained
+  favicon.svg, favicon.ico
+  robots.txt, sitemap.xml
+.github/
+  workflows/deploy.yml   ← Deploy on push to any branch
+  CODEOWNERS             ← Owner gate for workflow + config changes
 ```
 
-CODEOWNERS (`.github/CODEOWNERS`) gates merges that touch `.github/`,
-`package*.json`, `astro.config.*`, and other supply-chain-sensitive paths.
-Content edits in `src/` and `public/` merge without owner review.
+The site is a single hand-coded HTML file. Inline `<style>` and `<script>`
+blocks, Google Fonts via CDN, GA4 GTM injected inline. Edit `public/index.html`
+directly.
 
 ## DNS
 
 Zone `rumbatienda.com` on Cloudflare (zone ID: `32fa49fd2d70734200c592a56a6fb92b`).
-Apex CNAME → `rumbatienda-landing.pages.dev`. www 301 → apex via Page Rule.
+Apex CNAME → `rumbatienda-landing.pages.dev`. `www` 301 → apex via Page Rule.
 
-Do NOT touch subdomain records (`rumba.`, `tienda.`, `og.`, `mta-sts.`).
+Subdomain records (`rumba.`, `tienda.`, `cali2026.`, `og.`, `mta-sts.`) live
+in the same zone but are managed elsewhere. Do NOT touch them from this repo.
+
+## Deploy
+
+Deploys automatically via GitHub Actions (`.github/workflows/deploy.yml`).
+Direct push to `main` blocked by branch protection, all changes go through PRs.
+
+| Event | Target | URL |
+|---|---|---|
+| Push to feature branch | `preview` env | `https://<branch>.rumbatienda-landing.pages.dev` (alias) and `https://<commit>.rumbatienda-landing.pages.dev` (immutable) |
+| Merge to `main` | `production` env (main-only) | `https://rumbatienda.com` |
+
+Workflow runs `wrangler pages deploy ./public` directly. No build step.
+
+Local emergency deploy (owner only, bypasses CI):
+```bash
+npx wrangler pages deploy ./public --project-name=rumbatienda-landing
+```
+
+Local preview while editing:
+```bash
+python3 -m http.server 4321 -d public
+# open http://localhost:4321
+```
+
+CODEOWNERS (`.github/CODEOWNERS`) gates merges that touch `.github/`. Content
+edits in `public/` merge without owner review.
 
 ## Analytics
 
-- GA4: `G-2K3BYEMTTQ` (primary, unified Rumbatienda CO) + `G-2D2GBD8R7D` (legacy, dual tracking active)
+- GA4: `G-2K3BYEMTTQ` (Rumbatienda CO property, inline GTM snippet in index.html)
+- Matomo: site 4 (inline snippet in index.html)
 - CF Web Analytics: `d95ee1d53b0548fabea5ee2442bb5f31`
-- Matomo: site 4 (client-side snippet in Base.astro)
-
-## Branding
-
-Dark theme (#0A0A0E). Fonts: Bebas Neue (display), Barlow Condensed (body).
-Accents: salsa yellow (#FCD116), bachata pink (#FF4D8D), zouk cyan (#00CCCC).
 
 ## Content rules
 
-- Never use em dashes, en dashes, or hyphens as text separators in content, code, comments, or docs. Use commas, periods, pipes (|), or middot (·) instead.
+- Never use em dashes, en dashes, or hyphens as text separators in content, code,
+  comments, or docs. Use commas, periods, pipes (|), or middot (·) instead.

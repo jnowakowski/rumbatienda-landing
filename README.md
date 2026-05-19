@@ -1,18 +1,19 @@
 # rumbatienda-landing
 
-Umbrella landing page for [rumbatienda.com](https://rumbatienda.com). Single page that routes visitors to the two main subdomains: Tienda (shop at tienda.rumbatienda.com) and Rumba Medellin (events at rumba.rumbatienda.com).
+Apex landing page for [rumbatienda.com](https://rumbatienda.com). Single hand-coded HTML page that routes visitors to the two main subdomains: Tienda (shop at tienda.rumbatienda.com) and Rumba Medellin (events at rumba.rumbatienda.com).
 
 ## Stack
 
-Astro 6, TypeScript, static output. No frameworks or Tailwind. Deployed on Cloudflare Pages.
+Static HTML/CSS/JS in `public/`. No framework, no build step. Deployed on Cloudflare Pages via GitHub Actions.
 
-## Commands
+## Edit
+
+Edit `public/index.html` directly. Preview locally with any static server:
 
 ```bash
-npm install       # install dependencies
-npm run dev       # local dev server at localhost:4321
-npm run build     # build to ./dist/
-npx wrangler pages deploy ./dist --project-name=rumbatienda-landing   # deploy
+python3 -m http.server 4321 -d public
 ```
 
-Production: `https://rumbatienda.com`
+## Deploy
+
+Push to any branch → preview deploy on Cloudflare Pages. Merge PR to `main` → production deploy to `rumbatienda.com`. See `CLAUDE.md` for the full deploy section.

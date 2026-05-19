@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rumbatienda.com/sitemap-index.xml
+Sitemap: https://rumbatienda.com/sitemap.xml

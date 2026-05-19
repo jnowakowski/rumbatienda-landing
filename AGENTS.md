@@ -3,38 +3,58 @@
 You are in **`rumbatienda-landing`** (apex landing for `rumbatienda.com`,
 deployed on Cloudflare Pages).
 
-This repo has a **sibling**: **`cali2026`** (the
-`cali2026.rumbatienda.com` landing). The two repos share the same brand
-exploration in `rumba-brand-directions/` and should move together.
+This repo is **one of three** for the Rumba Corp site:
+
+| Repo                  | Domain                          | Stack                          |
+|-----------------------|----------------------------------|--------------------------------|
+| `rumbatienda-landing` (this) | `rumbatienda.com`         | Static HTML on Cloudflare Pages |
+| `cali2026`            | `cali2026.rumbatienda.com`       | Static HTML on Cloudflare Pages |
+| `rumbatienda` (shop)  | `tienda.rumbatienda.com`         | Next.js 16 on Vercel            |
+
+The two static landings (apex + cali2026) share the same brand exploration
+in `rumba-brand-directions/` and should move together. The shop is a
+separate codebase, included so you have full context.
 
 GitHub remotes:
-- this repo  → `git@github.com:jnowakowski/rumbatienda-landing.git`
-- sibling    → `git@github.com:jnowakowski/cali2026.git`
+- this repo → `git@github.com:jnowakowski/rumbatienda-landing.git`
+- cali2026  → `git@github.com:jnowakowski/cali2026.git`
+- shop      → `git@github.com:jnowakowski/rumbatienda.git`
 
 ## On `git pull` (or fresh clone), do this first
 
-1. **Find or clone the sibling.** From this repo's parent directory:
+1. **Find or clone the two siblings.** From this repo's parent directory:
    ```bash
    if [ ! -d ../cali2026 ] && [ ! -d ../com-rumbatienda-cali2026 ]; then
      git clone git@github.com:jnowakowski/cali2026.git ../cali2026
    fi
+   if [ ! -d ../rumbatienda ] && [ ! -d ../com-rumbatienda-tienda ]; then
+     git clone git@github.com:jnowakowski/rumbatienda.git ../rumbatienda
+   fi
    ```
-2. **Pull the sibling.**
+   If a clone fails with "Repository not found", the user has not yet
+   accepted the collaborator invite. Tell them: check
+   `https://github.com/notifications` for pending invitations from
+   `jnowakowski`. Do not retry the clone until they confirm.
+2. **Pull all three.**
    ```bash
+   git pull
    ( cd ../cali2026 2>/dev/null || cd ../com-rumbatienda-cali2026 ) && git pull
+   ( cd ../rumbatienda 2>/dev/null || cd ../com-rumbatienda-tienda )  && git pull
    ```
-3. **Read both READMEs**, then read `rumba-brand-directions/README.md`
-   (same file in both repos, ~5 MB of design boards + 12 direction JSX
-   files + reference uploads). That folder is the current brand handoff.
+3. **Read READMEs first**, then read `rumba-brand-directions/README.md`
+   (same file in this repo and cali2026, ~5 MB of design boards + 12
+   direction JSX files + reference uploads). That folder is the current
+   brand handoff. For the shop, read `PROJECT.md`.
 
 ## Then brief Julian — TL;DR style, English, no wall of text
 
 Keep it under ~150 words. Cover only:
 
-- **What deploys where.** This repo → `https://rumbatienda.com`. Sibling →
-  `https://cali2026.rumbatienda.com`. Both are static HTML on Cloudflare
-  Pages, PR-merge to deploy.
-- **What's new.** `rumba-brand-directions/` was just added to both repos.
+- **What deploys where.** Three repos:
+  - `rumbatienda-landing` → `https://rumbatienda.com` (Cloudflare Pages)
+  - `cali2026` → `https://cali2026.rumbatienda.com` (Cloudflare Pages)
+  - `rumbatienda` → `https://tienda.rumbatienda.com` (Next.js, Vercel)
+- **What's new.** `rumba-brand-directions/` was just added to apex + cali2026.
   10 design directions, 25 logo variants across two Logo Lab boards,
   reference uploads (current AI logo, current landing/trip pages, Feria
   de Cali ’68 captures). Open `index.html` for the pan/zoom canvas, or

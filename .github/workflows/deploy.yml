@@ -1,0 +1,54 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: ['**']
+
+permissions:
+  contents: read
+  deployments: write
+  pull-requests: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./dist --project-name=rumbatienda-landing --branch=${{ github.ref_name }} --commit-hash=${{ github.sha }}
+
+      - name: Find PR for current branch
+        if: github.ref != 'refs/heads/main'
+        id: pr
+        uses: jwalton/gh-find-current-pr@v1
+        with:
+          state: open
+
+      - name: Comment preview URL on PR
+        if: github.ref != 'refs/heads/main' && steps.pr.outputs.number
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: cloudflare-pages-preview
+          message: |
+            Cloudflare Pages preview
+
+            URL: ${{ steps.deploy.outputs.deployment-url }}
+            Branch: `${{ github.ref_name }}`
+            Commit: ${{ github.sha }}

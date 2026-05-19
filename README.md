@@ -4,6 +4,20 @@ Apex landing page for the Rumba Corp ecosystem. Single hand-coded HTML page
 that routes visitors to Tienda (shop) and Rumba Medellín (events). No
 framework, no build step.
 
+## Where things live
+
+- **This repo** → `rumbatienda.com` (apex landing, Cloudflare Pages)
+- **Sibling repo** [`jnowakowski/cali2026`](https://github.com/jnowakowski/cali2026)
+  → `cali2026.rumbatienda.com` (Feria de Cali ’26 trip landing)
+- **Shop** [`jnowakowski/rumbatienda`](https://github.com/jnowakowski/rumbatienda)
+  → `tienda.rumbatienda.com` (Next.js on Vercel)
+
+The apex and cali2026 landings share `rumba-brand-directions/` (brand
+exploration handoff, ~5 MB) and should be reviewed together.
+
+**Agents:** start with [`AGENTS.md`](AGENTS.md) — it covers sibling-repo
+pickup and how to brief Julian.
+
 ## Quick start (human or agent)
 
 The whole site is in `public/index.html`. Edit it directly.

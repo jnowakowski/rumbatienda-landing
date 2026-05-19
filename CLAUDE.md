@@ -24,12 +24,25 @@ Entry point for all organic/direct traffic to the rumbatienda.com domain.
 
 ## Deploy
 
+Deploys run automatically via GitHub Actions (`.github/workflows/deploy.yml`).
+Direct push to `main` is blocked by branch protection, all changes go through PRs.
+
+| Event | Target | URL |
+|---|---|---|
+| Push to feature branch | `preview` environment | `https://<branch>.rumbatienda-landing.pages.dev` (alias) and `https://<commit>.rumbatienda-landing.pages.dev` (immutable) |
+| Merge to `main` | `production` environment, restricted to `main` only | `https://rumbatienda.com` |
+
+The workflow uses Cloudflare's `wrangler pages deploy` with a scoped API token
+(Pages Write only). For each PR, a sticky comment posts the preview URL.
+
+Local emergency deploy (owner only, bypasses CI):
 ```bash
 npm run build && npx wrangler pages deploy ./dist --project-name=rumbatienda-landing
 ```
 
-Production: `https://rumbatienda.com`
-Preview: `https://rumbatienda-landing.pages.dev`
+CODEOWNERS (`.github/CODEOWNERS`) gates merges that touch `.github/`,
+`package*.json`, `astro.config.*`, and other supply-chain-sensitive paths.
+Content edits in `src/` and `public/` merge without owner review.
 
 ## DNS
 

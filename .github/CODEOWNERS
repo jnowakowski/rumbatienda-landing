@@ -1,0 +1,24 @@
+# Code owners for blast-radius reduction (AI agent collaboration).
+# Pull requests that touch these paths require review from the listed owner
+# before they can merge to main. Other paths (src/, public/, README.md, etc.)
+# merge without owner review.
+
+# All GitHub Actions and repo automation
+/.github/                @jnowakowski
+
+# Package and lock manifests (supply chain attack surface)
+/package.json            @jnowakowski
+/package-lock.json       @jnowakowski
+
+# Build config (any code that runs at build time)
+/astro.config.mjs        @jnowakowski
+/astro.config.ts         @jnowakowski
+/tsconfig.json           @jnowakowski
+
+# Cloudflare deploy config (reserved for future wrangler.toml use)
+/wrangler.toml           @jnowakowski
+/wrangler.jsonc          @jnowakowski
+
+# Any local env or secret material that accidentally lands in a PR
+/.env                    @jnowakowski
+/.env.*                  @jnowakowski

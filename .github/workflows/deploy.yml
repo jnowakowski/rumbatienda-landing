@@ -9,10 +9,20 @@ permissions:
   deployments: write
   pull-requests: write
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
+      url: ${{ steps.deploy.outputs.deployment-url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -25,23 +35,21 @@ jobs:
 
       - run: npm run build
 
-      - name: Deploy to Cloudflare Pages
-        id: deploy
+      - id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4.78.0'
           command: pages deploy ./dist --project-name=rumbatienda-landing --branch=${{ github.ref_name }} --commit-hash=${{ github.sha }}
 
-      - name: Find PR for current branch
-        if: github.ref != 'refs/heads/main'
+      - if: github.ref != 'refs/heads/main'
         id: pr
         uses: jwalton/gh-find-current-pr@v1
         with:
           state: open
 
-      - name: Comment preview URL on PR
-        if: github.ref != 'refs/heads/main' && steps.pr.outputs.number
+      - if: github.ref != 'refs/heads/main' && steps.pr.outputs.number
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           number: ${{ steps.pr.outputs.number }}

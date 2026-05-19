@@ -1,0 +1,5 @@
+# Anything that isn't a real file in this deploy 301-redirects to the apex.
+# Real files (index.html, favicon.svg, favicon.ico, robots.txt, sitemap.xml)
+# take precedence and are served directly. This prevents any future
+# duplicate-content noise from CF Pages' SPA-fallback default.
+/*  /  301

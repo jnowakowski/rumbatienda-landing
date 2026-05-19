@@ -1,0 +1,6 @@
+# Catch-all: anything that isn't a real file in this deploy 301-redirects
+# to the apex. Per CF Pages docs, static assets win over redirects, so
+# real files (index.html, favicon.*, robots.txt, sitemap.xml) are served
+# directly. This prevents CF Pages' SPA-fallback default from serving
+# duplicate content for random URLs.
+/*  /  301

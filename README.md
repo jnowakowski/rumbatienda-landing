@@ -16,3 +16,5 @@ npx wrangler pages deploy ./dist --project-name=rumbatienda-landing   # deploy
 ```
 
 Production: `https://rumbatienda.com`
+
+<!-- tier2 test: 2026-05-19T18:10:20 -->

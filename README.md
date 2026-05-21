@@ -17,6 +17,8 @@ exploration handoff, ~5 MB) and should be reviewed together.
 
 **Agents:** start with [`AGENTS.md`](AGENTS.md) — it covers sibling-repo
 pickup and how to brief Julian.
+If you are blocked on deploy or repo identity, read
+[`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md).
 
 ## Quick start (human or agent)
 

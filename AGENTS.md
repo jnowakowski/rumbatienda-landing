@@ -22,6 +22,9 @@ GitHub remotes:
 
 ## On `git pull` (or fresh clone), do this first
 
+0. **Read the deploy handoff.** Start with
+   [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md). It tells
+   you the canonical repo, deploy target, and what not to look for.
 1. **Find or clone the two siblings.** From this repo's parent directory:
    ```bash
    if [ ! -d ../cali2026 ] && [ ! -d ../com-rumbatienda-cali2026 ]; then
@@ -72,6 +75,8 @@ Stop. Wait for Julian to choose. Do not dump plans.
 
 - `README.md` covers the ship workflow (PR → Cloudflare Pages preview →
   squash-merge → production).
+- `docs/agent-deploy-handoff.md` is the quick recovery note for agents who
+  are unsure which repo or deploy target they are in.
 - `CLAUDE.md` covers content rules (no em/en dashes as separators), the
   dark-theme/Bebas/Barlow visual system used by the live site, analytics
   IDs, DNS.

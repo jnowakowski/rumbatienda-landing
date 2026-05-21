@@ -39,7 +39,7 @@ A brand direction (and logo) that:
 
 ### Source
 
-- `boards/` — one JSX file per board (12 boards total, ~250 lines each)
+- `boards/` — one JSX file per board (13 boards total, ~250 lines each)
 - `design-canvas.jsx` — starter component for the pan/zoom canvas
 - `main.jsx` — wires the boards into the canvas
 - `share.jsx` — wires the boards into the scroll view
@@ -136,7 +136,8 @@ The user explicitly told me to **guess, then ask for confirmation**, rather than
 │   ├── board-09-crayon.jsx            # 03 Crayon Caribe
 │   ├── board-10-cumbia.jsx            # 04 Cumbia Stamp
 │   ├── board-11-type.jsx              # 05 Type Solo
-│   └── board-12-logo-lab-v2.jsx       # Logo Lab v2 (16 variants)
+│   ├── board-12-logo-lab-v2.jsx       # Logo Lab v2 (16 variants)
+│   └── board-13-iconic-test.jsx       # Illustrative test board, dancer + sun + palms + drums
 └── uploads/
     ├── Logo-2b5da7f0.png              # the AI-generated current Rumba logo
     ├── Rumba ·Live salsa…html         # current Rumba landing page
@@ -150,7 +151,7 @@ The user explicitly told me to **guess, then ask for confirmation**, rather than
 
 1. **Decide** with Julian whether the typographic-foundation direction (board 01 Feria-aligned) is the right baseline, or whether one of the more textured directions (03 Crayon, 04 Cumbia) is closer.
 2. **Pick a wordmark** from Logo Lab v2 (or hybridize two).
-3. **Resolve the illustrative-iconography question** above — build one test board with dancing figure + sun + palette before fanning out.
+3. **Review the new illustrative test board** and decide whether the dancer, sun, palm, and drum are the right core icons or need swapping.
 4. Once a direction is locked, **redraw the chosen wordmark as a clean SVG**, do a 3-state animation (idle / hover / loading), and roll out the rest of the system (buttons, ticket / flyer templates, IG sticker pack, landing redesign).
 
 ---

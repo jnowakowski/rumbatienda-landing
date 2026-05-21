@@ -1,4 +1,4 @@
-// share.jsx — scroll-stack view of all boards (replaces design canvas for easy review)
+// share.jsx · scroll stack view of all boards, including the new illustrative test board
 
 const Stage = ({ w, h, children, bg }) => {
   const wrapRef = React.useRef(null);
@@ -77,7 +77,7 @@ const SectionDivider = ({ label, fg, bg, accent }) => (
       <div style={{
         fontFamily: "'JetBrains Mono', monospace", fontSize: 12,
         letterSpacing: '0.22em', textTransform: 'uppercase', color: accent,
-      }}>scroll ↓</div>
+      }}>scroll -></div>
     </div>
   </div>
 );
@@ -104,7 +104,7 @@ const BoardCard = ({ no, label, w, h, bg, children }) => (
 const {
   Board01Cartelera, Board02Flyer90, Board03Fania, Board04Sticker, Board05Sudor,
   Board06Feria, Board07LogoLab, Board07Editorial, Board08Crayon, Board09Cumbia,
-  Board10Type, Board11LogoLabV2, BOARD_W, BOARD_H,
+  Board10Type, Board11LogoLabV2, Board12IconicTest, BOARD_W, BOARD_H,
 } = window;
 
 const ShareApp = () => (
@@ -112,78 +112,83 @@ const ShareApp = () => (
 
     <Header
       kicker="Rumba · brand exploration · for Julian"
-      title={<>ten directions.<br/><span style={{color:'#e84c8a'}}>one logo.</span></>}
-      sub="The current AI logo + the Gaceta site lean &ldquo;curated travel mag.&rdquo; The product is nightlife. This is the full range — start at the Logo Lab, then scroll through the ten directions. Open questions about the Colombian illustrative taste are still on the table; this is the type+color foundation we can build illustration on top of."
+      title={<>ten directions.<br /><span style={{ color: '#e84c8a' }}>one logo.</span><br /><span style={{ color: '#f4c324' }}>one icon test.</span></>}
+      sub="The current AI logo and the Gaceta site lean curatorial. The product is nightlife. This is the full range, start at the Logo Lab, then scroll through the ten directions and the new icon test. That test is the first guess at the missing Colombian movement cue."
       fg="#382949" accent="#e84c8a" bg="#fff8de"
     />
 
-    <SectionDivider label="logo lab — pick a wordmark" fg="#382949" bg="#fff2c4" accent="#e84c8a" />
+    <SectionDivider label="logo lab · pick a wordmark" fg="#382949" bg="#fff2c4" accent="#e84c8a" />
 
-    <BoardCard no="LOGO LAB v2" label="16 wordmark variants — top picks: 01 (heavy lowercase + pink dot), 03 (swoosh underline), 14 (sticker shadow)." w={BOARD_W} h={2100} bg="#fff8de">
+    <BoardCard no="LOGO LAB v2" label="16 wordmark variants · top picks: 01 heavy lowercase plus pink dot, 03 swoosh underline, 14 sticker shadow." w={BOARD_W} h={2100} bg="#fff8de">
       <Board11LogoLabV2 />
     </BoardCard>
 
-    <BoardCard no="LOGO LAB v1" label="(earlier) the original 9-variant exploration — kept for context." w={BOARD_W} h={1850} bg="#fff8de">
+    <BoardCard no="LOGO LAB v1" label="Earlier 9 variant exploration, kept for context." w={BOARD_W} h={1850} bg="#fff8de">
       <Board07LogoLab />
     </BoardCard>
 
     <SectionDivider label="ten design directions" fg="#382949" bg="#fff2c4" accent="#e84c8a" />
 
-    <BoardCard no="01 ★ recommended" label="Feria-aligned — same family as the official Feria de Cali ’68: cream, verde, pink, aubergine. Rubik 900 lowercase. Warm, festive, never pompous." w={BOARD_W} h={BOARD_H} bg="#fff8de">
+    <BoardCard no="01" label="Feria aligned, same family as the official Feria de Cali 68: cream, verde, pink, aubergine. Rubik 900 lowercase. Warm, festive, never pompous." w={BOARD_W} h={BOARD_H} bg="#fff8de">
       <Board06Feria />
     </BoardCard>
 
-    <BoardCard no="02" label="Editorial Suave — warm bilingual magazine. Italic DM Serif Display, cream + terracotta + sage. Apartamento meets Caribe." w={BOARD_W} h={BOARD_H} bg="#f5ecd9">
+    <BoardCard no="02" label="Editorial Suave, warm bilingual magazine. Italic DM Serif Display, cream, terracotta, sage. Apartamento meets Caribe." w={BOARD_W} h={BOARD_H} bg="#f5ecd9">
       <Board07Editorial />
     </BoardCard>
 
-    <BoardCard no="03" label="Crayon Caribe — hand-painted folk art. Tomato, mint, cobalt, saffron. Imperfect on purpose — that’s why it’s warm." w={BOARD_W} h={BOARD_H} bg="#fdf3d8">
+    <BoardCard no="03" label="Crayon Caribe, hand painted folk art. Tomato, mint, cobalt, saffron. Imperfect on purpose, that is why it feels alive." w={BOARD_W} h={BOARD_H} bg="#fdf3d8">
       <Board08Crayon />
     </BoardCard>
 
-    <BoardCard no="04" label="Cumbia Stamp — ornate fruit-crate label, 1960s Cali mercado. Heavy serif inside an oval cartouche, saffron + emerald + crimson + indigo." w={BOARD_W} h={BOARD_H} bg="#f3e7c8">
+    <BoardCard no="04" label="Cumbia Stamp, ornate fruit crate label, 1960s Cali mercado. Heavy serif inside an oval cartouche, saffron, emerald, crimson, indigo." w={BOARD_W} h={BOARD_H} bg="#f3e7c8">
       <Board09Cumbia />
     </BoardCard>
 
-    <BoardCard no="05" label="Type Solo — pure typographic minimalism. One huge wordmark, no decoration, three colors total. The most confident option." w={BOARD_W} h={BOARD_H} bg="#fff8de">
+    <BoardCard no="05" label="Type Solo, pure typographic minimalism. One huge wordmark, no decoration, three colors total. The most confident option." w={BOARD_W} h={BOARD_H} bg="#fff8de">
       <Board10Type />
     </BoardCard>
 
-    <BoardCard no="06" label="Cartelera Callejera — torn paste-up street poster, riso misregister, hand-painted. Loud, local." w={BOARD_W} h={BOARD_H} bg="#f1e8d5">
+    <BoardCard no="06" label="Cartelera Callejera, torn paste up street poster, riso misregister, hand painted. Loud, local." w={BOARD_W} h={BOARD_H} bg="#f1e8d5">
       <Board01Cartelera />
     </BoardCard>
 
-    <BoardCard no="07" label="Flyer '99 — Y2K tropical maximalism. Chrome bevel, photocopy energy, gradient mesh, no apologies." w={BOARD_W} h={BOARD_H} bg="#0e0420">
+    <BoardCard no="07" label="Flyer '99, Y2K tropical maximalism. Chrome bevel, photocopy energy, gradient mesh, no apologies." w={BOARD_W} h={BOARD_H} bg="#0e0420">
       <Board02Flyer90 />
     </BoardCard>
 
-    <BoardCard no="08" label="Salsa Brava — 1970s Fania reissue. Heavy serif, photo-grain, the dignity of an LP back-cover." w={BOARD_W} h={BOARD_H} bg="#efe7d4">
+    <BoardCard no="08" label="Salsa Brava, 1970s Fania reissue. Heavy serif, photo grain, the dignity of an LP back cover." w={BOARD_W} h={BOARD_H} bg="#efe7d4">
       <Board03Fania />
     </BoardCard>
 
-    <BoardCard no="09" label="Sticker Culture — WhatsApp group-chat vernacular. The chat is the brand: stickers, voice notes, sent &amp; received bubbles." w={BOARD_W} h={BOARD_H} bg="#fff9f2">
+    <BoardCard no="09" label="Sticker Culture, WhatsApp group chat vernacular. The chat is the brand: stickers, voice notes, sent and received bubbles." w={BOARD_W} h={BOARD_H} bg="#fff9f2">
       <Board04Sticker />
     </BoardCard>
 
-    <BoardCard no="10" label="Sudor · Neon — flash-on-camera nightlife photography, brutalist sans, one acid accent. Photos do the talking." w={BOARD_W} h={BOARD_H} bg="#0a0a0c">
+    <BoardCard no="10" label="Sudor Neon, flash on camera nightlife photography, brutalist sans, one acid accent. Photos do the talking." w={BOARD_W} h={BOARD_H} bg="#0a0a0c">
       <Board05Sudor />
     </BoardCard>
 
-    {/* OPEN QUESTION */}
+    <SectionDivider label="illustrative test board" fg="#382949" bg="#fff2c4" accent="#e84c8a" />
+
+    <BoardCard no="11" label="Iconic test board, flat dancer, sun, palm, drum, same Feria family. This is the first guess at the missing Colombian visual cue." w={BOARD_W} h={BOARD_H} bg="#fff8de">
+      <Board12IconicTest />
+    </BoardCard>
+
     <div style={{
       background: '#382949', color: '#fff8de', padding: '56px 32px 72px',
-      borderTop: `2px solid #382949`,
+      borderTop: '2px solid #382949',
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#f4c324' }}>
-          OPEN QUESTION — Julian's flag
+          OPEN QUESTION · Julian's flag
         </div>
         <div style={{ fontFamily: "'Rubik', sans-serif", fontWeight: 900, fontSize: 'clamp(32px, 4.4vw, 52px)', lineHeight: 0.95, letterSpacing: '-0.04em', textTransform: 'lowercase', marginTop: 14 }}>
-          the colombian taste —<br/>
+          the colombian taste ·<br />
           <span style={{ color: '#e84c8a' }}>illustration, dancing figures, sun.</span>
         </div>
         <div style={{ fontFamily: "'DM Serif Display', serif", fontStyle: 'italic', fontSize: 20, marginTop: 18, opacity: 0.92, lineHeight: 1.5, maxWidth: '70ch' }}>
-          The 10 directions above are mostly typographic + chromatic. Julian called out that real Latin / Colombian design has flat illustration: dancing figures, a radiating sun, palm leaves, drums — flattened but visible. Next round: add a board built around illustrative iconography in the Cuban-poster / Festival de Cali style, on top of the Feria-aligned palette.
+          The ten directions are mostly typographic and chromatic. Julian called out that real Latin and Colombian design has flat illustration: dancing figures, a radiating sun, palm leaves, drums, flattened but visible. The new test board is the first pass at that missing system.
         </div>
         <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#f4c324', marginTop: 28, opacity: 0.9 }}>
           Open with Julian: which references? which icons make the cut? figure inside the logo, or living next to it as a system?
@@ -196,7 +201,7 @@ const ShareApp = () => (
       textAlign: 'center', background: '#fff8de', color: '#382949',
     }}>
       <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', opacity: 0.6 }}>
-        Rumba — Brand Directions · 2026
+        Rumba · Brand Directions · 2026
       </div>
     </div>
   </div>

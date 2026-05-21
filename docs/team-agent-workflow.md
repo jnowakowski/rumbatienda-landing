@@ -64,9 +64,15 @@ or code change Julian asked for.
 
 ## How to ask questions
 
-Use git as the durable conversation surface. If blocked, uncertain, or missing
-access, do not silently make infrastructure decisions. Write a short note in the
-PR, or add a small handoff file under `docs/handshakes/`, then commit and push.
+Use git as the durable conversation surface. If there is an ongoing question,
+make one ticket under `docs/tickets/`. One ticket is one Markdown file. Append
+updates to that file instead of scattering the same conversation across chat,
+new files, or private notes.
+
+If blocked, uncertain, or missing access, do not silently make infrastructure
+decisions. Write a short note in the PR, add or update the relevant ticket
+under `docs/tickets/`, then commit and push. Use `docs/handshakes/` only for
+short-lived handoffs that do not need ticket tracking yet.
 
 Use this format:
 

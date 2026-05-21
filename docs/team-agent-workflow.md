@@ -37,6 +37,31 @@ For this repo:
 
 Production deploy happens from the maintained GitHub workflow after merge.
 
+## When access is missing
+
+If Cloudflare, Vercel, DNS, GitHub Actions, production, or sibling repo access
+is missing, that is expected. It is not your job to obtain that access, route
+around it, or create a new deployment path.
+
+Missing infrastructure access means the guardrail is working. Stop the
+infrastructure path, preserve the evidence, and continue only with safe
+repo-local work that helps Julian produce a reviewable change.
+
+Good response:
+
+```text
+I do not have access to X, and that is expected.
+I will not change deployment or DNS.
+Here is the product change I can still make or preview:
+...
+Here is the one question for the Rumba team:
+...
+```
+
+Stopping before changing DNS was the right call. The next step is not to get a
+DNS token. The next step is to write a clear handoff and return to the product
+or code change Julian asked for.
+
 ## How to ask questions
 
 Use git as the durable conversation surface. If blocked, uncertain, or missing

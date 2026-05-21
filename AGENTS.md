@@ -37,10 +37,11 @@ GitHub remotes:
      git clone git@github.com:jnowakowski/rumbatienda.git ../rumbatienda
    fi
    ```
-   If a clone fails with "Repository not found", the user has not yet
-   accepted the collaborator invite. Tell them: check
-   `https://github.com/notifications` for pending invitations from
-   `jnowakowski`. Do not retry the clone until they confirm.
+   If a clone fails with "Repository not found", sibling access is missing.
+   That is not permission to change deploy, DNS, or hosting. Continue in the
+   repo you already have, leave a short handoff note if the missing repo blocks
+   the task, and tell Julian to check `https://github.com/notifications` for
+   pending invitations from `jnowakowski`.
 3. **Pull all three.**
    ```bash
    git pull

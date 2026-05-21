@@ -22,10 +22,13 @@ GitHub remotes:
 
 ## On `git pull` (or fresh clone), do this first
 
-0. **Read the deploy handoff.** Start with
+0. **Read the team workflow.** Start with
+   [`docs/team-agent-workflow.md`](docs/team-agent-workflow.md). It explains
+   how Julian, Julian's Codex, and the Rumba team coordinate through git.
+1. **Read the deploy handoff.** Then read
    [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md). It tells
    you the canonical repo, deploy target, and what not to look for.
-1. **Find or clone the two siblings.** From this repo's parent directory:
+2. **Find or clone the two siblings.** From this repo's parent directory:
    ```bash
    if [ ! -d ../cali2026 ] && [ ! -d ../com-rumbatienda-cali2026 ]; then
      git clone git@github.com:jnowakowski/cali2026.git ../cali2026
@@ -38,13 +41,13 @@ GitHub remotes:
    accepted the collaborator invite. Tell them: check
    `https://github.com/notifications` for pending invitations from
    `jnowakowski`. Do not retry the clone until they confirm.
-2. **Pull all three.**
+3. **Pull all three.**
    ```bash
    git pull
    ( cd ../cali2026 2>/dev/null || cd ../com-rumbatienda-cali2026 ) && git pull
    ( cd ../rumbatienda 2>/dev/null || cd ../com-rumbatienda-tienda )  && git pull
    ```
-3. **Read READMEs first**, then read `rumba-brand-directions/README.md`
+4. **Read READMEs first**, then read `rumba-brand-directions/README.md`
    (same file in this repo and cali2026, ~5 MB of design boards + 12
    direction JSX files + reference uploads). That folder is the current
    brand handoff. For the shop, read `PROJECT.md`.

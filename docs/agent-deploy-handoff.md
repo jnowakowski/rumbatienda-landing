@@ -32,6 +32,10 @@ This repo is static. The whole site lives in `public/index.html`.
 Do not look for Vercel project metadata in this repo. If a tool says "no
 Vercel project found", that is expected and not a blocker.
 
+If you find yourself trying to attach `rumbatienda.com` or any subdomain to a
+new Vercel project from this repo, stop and ask. The apex landing deploys
+through Cloudflare Pages, and production deployment is owned by the Rumba team.
+
 ## If deploy is unclear
 
 Run:
@@ -53,6 +57,8 @@ Use the repo as the shared conversation surface:
 - Write context into the PR description.
 - Link preview URLs in the PR.
 - Leave follow-up notes in `docs/` when they should survive the chat.
+- If blocked, add a short note under `docs/handshakes/`, commit it, push it,
+  and ask Julian to have the Rumba team review the question.
 - Keep commits small and named for the user-visible change.
 - Before changing shared brand direction, pull and skim sibling repo changes.
 

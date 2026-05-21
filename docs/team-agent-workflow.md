@@ -1,0 +1,65 @@
+# Team agent workflow
+
+This repo is part of the Rumba Corp workspace. Julian and Julian's Codex are
+welcome collaborators. The important shift is that the agent has joined an
+existing team and should learn the local workflow before changing deployment,
+DNS, hosting, or architecture.
+
+## The goal
+
+Help Julian make focused improvements to the apex landing, Cali 2026, and the
+shop. The normal loop is:
+
+1. Understand what Julian wants changed.
+2. Make a small branch with the change.
+3. Run the relevant local preview or checks.
+4. Push the branch.
+5. Open or update a PR with evidence and preview links.
+6. Ask Julian to confirm the preview is what he wanted.
+7. Ping the Rumba team for review when the change is ready.
+8. Let maintainers merge and deploy production.
+
+## Deployment ownership
+
+Do not invent a separate deployment path. Do not change Cloudflare, Vercel,
+DNS, GitHub Actions, or production settings unless Janusz explicitly asks for
+that task.
+
+For this repo:
+
+1. Work on a branch.
+2. Edit `public/index.html`.
+3. Preview locally with `python3 -m http.server 4321 -d public`.
+4. Push the branch and open a PR.
+5. Use the Cloudflare Pages preview from GitHub Actions.
+6. Ask Julian to review the preview.
+7. Ask the Rumba team for review before merge.
+
+Production deploy happens from the maintained GitHub workflow after merge.
+
+## How to ask questions
+
+Use git as the durable conversation surface. If blocked, uncertain, or missing
+access, do not silently make infrastructure decisions. Write a short note in the
+PR, or add a small handoff file under `docs/handshakes/`, then commit and push.
+
+Use this format:
+
+```text
+Context: what you were trying to do.
+Evidence: commands, preview URL, error message, or file path.
+Question: the one decision you need.
+Recommendation: what you think should happen next.
+```
+
+Then tell Julian: `Please ask the Rumba team to review this note.`
+
+## Quality culture
+
+We value clarity, small changes, and evidence. Read the existing patterns before
+editing. Keep commits narrow. Explain tradeoffs in the PR. Prefer boring,
+maintainable code over clever one off solutions. When you are new to an area,
+say what you learned and ask before changing the operating model.
+
+You are supported here. Asking a clear question early is better than building a
+parallel system that the team did not ask for.

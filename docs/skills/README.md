@@ -17,6 +17,12 @@ When you internalize this, the question stops being "does the code run" and
 becomes "did this move the goal, and how do I see it in the data." That is the
 same lens the rest of the team uses.
 
+And think at the scale of the whole ecosystem, not one page. tumbao.ch drives
+people in, they land on the events site, the events site links to the shop and
+the trip. Each part powers the others toward one common goal. The data is what
+lets you see those connections and build with them in mind, together, rather
+than polishing one isolated island.
+
 ## The skills
 
 | File | Load it when |
@@ -25,12 +31,15 @@ same lens the rest of the team uses.
 | [`02-instrument-first.md`](02-instrument-first.md) | You are writing or changing code. Before you ship, decide what it should log so you can prove it worked. |
 | [`03-experiments-and-lessons.md`](03-experiments-and-lessons.md) | A change is really a bet on an outcome. Frame it as an experiment, capture the lesson, catch your own blind spots. |
 | [`04-api-first.md`](04-api-first.md) | You are adding or changing an HTTP endpoint in a Rumba Worker. |
+| [`05-analytics.md`](05-analytics.md) | You want audience or search questions: visitors, sources, what people searched to find us. Check Loki first, then GA4 and Search Console. |
 
 ## Access
 
-Reading the data needs a Cloudflare Access service token. It is delivered out
-of band (not in git). See [`01-read-the-data.md`](01-read-the-data.md) for the
-env vars and how to verify access in one command.
+Reading the data needs two credentials, both delivered out of band (never in
+git): a Cloudflare Access service token for Loki (see
+[`01-read-the-data.md`](01-read-the-data.md)), and a read-only Google service
+account key for GA4 and Search Console (see [`05-analytics.md`](05-analytics.md)).
+The Loki token alone is enough to verify access in one command.
 
 ## Motto
 

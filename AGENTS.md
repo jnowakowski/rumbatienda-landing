@@ -85,3 +85,12 @@ Stop. Wait for Julian to choose. Do not dump plans.
   dark-theme/Bebas/Barlow visual system used by the live site, analytics
   IDs, DNS.
 - Site edits live in `public/index.html`. No build step, no framework.
+
+## Working through data (load on demand)
+
+`docs/skills/` holds a small set of internal skills on how the team works
+through data, not guesses: reading production logs in Loki, instrumenting code
+before shipping, running changes as measurable experiments, and the API
+convention. Do not read them every session. Open `docs/skills/README.md` and
+load one skill when the task matches it. Reading the data needs a Cloudflare
+Access token delivered out of band, see `docs/skills/01-read-the-data.md`.

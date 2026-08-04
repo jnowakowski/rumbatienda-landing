@@ -156,6 +156,8 @@ img { max-width: 100%; display: block; }
   gap: 7px;
 }
 .language-switcher button {
+  min-width: 44px;
+  min-height: 44px;
   padding: 3px 1px;
   color: var(--ink-soft);
   opacity: 0.55;
@@ -416,7 +418,7 @@ img { max-width: 100%; display: block; }
 .card.cali   { border-left-width: 8px; border-left-color: var(--pink); }
 .card.shop   { border-left-width: 8px; border-left-color: var(--amarillo); }
 
-/* shop is "soon" ·slightly muted */
+/* shop accent */
 .card.shop {
   background: linear-gradient(0deg, rgba(232, 144, 32, 0.05), rgba(232, 144, 32, 0.05)), var(--paper);
 }
@@ -718,12 +720,12 @@ img { max-width: 100%; display: block; }
     <span data-i18n="tickerLive">Live salsa from Medellín</span>
     <span data-i18n="tickerGuide">Weekly events guide</span>
     <span data-i18n="tickerCali">Cali 2026 · Dec 25 ·30</span>
-    <span data-i18n="tickerShop">Tienda · coming soon</span>
+    <span data-i18n="tickerShop">Tienda · open</span>
     <span>#RumbaMedellín</span>
     <span data-i18n="tickerLive">Live salsa from Medellín</span>
     <span data-i18n="tickerGuide">Weekly events guide</span>
     <span data-i18n="tickerCali">Cali 2026 · Dec 25 ·30</span>
-    <span data-i18n="tickerShop">Tienda · coming soon</span>
+    <span data-i18n="tickerShop">Tienda · open</span>
     <span>#RumbaMedellín</span>
   </div>
 </div>
@@ -731,7 +733,7 @@ img { max-width: 100%; display: block; }
 <!-- ================ HERO ================ -->
 <section class="hero">
   <div class="stamp-tl">№ 01 · Medellín, Colombia</div>
-  <div class="stamp-br">Est. 2023 · Julian Villa · Janusz Higher</div>
+  <div class="stamp-br" data-i18n="heroStamp">Est. 2023 · Julian Villa · Janusz Higher</div>
   <div class="wrap">
     <h1 data-reveal>
       <span class="word rumba">Rumba<span class="punct">.</span></span>
@@ -773,7 +775,7 @@ img { max-width: 100%; display: block; }
       <a class="card cali" href="https://cali2026.rumbatienda.com" data-reveal>
         <div class="num">
           <span data-i18n="tripLabel">№ 02 / Trip</span>
-          <span class="badge coming">Dec 25 ·30 · 2026</span>
+          <span class="badge coming" data-i18n="tripDate">Dec 25 ·30 · 2026</span>
         </div>
         <h3 data-i18n-html="tripHeading">Six days of <em>Feria de Cali.</em></h3>
         <p class="desc" data-i18n="tripDescription">A curated trip for Swiss and European dancers ·hotels, classes, official events, the right rooms. 25 spots, 11 taken.</p>
@@ -810,7 +812,7 @@ img { max-width: 100%; display: block; }
           Rumba began as a weekly text I'd send to friends ·where to dance Tuesday, who's playing live Saturday, which club to skip. It got long. It became a guide. The guide became a brand, and the brand became a way to introduce the scene I love to the people who want to find it ·locals first, visitors second.
         </p>
         <p data-i18n-html="whoToday">
-          Today there's the <strong>events guide</strong>, the <strong>Cali trip</strong> with my friend Janusz from Switzerland, and a small <strong>tienda</strong> on the way. Same hands behind all of it.
+          Today there's the <strong>events guide</strong>, the <strong>Cali trip</strong> with my friend Janusz from Switzerland, and a small <strong>tienda</strong> that's now open. Same hands behind all of it.
         </p>
         <p class="sig">Julian</p>
       </div>
@@ -858,7 +860,7 @@ img { max-width: 100%; display: block; }
         <ul>
           <li><a href="https://rumba.rumbatienda.com"><span data-i18n="eventsFooter">Events</span> <span class="tag" data-i18n="liveFooter">live</span></a></li>
           <li><a href="https://cali2026.rumbatienda.com">Cali 2026 <span class="tag" data-i18n="decFooter">dec</span></a></li>
-          <li><a href="https://tienda.rumbatienda.com">Tienda <span class="tag" data-i18n="soonFooter">soon</span></a></li>
+          <li><a href="https://tienda.rumbatienda.com">Tienda <span class="tag" data-i18n="shopFooterStatus">open</span></a></li>
         </ul>
       </div>
       <div>
@@ -891,7 +893,8 @@ img { max-width: 100%; display: block; }
     tickerLive: 'Salsa en vivo desde Medellín',
     tickerGuide: 'Guía semanal de eventos',
     tickerCali: 'Cali 2026 · 25 al 30 de dic.',
-    tickerShop: 'Tienda · próximamente',
+    tickerShop: 'Tienda · abierta',
+    heroStamp: 'Desde 2023 · Julian Villa · Janusz Higher',
     lede: 'Salsa en vivo <em>desde Medellín</em> ·y la gente que la mantiene bailando.',
     homeLabel: 'Base',
     foundedLabel: 'Fundada',
@@ -907,6 +910,7 @@ img { max-width: 100%; display: block; }
     eventsHeading: 'Dónde <em>baila</em> Medellín esta noche.',
     eventsDescription: 'Una guía semanal de las noches de salsa, sociales y orquestas en vivo de toda la ciudad ·curada por Julian, actualizada cada jueves.',
     tripLabel: '№ 02 / Viaje',
+    tripDate: '25 al 30 de dic. · 2026',
     tripHeading: 'Seis días de <em>Feria de Cali.</em>',
     tripDescription: 'Un viaje curado para bailarines suizos y europeos ·hoteles, clases, eventos oficiales y los lugares correctos. 25 cupos, 11 reservados.',
     shopHeading: 'Camisetas. <em>Lleva el sabor.</em>',
@@ -916,7 +920,7 @@ img { max-width: 100%; display: block; }
     whoHeading: 'Una persona,<br>una <em class="serif-it">obsesión.</em>',
     whoIntro: 'Soy Julian. Bailarín de salsa, anfitrión y el tipo que empezó a llevar una lista de las mejores noches de Medellín porque nadie más lo hacía.',
     whoStory: 'Rumba empezó como un mensaje semanal para mis amigos ·dónde bailar el martes, quién toca en vivo el sábado, qué club evitar. Se hizo largo. Se convirtió en una guía. La guía se convirtió en una marca, y la marca en una forma de presentar la escena que amo a quienes quieren encontrarla ·primero los locales, luego los visitantes.',
-    whoToday: 'Hoy están la <strong>guía de eventos</strong>, el <strong>viaje a Cali</strong> con mi amigo Janusz de Suiza y una pequeña <strong>tienda</strong> en camino. Las mismas manos detrás de todo.',
+    whoToday: 'Hoy están la <strong>guía de eventos</strong>, el <strong>viaje a Cali</strong> con mi amigo Janusz de Suiza y una pequeña <strong>tienda</strong> que ya está abierta. Las mismas manos detrás de todo.',
     sceneKicker: '§ 03 · La escena',
     sceneHeading: 'Medellín, <em class="serif-it">en vivo.</em>',
     followJulian: '@julianvlla · seguir',
@@ -935,7 +939,7 @@ img { max-width: 100%; display: block; }
     eventsFooter: 'Eventos',
     liveFooter: 'en vivo',
     decFooter: 'dic',
-    soonFooter: 'pronto',
+    shopFooterStatus: 'abierta',
     followFooter: 'Seguir',
     contactFooter: 'Contacto',
     umbrellaFooter: 'rumbatienda.com · la casa'

@@ -1,9 +1,13 @@
 # Julian SEO onboarding
 
-This is the one starting point for Julian and Julian's Codex. It grants the
-working model, not Google or infrastructure ownership: read the shared data,
-change the correct repo, merge your own green PR, and let the maintained
-workflow deploy production.
+Start with [`../JULIAN-START-HERE.md`](../JULIAN-START-HERE.md) for the complete
+site and repository map, autonomous deployment model, and the boundary between
+the Colombia and Switzerland work. This document then covers the Google setup
+for Julian and Julian's Codex.
+
+The access model grants normal SEO work, not Google or infrastructure
+ownership: read the shared data, change the correct repo, merge your own green
+PR, and let the maintained workflow deploy production.
 
 ## Access already assigned
 

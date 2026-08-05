@@ -28,7 +28,11 @@ GitHub remotes:
 1. **Read the deploy handoff.** Then read
    [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md). It tells
    you the canonical repo, deploy target, and what not to look for.
-2. **Find or clone the two siblings.** From this repo's parent directory:
+2. **Read the SEO workflow when the task affects search or analytics.** Use
+   [`docs/seo-workflow.md`](docs/seo-workflow.md) before changing Search
+   Console, Analytics, robots rules, sitemaps, canonical URLs, language URLs,
+   or structured data.
+3. **Find or clone the two siblings.** From this repo's parent directory:
    ```bash
    if [ ! -d ../cali2026 ] && [ ! -d ../com-rumbatienda-cali2026 ]; then
      git clone git@github.com:jnowakowski/cali2026.git ../cali2026
@@ -42,13 +46,13 @@ GitHub remotes:
    repo you already have, leave a short handoff note if the missing repo blocks
    the task, and tell Julian to check `https://github.com/notifications` for
    pending invitations from `jnowakowski`.
-3. **Pull all three.**
+4. **Pull all three.**
    ```bash
    git pull
    ( cd ../cali2026 2>/dev/null || cd ../com-rumbatienda-cali2026 ) && git pull
    ( cd ../rumbatienda 2>/dev/null || cd ../com-rumbatienda-tienda )  && git pull
    ```
-4. **Read READMEs first**, then read `rumba-brand-directions/README.md`
+5. **Read READMEs first**, then read `rumba-brand-directions/README.md`
    (same file in this repo and cali2026, ~5 MB of design boards + 12
    direction JSX files + reference uploads). That folder is the current
    brand handoff. For the shop, read `PROJECT.md`.

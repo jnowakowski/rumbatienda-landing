@@ -16,8 +16,8 @@ shop. The normal loop is:
 4. Push the branch.
 5. Open or update a PR with evidence and preview links.
 6. Ask Julian to confirm the preview is what he wanted.
-7. Ping the Rumba team for review when the change is ready.
-8. Let maintainers merge and deploy production.
+7. Wait for required automated checks to pass.
+8. Julian or Julian's agent squash merges the PR and verifies production.
 
 ## Deployment ownership
 
@@ -33,9 +33,11 @@ For this repo:
 4. Push the branch and open a PR.
 5. Use the Cloudflare Pages preview from GitHub Actions.
 6. Ask Julian to review the preview.
-7. Ask the Rumba team for review before merge.
+7. When required checks are green, merge the PR yourself.
 
 Production deploy happens from the maintained GitHub workflow after merge.
+Normal product and SEO changes require zero human approvals. Do not bypass a
+failed required check.
 
 ## When access is missing
 

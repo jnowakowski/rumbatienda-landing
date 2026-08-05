@@ -19,6 +19,8 @@ exploration handoff, ~5 MB) and should be reviewed together.
 pickup and how to brief Julian.
 If you are blocked on deploy or repo identity, read
 [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md).
+Before SEO, Search Console, or Analytics work, read
+[`docs/seo-workflow.md`](docs/seo-workflow.md).
 
 ## Quick start (human or agent)
 

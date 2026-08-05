@@ -3,6 +3,11 @@
 You are in **`rumbatienda-landing`** (apex landing for `rumbatienda.com`,
 deployed on Cloudflare Pages).
 
+Julian and Julian's Codex must first read
+[`JULIAN-START-HERE.md`](JULIAN-START-HERE.md). It is the canonical cross repo
+map and explains autonomous deployment plus the Colombia and Switzerland
+boundary.
+
 This repo is **one of four** for the Rumba Corp site:
 
 | Repo                  | Domain                          | Stack                          |
@@ -24,19 +29,21 @@ GitHub remotes:
 
 ## On `git pull` (or fresh clone), do this first
 
-0. **Read the team workflow.** Start with
+0. **Read the Julian start guide.** Open
+   [`JULIAN-START-HERE.md`](JULIAN-START-HERE.md), then continue here.
+1. **Read the team workflow.** Start with
    [`docs/team-agent-workflow.md`](docs/team-agent-workflow.md). It explains
    how Julian, Julian's Codex, and the Rumba team coordinate through git.
-1. **Read the deploy handoff.** Then read
+2. **Read the deploy handoff.** Then read
    [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md). It tells
    you the canonical repo, deploy target, and what not to look for.
-2. **Read the SEO workflow when the task affects search or analytics.** Use
+3. **Read the SEO workflow when the task affects search or analytics.** Use
    [`docs/seo-workflow.md`](docs/seo-workflow.md) before changing Search
    Console, Analytics, robots rules, sitemaps, canonical URLs, language URLs,
    or structured data.
    New team members start with
    [`docs/julian-seo-onboarding.md`](docs/julian-seo-onboarding.md).
-3. **Find or clone the three siblings.** From this repo's parent directory:
+4. **Find or clone the three siblings.** From this repo's parent directory:
    ```bash
    if [ ! -d ../cali2026 ] && [ ! -d ../com-rumbatienda-cali2026 ]; then
      git clone git@github.com:jnowakowski/cali2026.git ../cali2026
@@ -53,14 +60,14 @@ GitHub remotes:
    repo you already have, leave a short handoff note if the missing repo blocks
    the task, and tell Julian to check `https://github.com/notifications` for
    pending invitations from `jnowakowski`.
-4. **Pull all four.**
+5. **Pull all four.**
    ```bash
    git pull
    ( cd ../cali2026 2>/dev/null || cd ../com-rumbatienda-cali2026 ) && git pull
    ( cd ../rumbatienda 2>/dev/null || cd ../com-rumbatienda-tienda )  && git pull
    ( cd ../rumba-site 2>/dev/null || cd ../com-rumbatienda-rumba )    && git pull
    ```
-5. **Read READMEs first**, then read `rumba-brand-directions/README.md`
+6. **Read READMEs first**, then read `rumba-brand-directions/README.md`
    (same file in this repo and cali2026, ~5 MB of design boards + 12
    direction JSX files + reference uploads). That folder is the current
    brand handoff. For the shop, read `PROJECT.md`.

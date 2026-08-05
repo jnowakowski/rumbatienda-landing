@@ -15,13 +15,18 @@ framework, no build step.
 The apex and cali2026 landings share `rumba-brand-directions/` (brand
 exploration handoff, ~5 MB) and should be reviewed together.
 
-**Agents:** start with [`AGENTS.md`](AGENTS.md) — it covers sibling-repo
-pickup and how to brief Julian.
+**Julian and Julian's Codex:** start with
+[`JULIAN-START-HERE.md`](JULIAN-START-HERE.md). It contains the complete map
+from public URLs to repositories, autonomous deployment rules, and the boundary
+between the Colombia and Switzerland work.
+
+**Agents:** then read [`AGENTS.md`](AGENTS.md). It covers sibling-repo pickup
+and how to brief Julian.
 If you are blocked on deploy or repo identity, read
 [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md).
 Before SEO, Search Console, or Analytics work, read
 [`docs/seo-workflow.md`](docs/seo-workflow.md).
-Julian and Julian's Codex start with
+For the first SEO session, continue with
 [`docs/julian-seo-onboarding.md`](docs/julian-seo-onboarding.md).
 
 ## Quick start (human or agent)

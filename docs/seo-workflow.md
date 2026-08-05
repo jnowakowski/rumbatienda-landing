@@ -156,21 +156,26 @@ treat the language switch as user experience, not as a separate SEO page.
 On 2026-08-05 Google reported `ojvillac@gmail.com` as an Owner of the URL prefix
 property `https://cali2026.rumbatienda.com/`.
 
-Observed facts:
+Root cause:
 
 * Julian remains a Full user, not an Owner, on `sc-domain:rumbatienda.com`.
 * Julian is an Analyst on GA4 property `517107083`.
-* Google Analytics ownership verification requires Editor permission. Julian's
-  current Analyst permission is not sufficient for that method.
-* No Google verification HTML file or meta tag exists in the Cali repo or live
-  homepage.
-* No verification TXT record exists on `cali2026.rumbatienda.com`.
-* A Google verification TXT record exists on the apex domain. Do not remove it
-  without matching its exact token to the owner shown in Search Console.
+* Commit `040f2cb` in `jnowakowski/cali2026` added Julian's verification file
+  `public/google7f20fb11f8db94a6.html` to production.
+* That file made Julian a verified Owner of the child URL prefix property.
+* The file was not needed because the canonical domain property already covers
+  Cali 2026.
 
-This rules out the current GA4 role and the common HTML methods. The remaining
-token must still be matched in Search Console before changing DNS, Tag Manager,
-or a repository.
+Resolution on 2026-08-05:
+
+* Julian's access was removed from the child URL prefix property.
+* PR `jnowakowski/cali2026#70` removed the verification file and deployed the
+  clean `main` branch to production.
+* The former token URL now returns `404`.
+* The child property shows one verified Owner, `jnowakowski@gmail.com`, and zero
+  unused ownership tokens.
+* Julian remains a Full user on `sc-domain:rumbatienda.com` and an Analyst on
+  GA4 property `517107083`.
 
 ### How to remove the extra Owner safely
 

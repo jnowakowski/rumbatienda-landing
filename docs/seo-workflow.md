@@ -69,13 +69,13 @@ All Rumbatienda hosts use the unified Colombia GA4 property:
 | Property ID | `517107083` |
 | Measurement ID | `G-2K3BYEMTTQ` |
 | Julian | `ojvillac@gmail.com`, Analyst |
-| Agent service account | Viewer only |
 | Direct link | [Open Rumbatienda CO](https://analytics.google.com/analytics/web/#/a389760570p517107083) |
 
 Do not create a new GA4 property or use a new measurement ID for one subdomain.
 Filter reports by hostname, page path, or content group.
 
-An agent should authenticate outside the repository and use read only scopes:
+Julian's agent authenticates as Julian outside the repository and uses read
+only scopes:
 
 ```text
 https://www.googleapis.com/auth/analytics.readonly
@@ -84,6 +84,26 @@ https://www.googleapis.com/auth/webmasters.readonly
 
 Never commit OAuth secrets, refresh tokens, service account JSON files, or
 application default credentials.
+
+The exact machine setup and access check are in
+[`julian-seo-onboarding.md`](julian-seo-onboarding.md).
+
+## Shared measurement plan
+
+Use events to measure the ecosystem funnel, not every decorative click.
+
+| Event | Meaning | Key event |
+|---|---|---|
+| `funnel_exit` | Visitor moves from one Rumbatienda host to another | No |
+| `view_item` | Visitor opens a shop product | No |
+| `add_to_cart` | Visitor adds a shop item | No |
+| `begin_checkout` | Visitor starts checkout | No |
+| `generate_lead` | Cali interest form was accepted | Yes, once per session |
+| `purchase` | A paid shop order is confirmed | Yes, once per event |
+
+All funnel events use the unified measurement ID. Ecommerce events use GA4's
+recommended `currency`, `value`, `transaction_id`, and `items` parameters.
+Do not mark generic clicks or page views as key events.
 
 ## Which repo owns each URL
 

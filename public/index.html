@@ -1037,14 +1037,24 @@ img { max-width: 100%; display: block; }
   })();
 </script>
 
-<!-- Card click tracking -->
+<!-- Ecosystem funnel tracking -->
 <script>
-  document.querySelectorAll('.card').forEach(function(card) {
-    card.addEventListener('click', function() {
-      var label = card.querySelector('.url span')?.textContent || 'unknown';
-      if (typeof gtag === 'function') gtag('event', 'click', { event_category: 'apex_route', event_label: label });
-      if (window._paq) _paq.push(['trackEvent', 'ApexRoute', 'Click', label]);
-    });
+  document.addEventListener('click', function(event) {
+    var anchor = event.target.closest('a[href]');
+    if (!anchor) return;
+    var destination;
+    try { destination = new URL(anchor.href, location.href); } catch (_) { return; }
+    var isRumbaHost = destination.hostname === 'rumbatienda.com' || destination.hostname.endsWith('.rumbatienda.com');
+    if (!isRumbaHost || destination.hostname === location.hostname) return;
+    var params = {
+      source_host: location.hostname,
+      destination_host: destination.hostname,
+      destination_url: destination.origin + destination.pathname,
+      link_text: (anchor.textContent || '').trim().slice(0, 100),
+      transport_type: 'beacon'
+    };
+    if (typeof gtag === 'function') gtag('event', 'funnel_exit', params);
+    if (window._paq) _paq.push(['trackEvent', 'FunnelExit', destination.hostname, params.destination_url]);
   });
 </script>
 

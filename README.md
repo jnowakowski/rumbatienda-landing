@@ -21,6 +21,8 @@ If you are blocked on deploy or repo identity, read
 [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md).
 Before SEO, Search Console, or Analytics work, read
 [`docs/seo-workflow.md`](docs/seo-workflow.md).
+Julian and Julian's Codex start with
+[`docs/julian-seo-onboarding.md`](docs/julian-seo-onboarding.md).
 
 ## Quick start (human or agent)
 
@@ -44,9 +46,9 @@ python3 -m http.server 4321 -d public
 ## Rules of the road
 
 - Direct push to `main` is blocked. All changes go through PRs.
-- Edits in `public/` merge without owner approval. Anything touching
-  `.github/`, `.env*`, or future build config requires @jnowakowski review
-  (see `.github/CODEOWNERS`).
+- Normal green PRs require zero human approvals. Configuration and deploy
+  changes deserve extra scrutiny in the PR, but Julian or his agent may merge
+  them after all required checks pass.
 - The production Cloudflare token is environment-scoped and only available
   to deploys on `main`. Feature branches use a separate preview token.
 
@@ -64,9 +66,8 @@ Plus project conventions: no em/en dashes as text separators, analytics IDs
 - There is no src/, no node build, no framework. If you see references to
   Astro components or `src/pages/`, that history was removed in a recent
   cleanup and is not coming back.
-- Keep edits inside `public/`. If you genuinely need configuration changes
-  (workflow, deps), open a PR and ping @jnowakowski for the CODEOWNERS
-  approval.
+- Keep normal site edits inside `public/`. If configuration must change, make
+  it in a focused PR, wait for every required check, and merge only when green.
 - DNS records for subdomains (`tienda.`, `rumba.`, `cali2026.`, `og.`,
   `mta-sts.`) live in the same Cloudflare zone but are managed elsewhere.
   Do not modify them from this repo.

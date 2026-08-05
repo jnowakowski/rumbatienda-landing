@@ -33,8 +33,9 @@ Do not look for Vercel project metadata in this repo. If a tool says "no
 Vercel project found", that is expected and not a blocker.
 
 If you find yourself trying to attach `rumbatienda.com` or any subdomain to a
-new Vercel project from this repo, stop and ask. The apex landing deploys
-through Cloudflare Pages, and production deployment is owned by the Rumba team.
+new Vercel project from this repo, stop. The apex landing deploys through
+Cloudflare Pages. Julian can merge a green PR and verify its automatic deploy;
+no separate dashboard access or maintainer approval is needed.
 
 ## If deploy is unclear
 

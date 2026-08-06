@@ -232,41 +232,46 @@ prefix `https://cali2026.rumbatienda.com/de/salsa-reise-feria-de-cali-2026-schwe
 
 This time there was no verification file or tag in any repo for that page.
 `public/de/salsa-reise-feria-de-cali-2026-schweiz/index.html` has none, and no
-commit ever added one. That rules out the 2026-08-05 mechanism repeating.
+commit ever added one. That first looked like a new mechanism (GA4 permission
+or a direct UI action), but Search Console's own `Ownership verification
+details` panel for `ojvillac@gmail.com` on this property said plainly:
 
-The working theory, not yet confirmed against the Search Console API (no
-scope to query `ownershipInfo` from this session): Julian's standing access,
-not a repo change, verified the property. Two candidates:
+> Parent property: Automatically verified via `https://cali2026.rumbatienda.com/`
 
-* The "Google Analytics" verification method. It can self-verify a property
-  for any URL carrying the linked GA4 tag if the account has enough
-  permission on that GA4 property. Julian's role is Analyst on `517107083`,
-  which every Rumbatienda host tags. If that role is enough for this method,
-  he can self-verify any URL on any host, at will, with zero repo trace,
-  regardless of what this document says.
-* A direct action in the Search Console UI, not through the read only API
-  path in `julian-seo-onboarding.md`.
+That is the actual mechanism, confirmed in the UI, not guessed: Search
+Console auto-verifies a new child property for anyone who is already a
+verified Owner of a broader parent property covering that URL. On 2026-08-05,
+while Julian's verification file still made him an Owner of
+`https://cali2026.rumbatienda.com/`, Search Console (or an inspection of this
+specific German URL) silently created and auto-verified this second, deeper
+property against that same standing ownership. PR `#70` removed the file and
+Julian's access from the property it was flagged on, but nobody checked for
+other properties that had already inherited ownership from it before the
+file came down. This child property kept its own independent Owner grant
+even after the parent access was revoked, removing a parent Owner does not
+cascade to children already created from it.
 
-Either way, this is not a "read the docs harder" problem. A written boundary
-cannot stop a UI action or an account level permission. The fix has to happen
-on the Google account side, not only in this repo.
+So this is not a new leak and not a GA4 permission problem. It is the same
+2026-08-05 incident, incompletely cleaned up: one flagged property was fixed,
+a second one silently created from the same standing access was not.
 
-Resolution steps (same shape as 2026-08-05, target URL differs):
+Resolution on 2026-08-06:
 
-1. Open Search Console, find the property
-   `https://cali2026.rumbatienda.com/de/salsa-reise-feria-de-cali-2026-schweiz/`.
-2. `Settings` > `Users and permissions`, remove `ojvillac@gmail.com`.
-3. Check `Unused ownership tokens` for that property and remove any token
-   assigned to Julian.
-4. Confirm on the GA4 side: open property `517107083` > `Admin` > `Property
-   access management`, check Julian's exact role. If it is anything above
-   Viewer, or if Google's own help page for the Analytics verification method
-   says a lower role still qualifies, that is the real fix: drop Julian to
-   the lowest role that still lets him read the reports he needs, then retest
-   whether Analytics verification is still offered to his account for a new
-   property.
-5. Record the outcome of step 4 in this file, it decides whether this
-   recurs a third time.
+* Confirmed via `Ownership verification details`: Owner status was inherited
+  from the parent property `https://cali2026.rumbatienda.com/`, not from a
+  file, tag, DNS record, or Analytics permission.
+* Removed `ojvillac@gmail.com` from
+  `https://cali2026.rumbatienda.com/de/salsa-reise-feria-de-cali-2026-schweiz/`.
+  Unused ownership tokens on that property were already at zero.
+* Re-checked the parent, `https://cali2026.rumbatienda.com/`: one verified
+  Owner, `jnowakowski@gmail.com`, zero others. No further child properties
+  exist under `cali2026.rumbatienda.com` in this account's property list.
+
+The lesson for next time: after removing a verification file that granted
+someone Owner on a property, check the Search Console property list for
+every other property under that same host, not only the one Google's
+notification named. Owner status inherited from a parent survives the
+parent's own cleanup.
 
 ## Agent checklist
 

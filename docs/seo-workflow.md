@@ -224,6 +224,50 @@ Do not use `Remove property` as the fix. That action can only remove a property
 from a user's list while a valid verification token still allows the owner to
 regain access.
 
+## Incident recovery: unexpected child Owner, take two
+
+On 2026-08-06, one day after the incident above, Google reported
+`ojvillac@gmail.com` as an Owner of a second, more specific property: the URL
+prefix `https://cali2026.rumbatienda.com/de/salsa-reise-feria-de-cali-2026-schweiz/`.
+
+This time there was no verification file or tag in any repo for that page.
+`public/de/salsa-reise-feria-de-cali-2026-schweiz/index.html` has none, and no
+commit ever added one. That rules out the 2026-08-05 mechanism repeating.
+
+The working theory, not yet confirmed against the Search Console API (no
+scope to query `ownershipInfo` from this session): Julian's standing access,
+not a repo change, verified the property. Two candidates:
+
+* The "Google Analytics" verification method. It can self-verify a property
+  for any URL carrying the linked GA4 tag if the account has enough
+  permission on that GA4 property. Julian's role is Analyst on `517107083`,
+  which every Rumbatienda host tags. If that role is enough for this method,
+  he can self-verify any URL on any host, at will, with zero repo trace,
+  regardless of what this document says.
+* A direct action in the Search Console UI, not through the read only API
+  path in `julian-seo-onboarding.md`.
+
+Either way, this is not a "read the docs harder" problem. A written boundary
+cannot stop a UI action or an account level permission. The fix has to happen
+on the Google account side, not only in this repo.
+
+Resolution steps (same shape as 2026-08-05, target URL differs):
+
+1. Open Search Console, find the property
+   `https://cali2026.rumbatienda.com/de/salsa-reise-feria-de-cali-2026-schweiz/`.
+2. `Settings` > `Users and permissions`, remove `ojvillac@gmail.com`.
+3. Check `Unused ownership tokens` for that property and remove any token
+   assigned to Julian.
+4. Confirm on the GA4 side: open property `517107083` > `Admin` > `Property
+   access management`, check Julian's exact role. If it is anything above
+   Viewer, or if Google's own help page for the Analytics verification method
+   says a lower role still qualifies, that is the real fix: drop Julian to
+   the lowest role that still lets him read the reports he needs, then retest
+   whether Analytics verification is still offered to his account for a new
+   property.
+5. Record the outcome of step 4 in this file, it decides whether this
+   recurs a third time.
+
 ## Agent checklist
 
 Before SEO work:

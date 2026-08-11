@@ -72,28 +72,12 @@ GitHub remotes:
    direction JSX files + reference uploads). That folder is the current
    brand handoff. For the shop, read `PROJECT.md`.
 
-## Then brief Julian — TL;DR style, English, no wall of text
+## Orient to the current task
 
-Keep it under ~150 words. Cover only:
-
-- **What deploys where.** Four repos:
-  - `rumbatienda-landing` → `https://rumbatienda.com` (Cloudflare Pages)
-  - `cali2026` → `https://cali2026.rumbatienda.com` (Cloudflare Pages)
-  - `rumba-site` → `https://rumba.rumbatienda.com` (Cloudflare Workers)
-  - `rumbatienda` → `https://tienda.rumbatienda.com` (Next.js, Vercel)
-- **What's new.** `rumba-brand-directions/` was just added to apex + cali2026.
-  10 design directions, 25 logo variants across two Logo Lab boards,
-  reference uploads (current AI logo, current landing/trip pages, Feria
-  de Cali ’68 captures). Open `index.html` for the pan/zoom canvas, or
-  `Rumba Brand Directions.html` for the offline standalone bundle.
-- **The open question.** The 10 directions are mostly typographic; they
-  lack Colombian iconography (dancer, sun, palms, drums). See "OPEN
-  QUESTION" in `rumba-brand-directions/README.md`.
-- **Pick one to start.** (a) review the 10 directions, (b) build a test
-  board with illustrative iconography, or (c) pick a wordmark from Logo
-  Lab v2.
-
-Stop. Wait for Julian to choose. Do not dump plans.
+Do not replay a fixed brand-review briefing at session start. Read the current
+issue, PR, recent commits, and the requested repo first. Brief Julian only on
+facts needed for the task in front of him. `rumba-brand-directions/` is design
+history and reference material, not an automatic next action.
 
 ## Other context
 

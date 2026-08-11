@@ -40,7 +40,6 @@ of the ecosystem you want to read:
 |--------|----------|------------|
 | `default` | `{service="rumba"}` | rumba.rumbatienda.com events site (your main repo) |
 | `tumbao` | `{app="tumbao"}` | tumbao.ch Swiss schedule + WhatsApp intake |
-| `tumbao` | `{app="tumbao-insta-monitor"}` | the Instagram scene monitor |
 | `default` | `{service="llm-gateway"}` | one row per LLM request: spend, tokens, model |
 
 The browser view of the same data is Grafana at

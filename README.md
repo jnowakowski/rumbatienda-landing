@@ -21,7 +21,7 @@ from public URLs to repositories, autonomous deployment rules, and the boundary
 between the Colombia and Switzerland work.
 
 **Agents:** then read [`AGENTS.md`](AGENTS.md). It covers sibling-repo pickup
-and how to brief Julian.
+and the current collaboration boundary.
 If you are blocked on deploy or repo identity, read
 [`docs/agent-deploy-handoff.md`](docs/agent-deploy-handoff.md).
 Before SEO, Search Console, or Analytics work, read

@@ -22,19 +22,28 @@ Use GA4 and Search Console for what Loki does not have:
 
 ## Access
 
-A read-only Google service account key is delivered to you out of band (same
-rule as the Loki token: never commit it). Point `GOOGLE_APPLICATION_CREDENTIALS`
-at the JSON file. The account has read scope on the Rumba property only.
+Preferred path: the org SEO tooling documented in `brain/seo/PLAYBOOK.md`
+(workspace root). The MCP servers there carry Full access to every GSC
+property and Editor on every GA4 account, and
+`brain/seo/scripts/mcp-client.sh` works from plain bash with no key handling.
+
+If you instead use a raw Google service account key (delivered out of band,
+never commit it), point `GOOGLE_APPLICATION_CREDENTIALS` at the JSON file and
+use the CURRENT identifiers:
 
 ```
-GA4 property (Rumba):  531153655        measurement id G-2D2GBD8R7D
-GSC site:              rumba.rumbatienda.com
+GA4 property (Rumbatienda CO, unified): 517107083   measurement id G-2K3BYEMTTQ
+GSC property:                           sc-domain:rumbatienda.com
 ```
+
+Legacy note: property `Rumba` (531153655, `G-2D2GBD8R7D`) stopped receiving
+data on 2026-08-11 when the last dual-tracking tag was removed from
+rumba-site. It only holds history from before 2026-05-05 to 2026-08-11.
 
 Endpoints:
 
 ```
-GA4 Data:  POST https://analyticsdata.googleapis.com/v1beta/properties/531153655:runReport
+GA4 Data:  POST https://analyticsdata.googleapis.com/v1beta/properties/517107083:runReport
 GSC:       POST https://searchconsole.googleapis.com/webmasters/v3/sites/<site>/searchAnalytics/query
 ```
 

@@ -65,6 +65,39 @@ cali 2026 schedule" 1.8 (already won, hold it); "cali salsa festival 2026" 5.4;
 | A7 | Instagram funnel: UTM tagged program URL in the Medellín IG rotation from November | owned demand | Link live, UTM visible in GA4 |
 | A8 | Contract tests: extend `verify-playwright.js` to fetch each language copy at its real path (`/es/program/` etc.; today it only exercises the production dead `?lang=` path), asserting canonical, hreflang cluster, FAQ visibility, `html lang` | the safety gate A1 to A4 rely on | Tests fail on a broken language copy |
 
+### A0 findings (GSC pull 2026-08-13; 28d window 07-16 to 08-13; done, gates open for A1)
+
+EN `/program/` has no owned query family (37 impressions/28d total). Its average
+position 13.3 decomposes into 7 to 11 on English feria queries plus 53 to 82 on
+Spanish intent long tail that Google mis-routes to the EN page (that tail is an
+hreflang/routing job for A3, not a copy job).
+
+Losing queries, ranked: "feria de cali 2026" 20 impr pos 10.8 (root ranks 3.1);
+"feria de cali 2026 schedule" 5 impr pos 2.6 (**root also ranks 2.0, the one real
+cannibalization**); "salsodromo cali 2026" 2 impr pos 8.5 (root 3.3, program
+content query on the wrong page); "cali feria 2026" 3 impr pos 8.3.
+
+ES families with unowned EN twins: fechas/cuando (600+ ES impressions across
+variants; EN "feria de cali 2026 dates" 6 impr pos ~6, unowned);
+conciertos/artistas (140+ ES impressions; **zero** EN impressions for
+lineup/concerts today); programación (111+ ES; EN "schedule" held at 1.8 but by
+the root, not program).
+
+EN demand pool today is ~70 impr/28d vs 2,000+ ES; A1 positions for the Oct to
+Dec multiplication, not current harvest. "cali (salsa) festival 2026" is the only
+mid size EN family (33 impr pos 4.0, root only, program invisible: confirms A4).
+
+A1 content targets (from actual query wordings):
+
+1. `/program/` owns schedule intent: "Feria de Cali 2026 Schedule" title/H1;
+   the root defers with a "full schedule" link.
+2. Explicit EN dates block: "When is Feria de Cali 2026? December 24, 2026 to
+   January 1, 2027" (EN twin of the largest ES family).
+3. Salsódromo H2 on EN `/program/` (pending label until officially confirmed).
+4. "Cali salsa festival 2026" wording in program title, description, one H2.
+5. Pre built "Concerts and lineup: programming pending" section mirroring ES
+   conciertos demand, ready for program drop (feeds A6).
+
 Checkpoints and decision rules:
 
 * 2026-09-15: targets held, stay course; not moving, revise per data; leads at

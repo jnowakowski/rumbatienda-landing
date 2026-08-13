@@ -100,20 +100,31 @@ Flat or decaying, then inventory and event page work takes priority and hub
 copy is paused. A hub below the launch gate gets next event fallback content,
 never noindex flapping.
 
-## Execution model for the team
+## How we work together
 
-* One plan, per repo execution: separate PRs per repo with their own tests,
-  deploys and rollback paths. Cross repo changes are never atomic.
-* Claim a task by opening a draft PR referencing the task id (A1, B3, ...).
-* Data access: GSC property `sc-domain:rumbatienda.com` and GA4 `517107083`
-  (Julian's account already has access, see `julian-seo-onboarding.md`).
-  Never guess numbers; pull them.
-* Anything SEO relevant follows `docs/seo-workflow.md` (one property rule,
-  measurement ownership) and the repo's own conventions.
-* Swiss keyword evidence and launch gates live in
-  `tumbao.ch/docs/seo-keyword-map.md`. This plan does not override those gates.
+This is a shared direction, not a task assignment. Everyone on the team
+(Janusz, Julian, and the agents working with each of us) is invited to
+question it, improve it, and pick up whatever they can move best.
+
+* **Ask and propose.** Questions, doubts and better ideas are contributions.
+  Open a discussion on this file, comment on any PR, or just change the plan
+  in a PR of your own. The premises were reviewed hard, but they are premises,
+  not dogma; new data beats any of them.
+* **Pick what pulls you.** If a task interests you, take it (a draft PR
+  referencing the id, A1, B3, ..., is enough so we do not collide). If you see
+  a better task that is not on the list, propose it.
+* **Decisions are shared.** The checkpoints (09-08, 09-15, 11-01, 12-01) are
+  where we look at real numbers together and decide what to scale, revise or
+  drop. Nothing there is pre decided.
+* **Data over guessing.** GSC property `sc-domain:rumbatienda.com` and GA4
+  `517107083` are open to you (see `julian-seo-onboarding.md`). When in doubt,
+  pull the numbers and share them.
+* **Shared plumbing stays consistent.** `docs/seo-workflow.md` (one property
+  rule, measurement ownership) and each repo's conventions still apply; the
+  Swiss launch gates live in `tumbao.ch/docs/seo-keyword-map.md`. If any of
+  that blocks you, say so; rules can change through the same conversation.
 * After a deploy, the change gets one line in the portfolio SEO log kept by
-  Janusz's agent (ask in the PR if unsure; it is mirrored from the brain).
+  Janusz's agent; mention it in the PR and it will be handled.
 
 ## Out of scope
 

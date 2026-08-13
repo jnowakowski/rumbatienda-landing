@@ -1,5 +1,8 @@
 # SEO ownership and working agreement
 
+> **Active plan:** [`seo-activation-plan-2026-08.md`](seo-activation-plan-2026-08.md),
+> approved 2026-08-13. Read it before any SEO work in cali2026 or tumbao.ch.
+
 This is the operating guide for Julian, Julian's agent, and the Rumba team.
 Its purpose is simple: everyone can improve search performance independently,
 while ownership, measurement, and shared infrastructure stay consistent.

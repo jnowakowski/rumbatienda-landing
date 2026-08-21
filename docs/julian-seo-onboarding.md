@@ -129,3 +129,35 @@ position, sessions, users, top landing pages, top queries, and the next three
 SEO opportunities. Commit the report under `docs/seo/` in the repo whose work
 it proposes. Do not change ownership or create new properties while producing
 the baseline.
+
+## MCP gateway for Julian's Codex (full SEO tool access)
+
+Since 2026-08-13 Julian's Codex has its own service token to the shared MCP
+gateway. One endpoint, all 85 tools: Search Console (21), GA4 (9),
+Tag Manager (52), Loki logs (3). Same data plane Janusz's agents use, so both
+sides read identical numbers.
+
+Add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.rumba-gateway]
+url = "https://mcp.statsbox.ch/mcp"
+env_http_headers = { "CF-Access-Client-Id" = "MCP_GATEWAY_CF_ACCESS_ID", "CF-Access-Client-Secret" = "MCP_GATEWAY_CF_ACCESS_SECRET" }
+enabled = true
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+```
+
+Then export the two environment variables in your shell profile. The values
+(client id and secret of the `julian-codex-mcp` token) arrive from Janusz over
+a private channel, never through this repo. The token is personal and
+revocable; if it leaks, tell Janusz and it gets rotated in one API call.
+
+Notes:
+
+* GA4 tools: after a gateway service restart, call
+  `load_property_schema(property_id)` once before `get_ga4_data`.
+* GSC destructive tools (sitemap delete, URL removal) are enabled. The
+  working agreement in `seo-workflow.md` applies: shared plumbing changes are
+  discussed first.
+* Never print the headers or token values in logs, screen shares or PRs.

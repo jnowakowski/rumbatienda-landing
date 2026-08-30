@@ -20,5 +20,10 @@ Las imágenes se guardan como copias locales optimizadas en `public/images/landi
 | `santa-marta-beach-v4.jpg` | Santa Marta, bahía desde Gaira | CristhianVarela | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Bahía de Santa Marta en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bah%C3%ADa_de_Santa_Marta.jpg) |
 | `cali-show-v2.jpg` | Cali, show de salsa | Franciscokarriere | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Show de Salsa en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Show_de_Salsa.jpg) |
 | `store-group.webp` | La Topa Tolondra, Medellín | Archivo propio de Rumba Tienda | Archivo propio | [Grupo usando camisetas en la tienda](https://tienda.rumbatienda.com/worn-shirts/grupo-la-topa-01.webp) |
+| `user-santa-marta.webp` | Santa Marta, vista aérea | Imagen proporcionada por el usuario a partir de una captura | Autorización por verificar | [Referencia compartida: Santa Marta](https://www.santamarta.gov.co/para-visitar) |
+| `user-comuna13.webp` | Medellín, Comuna 13 | Imagen proporcionada por el usuario a partir de una captura | Autorización por verificar | [Referencia compartida: Medellín](https://www.medellin.gov.co/es/sala-de-prensa/noticias/que-tiene-medellin-que-gusta-tanto-a-los-turistas/) |
+| `user-cali-salsa.webp` | Cali, show de salsa | Imagen proporcionada por el usuario a partir de una captura | Autorización por verificar | [Referencia compartida: Cali](https://traveler.marriott.com/es/consejos-tendencias/festivales-imperdibles-en-cali-la-ciudad-de-la-salsa-y-la-alegria/) |
 
-Las copias locales fueron convertidas a JPEG progresivo y redimensionadas hasta 1800 px de ancho cuando aplicaba. La optimización no cambia la atribución ni la licencia de las obras originales.
+Las copias locales fueron convertidas a JPEG progresivo o WebP y redimensionadas hasta 1800 px de ancho cuando aplicaba. La optimización no cambia la atribución ni la licencia de las obras originales.
+
+Las tres imágenes `user-*` son recortes de las capturas compartidas por el usuario. Los archivos originales se conservan fuera del repositorio; queda pendiente confirmar la autorización de uso público de cada fotografía antes de una campaña comercial.

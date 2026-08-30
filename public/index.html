@@ -273,6 +273,8 @@ img, svg { display: block; max-width: 100%; }
 .route-card.shop { --card-color: var(--cyan); }
 .route-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font: 10px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 .route-photo { height: 126px; margin: 16px -24px 26px; overflow: hidden; }
+.route-card.shop .route-photo { height: 184px; }
+.route-card.shop .route-photo img { object-position: center 52%; }
 .route-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.08) contrast(1.04); transition: transform .35s ease; }
 .route-card:hover .route-photo img { transform: scale(1.06); }
 .route-card h3 { max-width: 8ch; margin: 0; font: 400 clamp(38px, 4vw, 57px)/.83 var(--display); text-transform: uppercase; }
@@ -297,6 +299,7 @@ img, svg { display: block; max-width: 100%; }
 .scene { padding: clamp(78px, 10vw, 140px) 0; }
 .scene-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 48px; }
 .scene-head h2 { max-width: 8ch; margin: 18px 0 0; font: 400 clamp(64px, 9vw, 118px)/.78 var(--display); text-transform: uppercase; }
+.scene-intro { max-width: 35ch; margin: 24px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
 .social-link { color: var(--pink); font: 700 12px/1 var(--mono); letter-spacing: .08em; }
 .social-link:hover { color: var(--bone); }
 .scene-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-template-rows: 180px 180px; gap: 10px; }
@@ -405,7 +408,7 @@ img, svg { display: block; max-width: 100%; }
 
   <section class="scene">
     <div class="wrap">
-      <div class="scene-head" data-reveal><div><span class="eyebrow" data-i18n="scene.eyebrow">La escena</span><h2 data-i18n="scene.title">Calor en la <span class="pink">calle.</span></h2></div><a class="social-link" href="https://www.instagram.com/julianvlla/"><span data-i18n="scene.follow">Seguir @julianvlla</span> ↗</a></div>
+      <div class="scene-head" data-reveal><div><span class="eyebrow" data-i18n="scene.eyebrow">La escena colombiana</span><h2 data-i18n="scene.title">De ciudad en <span class="pink">ciudad.</span></h2><p class="scene-intro" data-i18n="scene.intro">Seguimos el baile por Colombia: Medellín, Cali, Cartagena y Santa Marta.</p></div><a class="social-link" href="https://www.instagram.com/julianvlla/"><span data-i18n="scene.follow">Seguir @julianvlla</span> ↗</a></div>
       <div class="scene-grid" data-reveal>
         <div class="scene-tile large"><img src="/images/landing/medellin-comuna13-v5.jpg" alt="Vista panorámica de la Comuna 13 y las montañas de Medellín" data-i18n-alt="images.comuna13" width="1800" height="852" loading="lazy" /><span class="tile-label" data-i18n="scene.comuna13">Medellín / Comuna 13</span></div>
         <div class="scene-tile yellow-tile"><img src="/images/landing/cali-center.jpg" alt="Arquitectura y calle del centro de Cali" data-i18n-alt="images.caliCenter" width="1800" height="1200" loading="lazy" /><span class="tile-label" data-i18n="scene.caliCenter">Cali / Centro</span></div>
@@ -453,7 +456,7 @@ img, svg { display: block; max-width: 100%; }
         shop: { meta: '03 · Tienda', status: 'Online', title: 'Viste el <em>movimiento.</em>', description: 'Prendas diseñadas desde Medellín para llevar la cultura de baile contigo, dondequiera que vayas.', link: 'Entrar a la tienda' }
       },
       manifesto: { eyebrow: 'Manifiesto Rumba', quote: 'El baile no se encuentra. <span>Se sigue.</span>', note: 'Rumba nació entre mensajes de amigos, pistas de baile y ganas de compartir lo que hace especial a Medellín. Lo demás sigue creciendo, con música y con cuidado.' },
-      scene: { eyebrow: 'La escena', title: 'Calor en la <span class="pink">calle.</span>', follow: 'Seguir @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centro', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Mar', caliSalsa: 'Cali / Salsa' },
+      scene: { eyebrow: 'La escena colombiana', title: 'De ciudad en <span class="pink">ciudad.</span>', intro: 'Seguimos el baile por Colombia: Medellín, Cali, Cartagena y Santa Marta.', follow: 'Seguir @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centro', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Mar', caliSalsa: 'Cali / Salsa' },
       footer: { description: 'Una casa de baile desde Medellín. Hecha por gente que sigue la música.', explore: 'Explorar', events: 'Eventos', caliFair: 'Feria de Cali', shop: 'Tienda', follow: 'Seguir', talk: 'Hablar', bottom: 'Eventos · viajes · objetos' },
       images: { hero: 'Presentación de salsa en Cali, Colombia', city: 'Vista panorámica de Medellín, Colombia', trip: 'Grupo internacional en la Feria de Cali 2024', shop: 'Grupo de personas usando camisetas de Rumba Tienda en La Topa Tolondra', comuna13: 'Vista panorámica de la Comuna 13 y las montañas de Medellín', caliCenter: 'Arquitectura y calle del centro de Cali', cartagena: 'Calle de casas coloridas en Cartagena', santaMarta: 'Vista aérea de la bahía de Santa Marta y sus montañas', caliSalsa: 'Show de salsa en Cali con bailarines y música en vivo' }
     },
@@ -476,7 +479,7 @@ img, svg { display: block; max-width: 100%; }
         shop: { meta: '03 · Shop', status: 'Online', title: 'Wear the <em>movement.</em>', description: 'Pieces designed in Medellín to carry dance culture with you wherever you go.', link: 'Enter the shop' }
       },
       manifesto: { eyebrow: 'Rumba Manifesto', quote: 'You do not find the dance. <span>You follow it.</span>', note: 'Rumba was born from messages between friends, dance floors and the desire to share what makes Medellín special. The rest is still growing—with music and care.' },
-      scene: { eyebrow: 'The scene', title: 'Heat in the <span class="pink">street.</span>', follow: 'Follow @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Downtown', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Sea', caliSalsa: 'Cali / Salsa' },
+      scene: { eyebrow: 'The Colombian scene', title: 'From city to <span class="pink">city.</span>', intro: 'Following the dance across Colombia: Medellín, Cali, Cartagena and Santa Marta.', follow: 'Follow @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Downtown', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Sea', caliSalsa: 'Cali / Salsa' },
       footer: { description: 'A dance house from Medellín. Made by people who follow the music.', explore: 'Explore', events: 'Events', caliFair: 'Feria de Cali', shop: 'Shop', follow: 'Follow', talk: 'Talk', bottom: 'Events · trips · objects' },
       images: { hero: 'Salsa performance in Cali, Colombia', city: 'Panoramic view of Medellín, Colombia', trip: 'International group at the 2024 Feria de Cali', shop: 'Group of people wearing Rumba Tienda shirts at La Topa Tolondra', comuna13: 'Panoramic view of Comuna 13 and the mountains of Medellín', caliCenter: 'Architecture and street in downtown Cali', cartagena: 'Street of colorful houses in Cartagena', santaMarta: 'Aerial view of Santa Marta bay and its mountains', caliSalsa: 'Salsa show in Cali with dancers and live music' }
     },
@@ -499,7 +502,7 @@ img, svg { display: block; max-width: 100%; }
         shop: { meta: '03 · Boutique', status: 'En ligne', title: 'Porte le <em>mouvement.</em>', description: 'Des pièces conçues à Medellín pour emporter la culture de la danse partout avec toi.', link: 'Entrer dans la boutique' }
       },
       manifesto: { eyebrow: 'Manifeste Rumba', quote: 'On ne trouve pas la danse. <span>On la suit.</span>', note: 'Rumba est née de messages entre amis, de pistes de danse et de l’envie de partager ce qui rend Medellín unique. Le reste grandit encore, en musique et avec soin.' },
-      scene: { eyebrow: 'La scène', title: 'Chaleur dans la <span class="pink">rue.</span>', follow: 'Suivre @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centre', cartagena: 'Cartagena / Couleur', santaMarta: 'Santa Marta / Mer', caliSalsa: 'Cali / Salsa' },
+      scene: { eyebrow: 'La scène colombienne', title: 'De ville en <span class="pink">ville.</span>', intro: 'Suivre la danse à travers la Colombie : Medellín, Cali, Cartagena et Santa Marta.', follow: 'Suivre @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centre', cartagena: 'Cartagena / Couleur', santaMarta: 'Santa Marta / Mer', caliSalsa: 'Cali / Salsa' },
       footer: { description: 'Une maison de danse de Medellín. Faite par des gens qui suivent la musique.', explore: 'Explorer', events: 'Événements', caliFair: 'Feria de Cali', shop: 'Boutique', follow: 'Suivre', talk: 'Parler', bottom: 'Événements · voyages · objets' },
       images: { hero: 'Spectacle de salsa à Cali, Colombie', city: 'Vue panoramique de Medellín, Colombie', trip: 'Groupe international à la Feria de Cali 2024', shop: 'Groupe de personnes portant des t-shirts Rumba Tienda à La Topa Tolondra', comuna13: 'Vue panoramique de la Comuna 13 et des montagnes de Medellín', caliCenter: 'Architecture et rue du centre de Cali', cartagena: 'Rue aux maisons colorées de Cartagena', santaMarta: 'Vue aérienne de la baie de Santa Marta et de ses montagnes', caliSalsa: 'Spectacle de salsa à Cali avec danseurs et musique live' }
     },
@@ -522,7 +525,7 @@ img, svg { display: block; max-width: 100%; }
         shop: { meta: '03 · Shop', status: 'Online', title: 'Trag die <em>Bewegung.</em>', description: 'Kleidung aus Medellín, die dich überallhin mit der Tanzkultur begleitet.', link: 'Zum Shop' }
       },
       manifesto: { eyebrow: 'Rumba-Manifest', quote: 'Man findet den Tanz nicht. <span>Man folgt ihm.</span>', note: 'Rumba entstand aus Nachrichten unter Freunden, Tanzflächen und dem Wunsch, das Besondere an Medellín zu teilen. Alles andere wächst weiter – mit Musik und Sorgfalt.' },
-      scene: { eyebrow: 'Die Szene', title: 'Hitze auf der <span class="pink">Straße.</span>', follow: '@julianvlla folgen', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Zentrum', cartagena: 'Cartagena / Farbe', santaMarta: 'Santa Marta / Meer', caliSalsa: 'Cali / Salsa' },
+      scene: { eyebrow: 'Die kolumbianische Szene', title: 'Von Stadt zu <span class="pink">Stadt.</span>', intro: 'Wir folgen dem Tanz durch Kolumbien: Medellín, Cali, Cartagena und Santa Marta.', follow: '@julianvlla folgen', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Zentrum', cartagena: 'Cartagena / Farbe', santaMarta: 'Santa Marta / Meer', caliSalsa: 'Cali / Salsa' },
       footer: { description: 'Ein Tanzhaus aus Medellín. Gemacht von Menschen, die der Musik folgen.', explore: 'Entdecken', events: 'Events', caliFair: 'Feria de Cali', shop: 'Shop', follow: 'Folgen', talk: 'Sprechen', bottom: 'Events · Reisen · Objekte' },
       images: { hero: 'Salsa-Auftritt in Cali, Kolumbien', city: 'Panoramablick auf Medellín, Kolumbien', trip: 'Internationale Gruppe bei der Feria de Cali 2024', shop: 'Gruppe mit Rumba-Tienda-Shirts in La Topa Tolondra', comuna13: 'Panoramablick auf die Comuna 13 und die Berge von Medellín', caliCenter: 'Architektur und Straße im Zentrum von Cali', cartagena: 'Straße mit bunten Häusern in Cartagena', santaMarta: 'Luftaufnahme der Bucht von Santa Marta und ihrer Berge', caliSalsa: 'Salsa-Show in Cali mit Tänzerinnen, Tänzern und Live-Musik' }
     }

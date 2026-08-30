@@ -3,9 +3,10 @@
 This is the single entry point for Julian and Julian's Codex. Read it before
 choosing a repository, changing a public page, working on SEO, or deploying.
 
-Julian and his agent are working team members. They may prepare, merge, deploy,
-and verify normal changes independently. They do not need Janusz to approve a
-green pull request.
+Julian and his agent are working team members. They may prepare focused changes,
+run checks, open pull requests, and verify previews independently. Julian's
+agent must not merge its own pull requests. A green PR still needs a GitHub
+review from `jnowakowski`; chat or WhatsApp approval does not count.
 
 ## The map you must know
 
@@ -75,7 +76,7 @@ The site explicitly allows `ChatGPT-User`, `OAI-SearchBot`, `GPTBot`, Claude,
 Gemini, Perplexity, and ordinary crawlers in `robots.txt`. A real `403`, `5xx`,
 timeout, or redirect loop is an incident. A single intentional redirect is not.
 
-## Autonomous change and deployment loop
+## Review-gated change and deployment loop
 
 For a normal product, content, SEO, or analytics code change:
 
@@ -94,6 +95,18 @@ For a normal product, content, SEO, or analytics code change:
    an `ojvillac` squash commit. That needs an owner-authored follow-up commit
    from Janusz, not a Vercel seat.
 8. Verify the live URL, rendered HTML, tracking, and user visible outcome.
+
+### Image-rights gate
+
+Do not treat a screenshot, a public webpage, or "the user sent it" as a photo
+license. Before a new image enters any of the four repositories, record the
+exact file, copyright owner or photographer, source, license or written
+authorization, and attribution requirements. The authorization must cover
+commercial publication by Rumba Corp on websites and social channels, plus
+cropping or other edits. For commercial images centered on identifiable people,
+record the relevant consent or release too. If the evidence is incomplete, use
+an existing licensed or Rumba-owned image and leave the candidate image out of
+the repository.
 
 Do not push directly to `main`, bypass a failed check, create a second deploy
 path, or ask for a production Cloudflare or Vercel token, Vercel team

@@ -5,7 +5,7 @@ deployed on Cloudflare Pages).
 
 Julian and Julian's Codex must first read
 [`JULIAN-START-HERE.md`](JULIAN-START-HERE.md). It is the canonical cross repo
-map and explains autonomous deployment plus the Colombia and Switzerland
+map and explains review-gated deployment plus the Colombia and Switzerland
 boundary.
 
 This repo is **one of four** for the Rumba Corp site:
@@ -98,6 +98,21 @@ history and reference material, not an automatic next action.
 - Site edits live in `public/index.html`. No build step, no framework.
 - Shop deploys are a separate Vercel exception. Do not request Vercel team
   access. Read `jnowakowski/rumbatienda` `AGENTS.md` before shop deploy work.
+
+## Image rights before publication
+
+A screenshot, source-page URL, or statement that an image was "provided by the
+user" is not evidence of publication rights. Before adding a new photograph,
+record the exact file, copyright owner or photographer, source, license or
+written authorization, and required attribution in the repository's image
+credits file.
+
+Written authorization must identify the files and permit Rumba Corp to publish
+them commercially on its websites and social channels, including crops and
+other edits. If identifiable people are central to a commercial image, also
+record the relevant consent or release. If this evidence is missing, do not add
+the image as "authorization pending". Keep an already licensed or owned asset
+instead.
 
 ## GitHub review before merge
 

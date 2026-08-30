@@ -28,7 +28,9 @@ This repo is static. The whole site lives in `public/index.html`.
 5. Open a PR.
 6. GitHub Actions deploys a Cloudflare Pages preview and comments the URL.
 7. Request a GitHub review from `jnowakowski`. Wait for that review on the PR.
-8. Squash merge to `main` to deploy production.
+8. After the GitHub review, `jnowakowski` or another authorized maintainer
+   squash-merges to `main` to deploy production. Julian's Codex does not merge
+   its own PR.
 
 Do not look for Vercel project metadata in this repo. If a tool says "no
 Vercel project found", that is expected and not a blocker.

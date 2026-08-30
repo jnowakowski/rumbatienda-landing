@@ -18,7 +18,9 @@ shop. The normal loop is:
 6. Ask Julian to confirm the preview is what he wanted.
 7. Wait for required automated checks to pass.
 8. Request a GitHub review from `jnowakowski` on the PR. Do not merge until
-   that review is on GitHub. Then squash merge and verify production.
+   that review is on GitHub. Julian's Codex does not merge its own PR; after
+   approval, `jnowakowski` or another authorized maintainer squash-merges and
+   the team verifies production.
 
 ## Deployment ownership
 

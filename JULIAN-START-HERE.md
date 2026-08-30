@@ -85,12 +85,18 @@ For a normal product, content, SEO, or analytics code change:
 4. Push the branch and open a pull request with evidence and affected URLs.
 5. Wait for every required check to pass. Inspect the preview when available.
 6. Julian or Julian's agent squash merges the green pull request.
-7. Watch the production workflow. Retry the documented workflow if needed.
+7. Watch the production workflow. Retry the documented workflow only for a
+   transient failure. Do not retry a Vercel `TEAM_ACCESS_REQUIRED` / generic
+   `Please retry later` failure on an `ojvillac` squash commit. That needs
+   an owner-authored follow-up commit from Janusz, not a Vercel seat.
 8. Verify the live URL, rendered HTML, tracking, and user visible outcome.
 
 Normal changes require zero human approvals. Do not push directly to `main`,
 bypass a failed check, create a second deploy path, or ask for a production
-Cloudflare or Vercel token. GitHub holds the production secrets.
+Cloudflare or Vercel token, Vercel team membership, or dashboard access.
+GitHub holds the production secrets. For the shop, read
+[`jnowakowski/rumbatienda` AGENTS.md](https://github.com/jnowakowski/rumbatienda/blob/main/AGENTS.md)
+before touching deploy.
 
 Autonomy does not mean changing shared infrastructure without a task. Stop and
 coordinate before changing DNS, Search Console ownership, verification tokens,
@@ -193,9 +199,15 @@ verify each git remote, and read the target repository's README.md and AGENTS.md
 
 For every task, identify the exact public URL and map it to the owning repository
 before editing. You may create branches, open pull requests, squash merge your
-own green pull requests, watch deployment, retry the documented workflow, and
-verify production without Janusz approval. Never bypass failed CI or invent a
-second deployment path.
+own green pull requests, watch deployment, and verify production without Janusz
+approval. Never bypass failed CI, invent a second deployment path, or request
+Vercel team, dashboard, or token access.
+
+Shop exception: if vercel-production.yml fails after an ojvillac squash commit
+with "Please retry later" or TEAM_ACCESS_REQUIRED, do not retry the workflow
+and do not ask for a Vercel seat. Ask Janusz for the smallest owner-authored
+follow-up commit on main, same as rumbatienda PR #30. Current shop deploy
+rules are in that repo's AGENTS.md. The 2026-06-12 handshake is historical.
 
 Use sc-domain:rumbatienda.com and GA4 property 517107083 for all four
 Rumbatienda hosts. Do not create properties, ownership tokens, measurement IDs,

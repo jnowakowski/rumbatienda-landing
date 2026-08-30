@@ -1,0 +1,24 @@
+# Fotografías de la landing
+
+Las imágenes se guardan como copias locales optimizadas en `public/images/landing/`. Las fuentes originales y sus licencias se conservan aquí para mantener la atribución visible y verificable.
+
+| Archivo | Lugar | Autor | Licencia | Fuente |
+| --- | --- | --- | --- | --- |
+| `salsa-calena.jpg` | Cali, salsa | Sebasty11230518 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Salsa caleña en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Salsa_cale%C3%B1a.jpg) |
+| `medellin-comuna13.jpg` | Medellín, Comuna 13 | Diana Bueno Mercado | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Comuna 13, Medellín en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Comuna_13_-_Medell%C3%ADn.jpg) |
+| `medellin-comuna13-v2.jpg` | Medellín, Comuna 13 | Bernard Gagnon | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Graffiti in Comuna 13, Medellín 11 en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Graffiti_in_Comuna_13%2C_Medell%C3%ADn_11.jpg) |
+| `medellin-comuna13-v3.jpg` | Medellín, Comuna 13 / San Javier | Xemenendura | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Medallo comuna 13 en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Medallo_comuna_13.jpg) |
+| `medellin-comuna13-v4.jpg` | Medellín, Comuna 13 / San Javier | José Luiz Bernardes Ribeiro | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Escalators - Comuna 13 - Medellín - Colombia 2024 en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Escalators_-_Comuna_13_-_Medell%C3%ADn_-_Colombia_2024.jpg) |
+| `medellin-comuna13-v5.jpg` | Medellín, Comuna 13 / San Javier panorámica | Steffen Schmitz (Carschten) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Medellín, San Javier, 2023-07 CN-07 en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Medell%C3%ADn,_San_Javier,_2023-07_CN-07.jpg) |
+| `medellin-panorama.jpg` | Medellín, panorámica urbana | Carlos Andres Granada | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Medellín Panorámica en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Medell%C3%ADn_Panor%C3%A1mica.jpg) |
+| `cali-center.jpg` | Cali, centro histórico | Franciscokarriere | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Calle en centro de Cali en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Calle_en_centro_de_Cali.jpg) |
+| `cali-rumba-concert.webp` | Cali, Feria 2024 | Archivo propio de Rumba | Archivo propio | [Experiencia Cali 2024 en Cali2026](https://cali2026.rumbatienda.com/experience/experience-2024-concert.webp) |
+| `cartagena-street.jpg` | Cartagena, centro histórico | Uhkabu | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Multicolored street in Cartagena en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Multicolored_street_in_Cartagena.JPG) |
+| `santa-marta-beach.jpg` | Santa Marta, Playa Grande | StellaInfante | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Playa Grande, Santa Marta en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Playa_grande,_Santa_Marta.jpg) |
+| `santa-marta-beach-v2.jpg` | Santa Marta, El Rodadero | Julieth Gómez Durán | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [El Rodadero, Santa Marta, Colombia en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:El_Rodadero%2C_Santa_Marta%2C_Colombia.jpg) |
+| `santa-marta-beach-v3.jpg` | Santa Marta, Parque Tayrona / Playa Arrecifes | Adventourscolombia | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Playa Arrecifes en el Parque Tayrona en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Adventourscolombia-playa-arrecifes-tayrona-national-park-colombia.jpg) |
+| `santa-marta-beach-v4.jpg` | Santa Marta, bahía desde Gaira | CristhianVarela | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Bahía de Santa Marta en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bah%C3%ADa_de_Santa_Marta.jpg) |
+| `cali-show-v2.jpg` | Cali, show de salsa | Franciscokarriere | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Show de Salsa en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Show_de_Salsa.jpg) |
+| `store-group.webp` | La Topa Tolondra, Medellín | Archivo propio de Rumba Tienda | Archivo propio | [Grupo usando camisetas en la tienda](https://tienda.rumbatienda.com/worn-shirts/grupo-la-topa-01.webp) |
+
+Las copias locales fueron convertidas a JPEG progresivo y redimensionadas hasta 1800 px de ancho cuando aplicaba. La optimización no cambia la atribución ni la licencia de las obras originales.

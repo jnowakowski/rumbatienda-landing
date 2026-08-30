@@ -45,15 +45,16 @@ python3 -m http.server 4321 -d public
 3. `git push -u origin feature/<thing>`
 4. Open a PR (`gh pr create` or GitHub UI). CI builds a Cloudflare Pages
    preview and posts the URL as a sticky comment on the PR.
-5. When you are happy with the preview, squash-merge the PR. That deploys
-   to production at https://rumbatienda.com.
+5. Request a GitHub review from `jnowakowski` on the PR. Comment the preview
+   URL there. Do not merge until that review exists on GitHub.
+6. After the GitHub review, squash-merge. That deploys to production at
+   https://rumbatienda.com.
 
 ## Rules of the road
 
 - Direct push to `main` is blocked. All changes go through PRs.
-- Normal green PRs require zero human approvals. Configuration and deploy
-  changes deserve extra scrutiny in the PR, but Julian or his agent may merge
-  them after all required checks pass.
+- Julian's agent must request a GitHub review before merge. Do not self-merge
+  from a green check alone.
 - The production Cloudflare token is environment-scoped and only available
   to deploys on `main`. Feature branches use a separate preview token.
 

@@ -14,10 +14,10 @@ remote, not the local folder name.
 
 | Product | Public URL | GitHub repository | Stack and hosting | Normal production path |
 |---|---|---|---|---|
-| Rumba Corp landing | `https://rumbatienda.com/` | `jnowakowski/rumbatienda-landing` | Static HTML, Cloudflare Pages | Green PR, squash merge, GitHub deploy workflow |
-| Cali 2026 trip | `https://cali2026.rumbatienda.com/` | `jnowakowski/cali2026` | Static HTML and Pages Functions, Cloudflare Pages | Green PR, squash merge, GitHub deploy workflow |
-| Medellin events | `https://rumba.rumbatienda.com/` | `jnowakowski/rumba-site` | Server rendered Astro, EmDash, D1 and R2, Cloudflare Workers | Green PR, squash merge, `deploy.yml` |
-| Colombia shop | `https://tienda.rumbatienda.com/` | `jnowakowski/rumbatienda` | Next.js, Neon and Prisma, Vercel | Green PR, squash merge, `vercel-production.yml` |
+| Rumba Corp landing | `https://rumbatienda.com/` | `jnowakowski/rumbatienda-landing` | Static HTML, Cloudflare Pages | Green PR, GitHub review from `jnowakowski`, squash merge, GitHub deploy workflow |
+| Cali 2026 trip | `https://cali2026.rumbatienda.com/` | `jnowakowski/cali2026` | Static HTML and Pages Functions, Cloudflare Pages | Green PR, GitHub review from `jnowakowski`, squash merge, GitHub deploy workflow |
+| Medellin events | `https://rumba.rumbatienda.com/` | `jnowakowski/rumba-site` | Server rendered Astro, EmDash, D1 and R2, Cloudflare Workers | Green PR, GitHub review from `jnowakowski`, squash merge, `deploy.yml` |
+| Colombia shop | `https://tienda.rumbatienda.com/` | `jnowakowski/rumbatienda` | Next.js, Neon and Prisma, Vercel | Green PR, GitHub review from `jnowakowski`, squash merge, `vercel-production.yml` |
 
 Current local folders in Janusz's workspace use `com-rumbatienda*` names. A
 fresh clone will normally use the GitHub repository name. Both are valid. Run
@@ -84,17 +84,21 @@ For a normal product, content, SEO, or analytics code change:
 3. Run the repository's documented checks.
 4. Push the branch and open a pull request with evidence and affected URLs.
 5. Wait for every required check to pass. Inspect the preview when available.
-6. Julian or Julian's agent squash merges the green pull request.
-7. Watch the production workflow. Retry the documented workflow only for a
-   transient failure. Do not retry a Vercel `TEAM_ACCESS_REQUIRED` / generic
-   `Please retry later` failure on an `ojvillac` squash commit. That needs
-   an owner-authored follow-up commit from Janusz, not a Vercel seat.
+6. Request a GitHub review from `jnowakowski` on the PR
+   (`gh pr edit --add-reviewer jnowakowski`) and comment the preview URL
+   there. Do not squash-merge until that GitHub review exists. Chat or
+   WhatsApp is not a review.
+7. After the GitHub review, squash merge and watch the production workflow.
+   Retry the documented workflow only for a transient failure. Do not retry
+   a Vercel `TEAM_ACCESS_REQUIRED` / generic `Please retry later` failure on
+   an `ojvillac` squash commit. That needs an owner-authored follow-up commit
+   from Janusz, not a Vercel seat.
 8. Verify the live URL, rendered HTML, tracking, and user visible outcome.
 
-Normal changes require zero human approvals. Do not push directly to `main`,
-bypass a failed check, create a second deploy path, or ask for a production
-Cloudflare or Vercel token, Vercel team membership, or dashboard access.
-GitHub holds the production secrets. For the shop, read
+Do not push directly to `main`, bypass a failed check, create a second deploy
+path, or ask for a production Cloudflare or Vercel token, Vercel team
+membership, or dashboard access. GitHub holds the production secrets. For the
+shop, read
 [`jnowakowski/rumbatienda` AGENTS.md](https://github.com/jnowakowski/rumbatienda/blob/main/AGENTS.md)
 before touching deploy.
 
@@ -198,10 +202,11 @@ completely. Then clone or pull the four Rumbatienda repositories listed there,
 verify each git remote, and read the target repository's README.md and AGENTS.md.
 
 For every task, identify the exact public URL and map it to the owning repository
-before editing. You may create branches, open pull requests, squash merge your
-own green pull requests, watch deployment, and verify production without Janusz
-approval. Never bypass failed CI, invent a second deployment path, or request
-Vercel team, dashboard, or token access.
+before editing. You may create branches and open pull requests. Do not
+squash-merge your own PRs. Request a GitHub review from jnowakowski
+(gh pr edit --add-reviewer jnowakowski), put the preview evidence on the PR,
+and wait until that GitHub review exists. Never bypass failed CI, invent a
+second deployment path, or request Vercel team, dashboard, or token access.
 
 Shop exception: if vercel-production.yml fails after an ojvillac squash commit
 with "Please retry later" or TEAM_ACCESS_REQUIRED, do not retry the workflow

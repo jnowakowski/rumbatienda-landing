@@ -27,15 +27,16 @@ This repo is static. The whole site lives in `public/index.html`.
 4. Commit and push the branch.
 5. Open a PR.
 6. GitHub Actions deploys a Cloudflare Pages preview and comments the URL.
-7. Squash merge to `main` to deploy production.
+7. Request a GitHub review from `jnowakowski`. Wait for that review on the PR.
+8. Squash merge to `main` to deploy production.
 
 Do not look for Vercel project metadata in this repo. If a tool says "no
 Vercel project found", that is expected and not a blocker.
 
 If you find yourself trying to attach `rumbatienda.com` or any subdomain to a
 new Vercel project from this repo, stop. The apex landing deploys through
-Cloudflare Pages. Julian can merge a green PR and verify its automatic deploy;
-no separate dashboard access or maintainer approval is needed.
+Cloudflare Pages. Request a GitHub review before merge. No Vercel dashboard
+access is needed.
 
 ## If deploy is unclear
 

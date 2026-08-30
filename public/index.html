@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Rumba | Cultura de baile desde Medellín</title>
-<meta name="description" content="Rumba es una casa de baile desde Medellín: eventos, viajes y objetos para quienes siguen la música." />
+<title>Rumba | Dance culture from Medellín</title>
+<meta name="description" content="Rumba is a dance house from Medellín: events, trips and objects for people who follow the music." />
 <meta name="theme-color" content="#0a0a0e" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -533,7 +533,7 @@ img, svg { display: block; max-width: 100%; }
   const select = document.querySelector('#language-select');
 
   function applyLanguage(language, updateUrl) {
-    const activeLanguage = availableLanguages.includes(language) ? language : 'es';
+    const activeLanguage = availableLanguages.includes(language) ? language : 'en';
     const copy = translations[activeLanguage];
     document.documentElement.lang = activeLanguage;
     document.title = copy.pageTitle;
@@ -558,8 +558,8 @@ img, svg { display: block; max-width: 100%; }
     }
   }
 
-  let savedLanguage = 'es';
-  try { savedLanguage = localStorage.getItem('rumba-language') || 'es'; } catch (error) { /* storage can be unavailable */ }
+  let savedLanguage = 'en';
+  try { savedLanguage = localStorage.getItem('rumba-language') || 'en'; } catch (error) { /* storage can be unavailable */ }
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
   applyLanguage(availableLanguages.includes(requestedLanguage) ? requestedLanguage : savedLanguage, false);
   select.addEventListener('change', () => applyLanguage(select.value, true));

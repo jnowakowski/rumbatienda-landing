@@ -88,7 +88,15 @@ history and reference material, not an automatic next action.
 - `CLAUDE.md` covers content rules (no em/en dashes as separators), the
   dark-theme/Bebas/Barlow visual system used by the live site, analytics
   IDs, DNS.
+- Stay inside that visual system. Do not add a second body or mono font, and
+  do not replace Barlow Condensed as the body face, unless a task explicitly
+  asks for a brand change.
+- Language on this page is visitor UX on one canonical URL. Do not invent a
+  `?lang=` SEO scheme or make English the default without an explicit task.
+  Read `docs/seo-workflow.md` before changing language URLs.
 - Site edits live in `public/index.html`. No build step, no framework.
+- Shop deploys are a separate Vercel exception. Do not request Vercel team
+  access. Read `jnowakowski/rumbatienda` `AGENTS.md` before shop deploy work.
 
 ## Working through data (load on demand)
 

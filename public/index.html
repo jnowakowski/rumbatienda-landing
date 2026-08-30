@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Rumba | Tanzkultur aus Medellín</title>
-<meta name="description" content="Rumba ist ein Tanzhaus aus Medellín: Events, Reisen und Dinge für Menschen, die der Musik folgen." />
+<title>Rumba | Dance culture from Medellín</title>
+<meta name="description" content="Rumba is a dance house from Medellín: events, trips and objects for people who follow the music." />
 <meta name="theme-color" content="#0a0a0e" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -563,8 +563,8 @@ img, svg { display: block; max-width: 100%; }
     }
   }
 
-  let savedLanguage = 'de';
-  try { savedLanguage = localStorage.getItem('rumba-lang-v2') || 'de'; } catch (error) { /* storage can be unavailable */ }
+  let savedLanguage = 'en';
+  try { savedLanguage = localStorage.getItem('rumba-lang-v2') || 'en'; } catch (error) { /* storage can be unavailable */ }
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
   applyLanguage(availableLanguages.includes(requestedLanguage) ? requestedLanguage : savedLanguage, false);
   select.addEventListener('change', () => applyLanguage(select.value, true));

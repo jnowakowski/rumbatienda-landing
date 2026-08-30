@@ -70,10 +70,10 @@ substitute.
 | `rumba.rumbatienda.com` | `rumba-site` | `make build` | merge green PR, Cloudflare Workers workflow |
 | `tienda.rumbatienda.com` | `rumbatienda` | `npx tsc --noEmit` | merge green PR, Vercel workflow |
 
-Julian does not wait for Janusz to approve or merge a normal SEO PR. Branch
-protection requires a PR and the repository's automated checks, with zero
-human approvals required. When the checks are green, Julian or Julian's agent
-may squash merge the PR. The merge to `main` starts production deployment.
+Branch protection requires a PR and the repository's automated checks.
+Julian's agent must request a GitHub review from `jnowakowski` and wait for
+that review on the PR before anyone squash-merges. The merge to `main` starts
+production deployment.
 
 Use the GitHub Actions page or these commands to inspect and retry a deploy:
 
@@ -102,8 +102,8 @@ need dashboard access or a local production token.
    that URL.
 6. Run the repo's checks, push, and open a PR with target URLs, expected search
    behavior, and evidence.
-7. Wait for green CI, inspect the preview where available, then squash merge
-   the PR yourself.
+7. Wait for green CI, inspect the preview, request a GitHub review from
+   `jnowakowski`, and wait for that review on the PR before squash merge.
 8. Watch the production deploy and verify the live status, canonical URL,
    indexability, sitemap membership, structured data, and tracking code.
 9. Record any manual Search Console action in the PR.

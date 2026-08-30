@@ -88,15 +88,31 @@ history and reference material, not an automatic next action.
 - `CLAUDE.md` covers content rules (no em/en dashes as separators), the
   dark-theme/Bebas/Barlow visual system used by the live site, analytics
   IDs, DNS.
-- Stay inside that visual system. Do not add a second body or mono font, and
-  do not replace Barlow Condensed as the body face, unless a task explicitly
-  asks for a brand change.
-- Language on this page is visitor UX on one canonical URL. Do not invent a
-  `?lang=` SEO scheme or make English the default without an explicit task.
-  Read `docs/seo-workflow.md` before changing language URLs.
+- Stay inside that visual system. Display is Bebas Neue. Body, UI labels, and
+  chrome are Barlow Condensed. Do not add DM Sans, Space Mono, or any second
+  body or mono font unless a task explicitly asks for a brand change.
+- The first HTML this page returns is Spanish (`html lang="es"`). A language
+  switcher is visitor UX on one canonical URL. Do not make English the default
+  and do not treat `?lang=` as an SEO scheme. Read `docs/seo-workflow.md`
+  before changing language URLs.
 - Site edits live in `public/index.html`. No build step, no framework.
 - Shop deploys are a separate Vercel exception. Do not request Vercel team
   access. Read `jnowakowski/rumbatienda` `AGENTS.md` before shop deploy work.
+
+## GitHub review before merge
+
+Julian's Codex must not squash-merge its own pull requests.
+
+After CI is green and the preview is recorded on the PR:
+
+1. Request a GitHub review from `jnowakowski` on that same PR.
+   `gh pr edit --add-reviewer jnowakowski`
+2. Comment on the GitHub PR with the preview URL and what to look at.
+3. Wait until a review from `jnowakowski` exists on the GitHub PR.
+4. Only then may the PR be squash-merged.
+
+Do not treat a chat, WhatsApp, or local "looks good" as a review. The review
+has to be on GitHub. If the reviewer has not responded, wait. Do not merge.
 
 ## Working through data (load on demand)
 

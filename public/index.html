@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Rumba | Cultura de baile desde Medellín</title>
-<meta name="description" content="Rumba es una casa de baile desde Medellín: eventos, viajes y objetos para quienes siguen la música." />
+<title>Rumba | Dance culture from Medellín</title>
+<meta name="description" content="Rumba is a dance house from Medellín: events, trips and objects for people who follow the music." />
 <meta name="theme-color" content="#0a0a0e" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,6 +108,25 @@ img, svg { display: block; max-width: 100%; }
   transition: color .2s ease;
 }
 .main-nav a:hover, .main-nav a:focus-visible { color: var(--bone); }
+.language-control { position: relative; display: inline-flex; align-items: center; }
+.language-control::after { content: "⌄"; position: absolute; right: 9px; color: var(--muted); font-size: 13px; pointer-events: none; }
+.language-select {
+  min-width: 58px;
+  min-height: 44px;
+  padding: 0 25px 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  appearance: none;
+  background: transparent;
+  color: var(--bone);
+  font: 600 12px/1 var(--condensed);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.language-select:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+.language-select option { background: var(--night); color: var(--bone); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -121,6 +140,7 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 700px) {
   .header-row { min-height: 66px; }
   .main-nav a:not(.nav-cta) { display: none; }
+  .main-nav { gap: 8px; }
   .brand { font-size: 32px; }
 }
 
@@ -311,10 +331,11 @@ img, svg { display: block; max-width: 100%; }
   <div class="wrap header-row">
     <a class="brand" href="/" aria-label="Rumba inicio">Rumba<span class="brand-mark">.</span></a>
     <nav class="main-nav" aria-label="Navegación principal">
-      <a href="#rutas">Rutas</a>
-      <a href="#manifiesto">Manifiesto</a>
-      <a href="https://www.instagram.com/julianvlla/">Instagram</a>
-      <a class="nav-cta" href="https://rumba.rumbatienda.com">Ver eventos <span aria-hidden="true">↗</span></a>
+      <a href="#rutas" data-i18n="nav.routes">Rutas</a>
+      <a href="#manifiesto" data-i18n="nav.manifesto">Manifiesto</a>
+      <a href="https://www.instagram.com/julianvlla/" data-i18n="nav.instagram">Instagram</a>
+      <label class="language-control"><span class="sr-only" data-i18n="language.label">Idioma</span><select class="language-select" id="language-select" aria-label="Idioma"><option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option><option value="de">DE</option></select></label>
+      <a class="nav-cta" href="https://rumba.rumbatienda.com"><span data-i18n="nav.events">Ver eventos</span> <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>
@@ -323,53 +344,53 @@ img, svg { display: block; max-width: 100%; }
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy" data-reveal>
-        <span class="eyebrow">Desde Medellín · Colombia</span>
-        <h1 class="display"><span>Calle</span><span class="outline">baile</span><span class="pink">Rumba.</span></h1>
-        <p class="hero-intro">Una casa para quienes <strong>siguen el baile</strong>: la noche que buscas, el viaje que recuerdas y las cosas que llevas contigo.</p>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Desde Medellín · Colombia</span>
+        <h1 class="display"><span data-i18n="hero.line1">Calle</span><span class="outline" data-i18n="hero.line2">baile</span><span class="pink" data-i18n="hero.line3">Rumba.</span></h1>
+        <p class="hero-intro" data-i18n="hero.intro">Una casa para quienes <strong>siguen el baile</strong>: la noche que buscas, el viaje que recuerdas y las cosas que llevas contigo.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://rumba.rumbatienda.com">Explorar la guía <span aria-hidden="true">↗</span></a>
-          <a class="button button-ghost" href="#rutas">Conocer Rumba</a>
+          <a class="button button-primary" href="https://rumba.rumbatienda.com"><span data-i18n="hero.primary">Explorar la guía</span> <span aria-hidden="true">↗</span></a>
+          <a class="button button-ghost" href="#rutas" data-i18n="hero.secondary">Conocer Rumba</a>
         </div>
-        <p class="hero-note">Eventos · viajes · objetos / hecho a mano</p>
+        <p class="hero-note" data-i18n="hero.note">Eventos · viajes · objetos / hecho a mano</p>
       </div>
       <div class="hero-art" data-reveal>
         <div class="art-frame">
-          <span class="art-label">Baila donde quieras</span>
-          <img class="hero-photo" src="/images/landing/salsa-calena.jpg" alt="Presentación de salsa en Cali, Colombia" width="1500" height="1001" fetchpriority="high" />
+          <span class="art-label" data-i18n="hero.artLabel">Baila donde quieras</span>
+          <img class="hero-photo" src="/images/landing/salsa-calena.jpg" alt="Presentación de salsa en Cali, Colombia" data-i18n-alt="images.hero" width="1500" height="1001" fetchpriority="high" />
         </div>
       </div>
     </div>
   </section>
 
-  <div class="signal-strip" aria-hidden="true"><div class="wrap"><div class="signal-track"><span>Medellín de noche</span><span>Salsa sin mapa</span><span>Feria de Cali</span><span>Hecho para bailar</span></div></div></div>
+  <div class="signal-strip" aria-hidden="true"><div class="wrap"><div class="signal-track"><span data-i18n="signals.night">Medellín de noche</span><span data-i18n="signals.salsa">Salsa sin mapa</span><span data-i18n="signals.feria">Feria de Cali</span><span data-i18n="signals.dance">Hecho para bailar</span></div></div></div>
 
   <section class="routes" id="rutas">
     <div class="wrap">
       <div class="section-head" data-reveal>
-        <div><span class="eyebrow">Tres maneras de entrar</span><h2>Elige tu <em>camino.</em></h2></div>
-        <p>Una misma energía, tres puertas. Empieza por la ciudad, por el viaje o por lo que te quieres poner esta noche.</p>
+        <div><span class="eyebrow" data-i18n="routes.eyebrow">Tres maneras de entrar</span><h2 data-i18n="routes.title">Elige tu <em>camino.</em></h2></div>
+        <p data-i18n="routes.intro">Una misma energía, tres puertas. Empieza por la ciudad, por el viaje o por lo que te quieres poner esta noche.</p>
       </div>
       <div class="route-grid">
         <a class="route-card events" href="https://rumba.rumbatienda.com" data-reveal>
-          <div class="route-top"><span>01 · Guía semanal</span><span class="yellow">Activo</span></div>
-          <div class="route-photo"><img src="/images/landing/medellin-panorama.jpg" alt="Vista panorámica de Medellín, Colombia" width="1280" height="853" loading="lazy" /></div>
-          <h3>La ciudad está <em>sonando.</em></h3>
-          <p>Descubre dónde bailar salsa, bachata y más en Medellín. Una guía viva, curada con criterio local.</p>
-          <div class="route-link"><span>Ir a la guía</span><span aria-hidden="true">↗</span></div>
+          <div class="route-top"><span data-i18n="routes.city.meta">01 · Guía semanal</span><span class="yellow" data-i18n="routes.city.status">Activo</span></div>
+          <div class="route-photo"><img src="/images/landing/medellin-panorama.jpg" alt="Vista panorámica de Medellín, Colombia" data-i18n-alt="images.city" width="1280" height="853" loading="lazy" /></div>
+          <h3 data-i18n="routes.city.title">La ciudad está <em>sonando.</em></h3>
+          <p data-i18n="routes.city.description">Descubre dónde bailar salsa, bachata y más en Medellín. Una guía viva, curada con criterio local.</p>
+          <div class="route-link"><span data-i18n="routes.city.link">Ir a la guía</span><span aria-hidden="true">↗</span></div>
         </a>
         <a class="route-card trip" href="https://cali2026.rumbatienda.com" data-reveal>
-          <div class="route-top"><span>02 · Experiencia</span><span class="pink">Cali</span></div>
-          <div class="route-photo"><img src="/images/landing/cali-rumba-concert.webp" alt="Grupo internacional en la Feria de Cali 2024" width="1280" height="1707" loading="lazy" /></div>
-          <h3>Ocho días en <em>Cali.</em></h3>
-          <p>Una inmersión salsera con Feria, clases estilo Cali, noches curadas, gastronomía local y Año Nuevo en San Antonio.</p>
-          <div class="route-link"><span>Conocer el viaje</span><span aria-hidden="true">↗</span></div>
+          <div class="route-top"><span data-i18n="routes.trip.meta">02 · Experiencia</span><span class="pink" data-i18n="routes.trip.status">Cali</span></div>
+          <div class="route-photo"><img src="/images/landing/cali-rumba-concert.webp" alt="Grupo internacional en la Feria de Cali 2024" data-i18n-alt="images.trip" width="1280" height="1707" loading="lazy" /></div>
+          <h3 data-i18n="routes.trip.title">Ocho días en <em>Cali.</em></h3>
+          <p data-i18n="routes.trip.description">Una inmersión salsera con Feria, clases estilo Cali, noches curadas, gastronomía local y Año Nuevo en San Antonio.</p>
+          <div class="route-link"><span data-i18n="routes.trip.link">Conocer el viaje</span><span aria-hidden="true">↗</span></div>
         </a>
         <a class="route-card shop" href="https://tienda.rumbatienda.com" data-reveal>
-          <div class="route-top"><span>03 · Tienda</span><span class="cyan">Online</span></div>
-          <div class="route-photo"><img src="/images/landing/store-group.webp" alt="Grupo de personas usando camisetas de Rumba Tienda en La Topa Tolondra" width="900" height="1200" loading="lazy" /></div>
-          <h3>Viste el <em>movimiento.</em></h3>
-          <p>Prendas diseñadas desde Medellín para llevar la cultura de baile contigo, dondequiera que vayas.</p>
-          <div class="route-link"><span>Entrar a la tienda</span><span aria-hidden="true">↗</span></div>
+          <div class="route-top"><span data-i18n="routes.shop.meta">03 · Tienda</span><span class="cyan" data-i18n="routes.shop.status">Online</span></div>
+          <div class="route-photo"><img src="/images/landing/store-group.webp" alt="Grupo de personas usando camisetas de Rumba Tienda en La Topa Tolondra" data-i18n-alt="images.shop" width="900" height="1200" loading="lazy" /></div>
+          <h3 data-i18n="routes.shop.title">Viste el <em>movimiento.</em></h3>
+          <p data-i18n="routes.shop.description">Prendas diseñadas desde Medellín para llevar la cultura de baile contigo, dondequiera que vayas.</p>
+          <div class="route-link"><span data-i18n="routes.shop.link">Entrar a la tienda</span><span aria-hidden="true">↗</span></div>
         </a>
       </div>
     </div>
@@ -377,20 +398,20 @@ img, svg { display: block; max-width: 100%; }
 
   <section class="manifesto" id="manifiesto">
     <div class="wrap manifesto-grid" data-reveal>
-      <span class="eyebrow">Manifiesto Rumba</span>
-      <div><blockquote>El baile no se encuentra. <span>Se sigue.</span></blockquote><p class="manifesto-note">Rumba nació entre mensajes de amigos, pistas de baile y ganas de compartir lo que hace especial a Medellín. Lo demás sigue creciendo, con música y con cuidado.</p></div>
+      <span class="eyebrow" data-i18n="manifesto.eyebrow">Manifiesto Rumba</span>
+      <div><blockquote data-i18n="manifesto.quote">El baile no se encuentra. <span>Se sigue.</span></blockquote><p class="manifesto-note" data-i18n="manifesto.note">Rumba nació entre mensajes de amigos, pistas de baile y ganas de compartir lo que hace especial a Medellín. Lo demás sigue creciendo, con música y con cuidado.</p></div>
     </div>
   </section>
 
   <section class="scene">
     <div class="wrap">
-      <div class="scene-head" data-reveal><div><span class="eyebrow">La escena</span><h2>Calor en la <span class="pink">calle.</span></h2></div><a class="social-link" href="https://www.instagram.com/julianvlla/">Seguir @julianvlla ↗</a></div>
+      <div class="scene-head" data-reveal><div><span class="eyebrow" data-i18n="scene.eyebrow">La escena</span><h2 data-i18n="scene.title">Calor en la <span class="pink">calle.</span></h2></div><a class="social-link" href="https://www.instagram.com/julianvlla/"><span data-i18n="scene.follow">Seguir @julianvlla</span> ↗</a></div>
       <div class="scene-grid" data-reveal>
-        <div class="scene-tile large"><img src="/images/landing/medellin-comuna13-v5.jpg" alt="Vista panorámica de la Comuna 13 y las montañas de Medellín" width="1800" height="852" loading="lazy" /><span class="tile-label">Medellín / Comuna 13</span></div>
-        <div class="scene-tile yellow-tile"><img src="/images/landing/cali-center.jpg" alt="Arquitectura y calle del centro de Cali" width="1800" height="1200" loading="lazy" /><span class="tile-label">Cali / Centro</span></div>
-        <div class="scene-tile cyan-tile"><img src="/images/landing/cartagena-street.jpg" alt="Calle de casas coloridas en Cartagena" width="1800" height="1202" loading="lazy" /><span class="tile-label">Cartagena / Color</span></div>
-        <div class="scene-tile pink-tile"><img src="/images/landing/santa-marta-beach-v4.jpg" alt="Vista aérea de la bahía de Santa Marta y sus montañas" width="1800" height="1013" loading="lazy" /><span class="tile-label">Santa Marta / Mar</span></div>
-        <div class="scene-tile dark-tile"><img src="/images/landing/cali-show-v2.jpg" alt="Show de salsa en Cali con bailarines y música en vivo" width="1600" height="1067" loading="lazy" /><span class="tile-label">Cali / Salsa</span></div>
+        <div class="scene-tile large"><img src="/images/landing/medellin-comuna13-v5.jpg" alt="Vista panorámica de la Comuna 13 y las montañas de Medellín" data-i18n-alt="images.comuna13" width="1800" height="852" loading="lazy" /><span class="tile-label" data-i18n="scene.comuna13">Medellín / Comuna 13</span></div>
+        <div class="scene-tile yellow-tile"><img src="/images/landing/cali-center.jpg" alt="Arquitectura y calle del centro de Cali" data-i18n-alt="images.caliCenter" width="1800" height="1200" loading="lazy" /><span class="tile-label" data-i18n="scene.caliCenter">Cali / Centro</span></div>
+        <div class="scene-tile cyan-tile"><img src="/images/landing/cartagena-street.jpg" alt="Calle de casas coloridas en Cartagena" data-i18n-alt="images.cartagena" width="1800" height="1202" loading="lazy" /><span class="tile-label" data-i18n="scene.cartagena">Cartagena / Color</span></div>
+        <div class="scene-tile pink-tile"><img src="/images/landing/santa-marta-beach-v4.jpg" alt="Vista aérea de la bahía de Santa Marta y sus montañas" data-i18n-alt="images.santaMarta" width="1800" height="1013" loading="lazy" /><span class="tile-label" data-i18n="scene.santaMarta">Santa Marta / Mar</span></div>
+        <div class="scene-tile dark-tile"><img src="/images/landing/cali-show-v2.jpg" alt="Show de salsa en Cali con bailarines y música en vivo" data-i18n-alt="images.caliSalsa" width="1600" height="1067" loading="lazy" /><span class="tile-label" data-i18n="scene.caliSalsa">Cali / Salsa</span></div>
       </div>
     </div>
   </section>
@@ -399,17 +420,150 @@ img, svg { display: block; max-width: 100%; }
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand"><a class="brand" href="/">Rumba<span class="brand-mark">.</span></a><p>Una casa de baile desde Medellín. Hecha por gente que sigue la música.</p></div>
-      <div><h2 class="footer-title">Explorar</h2><ul class="footer-list"><li><a href="https://rumba.rumbatienda.com">Eventos</a></li><li><a href="https://cali2026.rumbatienda.com">Feria de Cali</a></li><li><a href="https://tienda.rumbatienda.com">Tienda</a></li></ul></div>
-      <div><h2 class="footer-title">Seguir</h2><ul class="footer-list"><li><a href="https://www.instagram.com/julianvlla/">@julianvlla</a></li><li><a href="https://www.instagram.com/janusz.higher/">@janusz.higher</a></li></ul></div>
-      <div><h2 class="footer-title">Hablar</h2><ul class="footer-list"><li><a href="mailto:ojvillac@gmail.com">ojvillac@gmail.com</a></li><li><a href="https://wa.me/573117613548">WhatsApp</a></li></ul></div>
+      <div class="footer-brand"><a class="brand" href="/">Rumba<span class="brand-mark">.</span></a><p data-i18n="footer.description">Una casa de baile desde Medellín. Hecha por gente que sigue la música.</p></div>
+      <div><h2 class="footer-title" data-i18n="footer.explore">Explorar</h2><ul class="footer-list"><li><a href="https://rumba.rumbatienda.com" data-i18n="footer.events">Eventos</a></li><li><a href="https://cali2026.rumbatienda.com" data-i18n="footer.caliFair">Feria de Cali</a></li><li><a href="https://tienda.rumbatienda.com" data-i18n="footer.shop">Tienda</a></li></ul></div>
+      <div><h2 class="footer-title" data-i18n="footer.follow">Seguir</h2><ul class="footer-list"><li><a href="https://www.instagram.com/julianvlla/">@julianvlla</a></li><li><a href="https://www.instagram.com/janusz.higher/">@janusz.higher</a></li></ul></div>
+      <div><h2 class="footer-title" data-i18n="footer.talk">Hablar</h2><ul class="footer-list"><li><a href="mailto:ojvillac@gmail.com">ojvillac@gmail.com</a></li><li><a href="https://wa.me/573117613548">WhatsApp</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Rumba · Medellín, Colombia</span><span>Eventos · viajes · objetos</span></div>
+    <div class="footer-bottom"><span>© 2026 Rumba · Medellín, Colombia</span><span data-i18n="footer.bottom">Eventos · viajes · objetos</span></div>
   </div>
 </footer>
 
 <script>
 (function () {
+  const translations = {
+    es: {
+      pageTitle: 'Rumba | Cultura de baile desde Medellín',
+      pageDescription: 'Rumba es una casa de baile desde Medellín: eventos, viajes y objetos para quienes siguen la música.',
+      nav: { label: 'Navegación principal', routes: 'Rutas', manifesto: 'Manifiesto', instagram: 'Instagram', events: 'Ver eventos' },
+      language: { label: 'Idioma' },
+      aria: { brand: 'Rumba inicio' },
+      hero: {
+        eyebrow: 'Desde Medellín · Colombia',
+        line1: 'Calle', line2: 'baile', line3: 'Rumba.',
+        intro: 'Una casa para quienes <strong>siguen el baile</strong>: la noche que buscas, el viaje que recuerdas y las cosas que llevas contigo.',
+        primary: 'Explorar la guía', secondary: 'Conocer Rumba', note: 'Eventos · viajes · objetos / hecho a mano', artLabel: 'Baila donde quieras'
+      },
+      signals: { night: 'Medellín de noche', salsa: 'Salsa sin mapa', feria: 'Feria de Cali', dance: 'Hecho para bailar' },
+      routes: {
+        eyebrow: 'Tres maneras de entrar', title: 'Elige tu <em>camino.</em>',
+        intro: 'Una misma energía, tres puertas. Empieza por la ciudad, por el viaje o por lo que te quieres poner esta noche.',
+        city: { meta: '01 · Guía semanal', status: 'Activo', title: 'La ciudad está <em>sonando.</em>', description: 'Descubre dónde bailar salsa, bachata y más en Medellín. Una guía viva, curada con criterio local.', link: 'Ir a la guía' },
+        trip: { meta: '02 · Experiencia', status: 'Cali', title: 'Ocho días en <em>Cali.</em>', description: 'Una inmersión salsera con Feria, clases estilo Cali, noches curadas, gastronomía local y Año Nuevo en San Antonio.', link: 'Conocer el viaje' },
+        shop: { meta: '03 · Tienda', status: 'Online', title: 'Viste el <em>movimiento.</em>', description: 'Prendas diseñadas desde Medellín para llevar la cultura de baile contigo, dondequiera que vayas.', link: 'Entrar a la tienda' }
+      },
+      manifesto: { eyebrow: 'Manifiesto Rumba', quote: 'El baile no se encuentra. <span>Se sigue.</span>', note: 'Rumba nació entre mensajes de amigos, pistas de baile y ganas de compartir lo que hace especial a Medellín. Lo demás sigue creciendo, con música y con cuidado.' },
+      scene: { eyebrow: 'La escena', title: 'Calor en la <span class="pink">calle.</span>', follow: 'Seguir @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centro', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Mar', caliSalsa: 'Cali / Salsa' },
+      footer: { description: 'Una casa de baile desde Medellín. Hecha por gente que sigue la música.', explore: 'Explorar', events: 'Eventos', caliFair: 'Feria de Cali', shop: 'Tienda', follow: 'Seguir', talk: 'Hablar', bottom: 'Eventos · viajes · objetos' },
+      images: { hero: 'Presentación de salsa en Cali, Colombia', city: 'Vista panorámica de Medellín, Colombia', trip: 'Grupo internacional en la Feria de Cali 2024', shop: 'Grupo de personas usando camisetas de Rumba Tienda en La Topa Tolondra', comuna13: 'Vista panorámica de la Comuna 13 y las montañas de Medellín', caliCenter: 'Arquitectura y calle del centro de Cali', cartagena: 'Calle de casas coloridas en Cartagena', santaMarta: 'Vista aérea de la bahía de Santa Marta y sus montañas', caliSalsa: 'Show de salsa en Cali con bailarines y música en vivo' }
+    },
+    en: {
+      pageTitle: 'Rumba | Dance culture from Medellín',
+      pageDescription: 'Rumba is a dance house from Medellín: events, trips and objects for people who follow the music.',
+      nav: { label: 'Main navigation', routes: 'Routes', manifesto: 'Manifesto', instagram: 'Instagram', events: 'See events' },
+      language: { label: 'Language' }, aria: { brand: 'Rumba home' },
+      hero: {
+        eyebrow: 'From Medellín · Colombia', line1: 'Street', line2: 'dance', line3: 'Rumba.',
+        intro: 'A home for those who <strong>live for dance</strong>: the night you are looking for, the trip you will remember and the things you carry with you.',
+        primary: 'Explore the guide', secondary: 'Discover Rumba', note: 'Events · trips · objects / handmade', artLabel: 'Dance wherever you want'
+      },
+      signals: { night: 'Medellín by night', salsa: 'Salsa without a map', feria: 'Feria de Cali', dance: 'Made to dance' },
+      routes: {
+        eyebrow: 'Three ways in', title: 'Choose your <em>path.</em>',
+        intro: 'One energy, three doors. Start with the city, the trip or what you want to wear tonight.',
+        city: { meta: '01 · Weekly guide', status: 'Active', title: 'The city is <em>humming.</em>', description: 'Discover where to dance salsa, bachata and more in Medellín. A local guide, carefully curated.', link: 'Go to the guide' },
+        trip: { meta: '02 · Experience', status: 'Cali', title: 'Eight days in <em>Cali.</em>', description: 'A salsa immersion with the Feria, Cali-style classes, curated nights, local food and New Year’s Eve in San Antonio.', link: 'Discover the trip' },
+        shop: { meta: '03 · Shop', status: 'Online', title: 'Wear the <em>movement.</em>', description: 'Pieces designed in Medellín to carry dance culture with you wherever you go.', link: 'Enter the shop' }
+      },
+      manifesto: { eyebrow: 'Rumba Manifesto', quote: 'You do not find the dance. <span>You follow it.</span>', note: 'Rumba was born from messages between friends, dance floors and the desire to share what makes Medellín special. The rest is still growing—with music and care.' },
+      scene: { eyebrow: 'The scene', title: 'Heat in the <span class="pink">street.</span>', follow: 'Follow @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Downtown', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Sea', caliSalsa: 'Cali / Salsa' },
+      footer: { description: 'A dance house from Medellín. Made by people who follow the music.', explore: 'Explore', events: 'Events', caliFair: 'Feria de Cali', shop: 'Shop', follow: 'Follow', talk: 'Talk', bottom: 'Events · trips · objects' },
+      images: { hero: 'Salsa performance in Cali, Colombia', city: 'Panoramic view of Medellín, Colombia', trip: 'International group at the 2024 Feria de Cali', shop: 'Group of people wearing Rumba Tienda shirts at La Topa Tolondra', comuna13: 'Panoramic view of Comuna 13 and the mountains of Medellín', caliCenter: 'Architecture and street in downtown Cali', cartagena: 'Street of colorful houses in Cartagena', santaMarta: 'Aerial view of Santa Marta bay and its mountains', caliSalsa: 'Salsa show in Cali with dancers and live music' }
+    },
+    fr: {
+      pageTitle: 'Rumba | Culture de la danse depuis Medellín',
+      pageDescription: 'Rumba est une maison de danse de Medellín : événements, voyages et objets pour celles et ceux qui suivent la musique.',
+      nav: { label: 'Navigation principale', routes: 'Itinéraires', manifesto: 'Manifeste', instagram: 'Instagram', events: 'Voir les événements' },
+      language: { label: 'Langue' }, aria: { brand: 'Accueil Rumba' },
+      hero: {
+        eyebrow: 'Depuis Medellín · Colombie', line1: 'Rue', line2: 'danse', line3: 'Rumba.',
+        intro: 'Une maison pour celles et ceux qui <strong>vivent la danse</strong> : la nuit que tu cherches, le voyage dont tu te souviendras et les objets que tu emportes avec toi.',
+        primary: 'Découvrir le guide', secondary: 'Découvrir Rumba', note: 'Événements · voyages · objets / faits à la main', artLabel: 'Danse où tu veux'
+      },
+      signals: { night: 'Medellín de nuit', salsa: 'Salsa sans carte', feria: 'Feria de Cali', dance: 'Fait pour danser' },
+      routes: {
+        eyebrow: 'Trois façons d’entrer', title: 'Choisis ton <em>chemin.</em>',
+        intro: 'Une même énergie, trois portes. Commence par la ville, le voyage ou ce que tu veux porter ce soir.',
+        city: { meta: '01 · Guide hebdomadaire', status: 'Actif', title: 'La ville <em>résonne.</em>', description: 'Découvre où danser la salsa, la bachata et plus encore à Medellín. Un guide local pensé avec soin.', link: 'Voir le guide' },
+        trip: { meta: '02 · Expérience', status: 'Cali', title: 'Huit jours à <em>Cali.</em>', description: 'Une immersion dans la salsa avec la Feria, des cours à la caleña, des soirées bien choisies, la gastronomie locale et le Nouvel An à San Antonio.', link: 'Découvrir le voyage' },
+        shop: { meta: '03 · Boutique', status: 'En ligne', title: 'Porte le <em>mouvement.</em>', description: 'Des pièces conçues à Medellín pour emporter la culture de la danse partout avec toi.', link: 'Entrer dans la boutique' }
+      },
+      manifesto: { eyebrow: 'Manifeste Rumba', quote: 'On ne trouve pas la danse. <span>On la suit.</span>', note: 'Rumba est née de messages entre amis, de pistes de danse et de l’envie de partager ce qui rend Medellín unique. Le reste grandit encore, en musique et avec soin.' },
+      scene: { eyebrow: 'La scène', title: 'Chaleur dans la <span class="pink">rue.</span>', follow: 'Suivre @julianvlla', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centre', cartagena: 'Cartagena / Couleur', santaMarta: 'Santa Marta / Mer', caliSalsa: 'Cali / Salsa' },
+      footer: { description: 'Une maison de danse de Medellín. Faite par des gens qui suivent la musique.', explore: 'Explorer', events: 'Événements', caliFair: 'Feria de Cali', shop: 'Boutique', follow: 'Suivre', talk: 'Parler', bottom: 'Événements · voyages · objets' },
+      images: { hero: 'Spectacle de salsa à Cali, Colombie', city: 'Vue panoramique de Medellín, Colombie', trip: 'Groupe international à la Feria de Cali 2024', shop: 'Groupe de personnes portant des t-shirts Rumba Tienda à La Topa Tolondra', comuna13: 'Vue panoramique de la Comuna 13 et des montagnes de Medellín', caliCenter: 'Architecture et rue du centre de Cali', cartagena: 'Rue aux maisons colorées de Cartagena', santaMarta: 'Vue aérienne de la baie de Santa Marta et de ses montagnes', caliSalsa: 'Spectacle de salsa à Cali avec danseurs et musique live' }
+    },
+    de: {
+      pageTitle: 'Rumba | Tanzkultur aus Medellín',
+      pageDescription: 'Rumba ist ein Tanzhaus aus Medellín: Events, Reisen und Dinge für Menschen, die der Musik folgen.',
+      nav: { label: 'Hauptnavigation', routes: 'Routen', manifesto: 'Manifest', instagram: 'Instagram', events: 'Events ansehen' },
+      language: { label: 'Sprache' }, aria: { brand: 'Rumba Startseite' },
+      hero: {
+        eyebrow: 'Aus Medellín · Kolumbien', line1: 'Straße', line2: 'Tanz', line3: 'Rumba.',
+        intro: 'Ein Zuhause für alle, die <strong>für den Tanz leben</strong>: die Nacht, die du suchst, die Reise, an die du dich erinnern wirst, und die Dinge, die du mitnimmst.',
+        primary: 'Guide entdecken', secondary: 'Rumba kennenlernen', note: 'Events · Reisen · Objekte / handgemacht', artLabel: 'Tanz, wo du willst'
+      },
+      signals: { night: 'Medellín bei Nacht', salsa: 'Salsa ohne Karte', feria: 'Feria de Cali', dance: 'Zum Tanzen gemacht' },
+      routes: {
+        eyebrow: 'Drei Wege zum Einstieg', title: 'Wähle deinen <em>Weg.</em>',
+        intro: 'Eine Energie, drei Türen. Starte mit der Stadt, der Reise oder dem, was du heute Abend tragen willst.',
+        city: { meta: '01 · Wochen-Guide', status: 'Aktiv', title: 'Die Stadt <em>klingt.</em>', description: 'Entdecke, wo du in Medellín Salsa, Bachata und mehr tanzen kannst. Ein sorgfältig zusammengestellter Guide aus Medellín.', link: 'Zum Guide' },
+        trip: { meta: '02 · Erlebnis', status: 'Cali', title: 'Acht Tage in <em>Cali.</em>', description: 'Eine Salsa-Immersion mit der Feria, Cali-Style-Kursen, ausgewählten Abenden, lokaler Küche und Silvester in San Antonio.', link: 'Reise entdecken' },
+        shop: { meta: '03 · Shop', status: 'Online', title: 'Trag die <em>Bewegung.</em>', description: 'Kleidung aus Medellín, die dich überallhin mit der Tanzkultur begleitet.', link: 'Zum Shop' }
+      },
+      manifesto: { eyebrow: 'Rumba-Manifest', quote: 'Man findet den Tanz nicht. <span>Man folgt ihm.</span>', note: 'Rumba entstand aus Nachrichten unter Freunden, Tanzflächen und dem Wunsch, das Besondere an Medellín zu teilen. Alles andere wächst weiter – mit Musik und Sorgfalt.' },
+      scene: { eyebrow: 'Die Szene', title: 'Hitze auf der <span class="pink">Straße.</span>', follow: '@julianvlla folgen', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Zentrum', cartagena: 'Cartagena / Farbe', santaMarta: 'Santa Marta / Meer', caliSalsa: 'Cali / Salsa' },
+      footer: { description: 'Ein Tanzhaus aus Medellín. Gemacht von Menschen, die der Musik folgen.', explore: 'Entdecken', events: 'Events', caliFair: 'Feria de Cali', shop: 'Shop', follow: 'Folgen', talk: 'Sprechen', bottom: 'Events · Reisen · Objekte' },
+      images: { hero: 'Salsa-Auftritt in Cali, Kolumbien', city: 'Panoramablick auf Medellín, Kolumbien', trip: 'Internationale Gruppe bei der Feria de Cali 2024', shop: 'Gruppe mit Rumba-Tienda-Shirts in La Topa Tolondra', comuna13: 'Panoramablick auf die Comuna 13 und die Berge von Medellín', caliCenter: 'Architektur und Straße im Zentrum von Cali', cartagena: 'Straße mit bunten Häusern in Cartagena', santaMarta: 'Luftaufnahme der Bucht von Santa Marta und ihrer Berge', caliSalsa: 'Salsa-Show in Cali mit Tänzerinnen, Tänzern und Live-Musik' }
+    }
+  };
+
+  const getValue = (source, path) => path.split('.').reduce((value, key) => value && value[key], source);
+  const availableLanguages = Object.keys(translations);
+  const select = document.querySelector('#language-select');
+
+  function applyLanguage(language, updateUrl) {
+    const activeLanguage = availableLanguages.includes(language) ? language : 'en';
+    const copy = translations[activeLanguage];
+    document.documentElement.lang = activeLanguage;
+    document.title = copy.pageTitle;
+    document.querySelector('meta[name="description"]').setAttribute('content', copy.pageDescription);
+    document.querySelector('.main-nav').setAttribute('aria-label', copy.nav.label);
+    document.querySelectorAll('.brand').forEach((brand) => brand.setAttribute('aria-label', copy.aria.brand));
+    select.setAttribute('aria-label', copy.language.label);
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+      const value = getValue(copy, element.dataset.i18n);
+      if (typeof value === 'string') element.innerHTML = value;
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach((image) => {
+      const value = getValue(copy, image.dataset.i18nAlt);
+      if (typeof value === 'string') image.alt = value;
+    });
+    select.value = activeLanguage;
+    try { localStorage.setItem('rumba-language', activeLanguage); } catch (error) { /* storage can be unavailable */ }
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', activeLanguage);
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  let savedLanguage = 'en';
+  try { savedLanguage = localStorage.getItem('rumba-language') || 'en'; } catch (error) { /* storage can be unavailable */ }
+  const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
+  applyLanguage(availableLanguages.includes(requestedLanguage) ? requestedLanguage : savedLanguage, false);
+  select.addEventListener('change', () => applyLanguage(select.value, true));
+
   const reveal = document.querySelectorAll('[data-reveal]');
   if (!('IntersectionObserver' in window)) {
     reveal.forEach((item) => item.classList.add('in'));

@@ -1,13 +1,14 @@
 # Julian SEO onboarding
 
 Start with [`../JULIAN-START-HERE.md`](../JULIAN-START-HERE.md) for the complete
-site and repository map, autonomous deployment model, and the boundary between
+site and repository map, review-gated deployment model, and the boundary between
 the Colombia and Switzerland work. This document then covers the Google setup
 for Julian and Julian's Codex.
 
 The access model grants normal SEO work, not Google or infrastructure
-ownership: read the shared data, change the correct repo, merge your own green
-PR, and let the maintained workflow deploy production.
+ownership: read the shared data, change the correct repo, open a green PR,
+request the required GitHub review, and let an authorized maintainer merge it
+so the maintained workflow can deploy production.
 
 ## Access already assigned
 
@@ -115,7 +116,8 @@ language SEO, measurement plan, and incident history.
 
 Normal self service work includes metadata, content, internal links, canonical
 tags, `hreflang`, structured data, robots rules, sitemaps, analytics events,
-PR merge, deploy retry, and production verification.
+preview verification, and production verification after an authorized
+maintainer merges the reviewed PR.
 
 Stop and coordinate before changing DNS, Search Console ownership or users,
 verification files or tags, GA4 property administration, measurement IDs,

@@ -17,7 +17,7 @@ exploration handoff, ~5 MB) and should be reviewed together.
 
 **Julian and Julian's Codex:** start with
 [`JULIAN-START-HERE.md`](JULIAN-START-HERE.md). It contains the complete map
-from public URLs to repositories, autonomous deployment rules, and the boundary
+from public URLs to repositories, review-gated deployment rules, and the boundary
 between the Colombia and Switzerland work.
 
 **Agents:** then read [`AGENTS.md`](AGENTS.md). It covers sibling-repo pickup

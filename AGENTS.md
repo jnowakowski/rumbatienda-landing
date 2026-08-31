@@ -94,7 +94,10 @@ history and reference material, not an automatic next action.
 - The first HTML this page returns is English (`html lang="en"`). German,
   Spanish, and French remain available through the language switcher on the
   same canonical URL. Do not change that default without an explicit task and
-  do not treat `?lang=` as an SEO scheme.
+  do not treat `?lang=` as an SEO scheme. Keep the English default stable for
+  a full 28-day measurement window from 2026-08-31. Reconsider it only from
+  recorded GA4, GSC, and funnel evidence, never because a new agent prefers a
+  different language.
   Read `docs/seo-workflow.md` before changing language URLs.
 - Site edits live in `public/index.html`. No build step, no framework.
 - Shop deploys are a separate Vercel exception. Do not request Vercel team
@@ -129,6 +132,12 @@ After CI is green and the preview is recorded on the PR:
 
 Do not treat a chat, WhatsApp, or local "looks good" as a review. The review
 has to be on GitHub. If the reviewer has not responded, wait. Do not merge.
+
+Repository admins can deliberately bypass the approving-review requirement.
+That is an owner-only recovery and coordination capability. It does not apply
+to `ojvillac` or Julian's Codex and does not authorize bypassing failed CI. If
+Janusz uses the bypass, treat it as an owner action, not as a change to this
+workflow.
 
 ## Working through data (load on demand)
 

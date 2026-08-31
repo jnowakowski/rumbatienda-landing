@@ -221,8 +221,10 @@ squash-merge your own PRs. Request a GitHub review from jnowakowski
 and wait until that GitHub review exists. Never bypass failed CI, invent a
 second deployment path, or request Vercel team, dashboard, or token access.
 
-Landing first HTML is German (DACH). Bebas Neue display, Barlow Condensed body.
-Do not change the default language or add extra fonts without an explicit task.
+Landing first HTML is English. German, Spanish, and French remain available
+through the selector on the same canonical URL. Bebas Neue is the display font
+and Barlow Condensed is the body font. Do not change the default language or add
+extra fonts without an explicit task.
 
 Shop exception: if vercel-production.yml fails after an ojvillac squash commit
 with "Please retry later" or TEAM_ACCESS_REQUIRED, do not retry the workflow

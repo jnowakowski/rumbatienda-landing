@@ -91,9 +91,10 @@ history and reference material, not an automatic next action.
 - Stay inside that visual system. Display is Bebas Neue. Body, UI labels, and
   chrome are Barlow Condensed. Do not add DM Sans, Space Mono, or any second
   body or mono font unless a task explicitly asks for a brand change.
-- The first HTML this page returns is German (`html lang="de"`), because the
-  audience is DACH. A language switcher is visitor UX on one canonical URL.
-  Do not change that default and do not treat `?lang=` as an SEO scheme.
+- The first HTML this page returns is English (`html lang="en"`). German,
+  Spanish, and French remain available through the language switcher on the
+  same canonical URL. Do not change that default without an explicit task and
+  do not treat `?lang=` as an SEO scheme.
   Read `docs/seo-workflow.md` before changing language URLs.
 - Site edits live in `public/index.html`. No build step, no framework.
 - Shop deploys are a separate Vercel exception. Do not request Vercel team

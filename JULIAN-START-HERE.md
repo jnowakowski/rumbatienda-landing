@@ -8,6 +8,11 @@ run checks, open pull requests, and verify previews independently. Julian's
 agent must not merge its own pull requests. A green PR still needs a GitHub
 review from `jnowakowski`; chat or WhatsApp approval does not count.
 
+Repository admins can deliberately bypass the approving-review requirement.
+That is an owner-only recovery and coordination capability. It does not apply
+to `ojvillac` or Julian's agent and does not authorize bypassing failed CI. An
+owner bypass is an action by Janusz, not a change to Julian's workflow.
+
 ## The map you must know
 
 The public hostname decides which repository owns a change. Trust the GitHub
@@ -224,7 +229,9 @@ second deployment path, or request Vercel team, dashboard, or token access.
 Landing first HTML is English. German, Spanish, and French remain available
 through the selector on the same canonical URL. Bebas Neue is the display font
 and Barlow Condensed is the body font. Do not change the default language or add
-extra fonts without an explicit task.
+extra fonts without an explicit task. Keep the English default stable for a
+full 28-day measurement window from 2026-08-31, then reconsider it only from
+recorded GA4, GSC, and funnel evidence.
 
 Shop exception: if vercel-production.yml fails after an ojvillac squash commit
 with "Please retry later" or TEAM_ACCESS_REQUIRED, do not retry the workflow

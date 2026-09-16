@@ -100,8 +100,16 @@ A1 content targets (from actual query wordings):
 
 Checkpoints and decision rules:
 
-* 2026-09-15: targets held, stay course; not moving, revise per data; leads at
-  zero with traffic up, fix the conversion path first.
+* 2026-09-15: executed. GSC still shows Europeans (including CH/DE/FR/CA)
+  typing `feria de cali 2026`, not trip stems. `/de/` already ranked in CH
+  (CTR ~14%). The Swiss landing had 0 impressions because it was unlinked.
+  Shipped cali2026#96: offer module on `/de/` (title unchanged), CH landing
+  linked, GA4 production-host allowlist. `generate_lead` exists in the form
+  JS and was zero in 28d. Next: one real prod submit, then GSC on 2026-10-13
+  for CH landing impressions and `reise`/`tanzreise` stems. Do not retitle
+  `/de/`, do not IP-banner yet, do not ads on informational Feria queries.
+  Autocomplete `gl=ch` shows `salsa reise kolumbien` and `tanzreise salsa 2026`
+  as supporting language, and `salsa workshop`/`kurs` as local Swiss classes.
 * 2026-11-01: paid search yes or no for November and December (owner: Janusz).
 * 2026-12-01: freshness check; stale program content is a P0 fix.
 * Program drop: whenever Corfecali publishes, the 48 hour SLA starts.
@@ -132,6 +140,13 @@ boundary, after midnight events, stable canonicals) designed before launch.
 Flat or decaying, then inventory and event page work takes priority and hub
 copy is paused. A hub below the launch gate gets next event fallback content,
 never noindex flapping.
+
+2026-09-15 follow-up (tumbao-ch#226, Worker `e1f68ed`): Neuchâtel hub is
+indexed with Event rich results and is not national proof. Zürich city hub
+was discovered-not-indexed despite home links. The salsa facet on Zürich was
+indexed and already had query-shaped intro copy. City hub intro now matches
+that pattern. Homepage Cali CTAs go to cali2026 `/de/`, not the English root.
+Tumbao still does not own Feria or course queries.
 
 ## How we work together
 

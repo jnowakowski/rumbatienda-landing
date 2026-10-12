@@ -28,6 +28,8 @@ Before SEO, Search Console, or Analytics work, read
 [`docs/seo-workflow.md`](docs/seo-workflow.md).
 For the first SEO session, continue with
 [`docs/julian-seo-onboarding.md`](docs/julian-seo-onboarding.md).
+For the planned move to `rumbaexperience.co`, read
+[`docs/domain-switch-runbook.md`](docs/domain-switch-runbook.md).
 
 ## Quick start (human or agent)
 

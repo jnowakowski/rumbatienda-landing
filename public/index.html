@@ -6,6 +6,7 @@
 <title>Rumba | Dance culture from Medellín</title>
 <meta name="description" content="Rumba is a dance house from Medellín: events, trips and objects for people who follow the music." />
 <meta name="theme-color" content="#0a0a0e" />
+<link rel="canonical" href="https://rumbatienda.com/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -587,24 +588,34 @@ img, svg { display: block; max-width: 100%; }
 })();
 </script>
 
-<!-- GA4: Rumbatienda CO unified property -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K3BYEMTTQ"></script>
+<!-- Analytics: production hostnames only (GA4, CF Web Analytics, Matomo). Previews, pages.dev and localhost emit no hits. -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2K3BYEMTTQ', { page_title: 'Rumba Home', content_group: 'apex' });
-</script>
+  (function () {
+    var productionHosts = ['rumbatienda.com', 'www.rumbatienda.com', /* switch-domain: keep */
+      'rumbaexperience.co', 'www.rumbaexperience.co'];
+    if (productionHosts.indexOf(location.hostname) === -1) return;
 
-<!-- CF Web Analytics -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"d95ee1d53b0548fabea5ee2442bb5f31"}'></script>
+    // GA4: Rumbatienda CO unified property
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag(){ dataLayer.push(arguments); };
+    var ga = document.createElement('script');
+    ga.async = true;
+    ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-2K3BYEMTTQ';
+    document.head.appendChild(ga);
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-2K3BYEMTTQ', { page_title: 'Rumba Home', content_group: 'apex' });
 
-<!-- Matomo site 4 -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
+    // CF Web Analytics
+    var cf = document.createElement('script');
+    cf.defer = true;
+    cf.setAttribute('data-cf-beacon', '{"token":"d95ee1d53b0548fabea5ee2442bb5f31"}');
+    cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    document.body.appendChild(cf);
+
+    // Matomo site 4
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
     var u = 'https://matomo-rumba.statsbox.ch/';
     _paq.push(['setTrackerUrl', u + 'matomo.php']);
     _paq.push(['setSiteId', '4']);

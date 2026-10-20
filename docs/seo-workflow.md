@@ -10,25 +10,33 @@ while ownership, measurement, and shared infrastructure stay consistent.
 Read this before changing Search Console, Analytics, robots rules, sitemaps,
 canonical URLs, language URLs, or structured data.
 
-## The one property rule
+## Domain properties during phase 1
 
-Use one Google Search Console property for the whole Rumbatienda ecosystem:
+Use the Google Search Console domain property matching the target URL:
 
 | Setting | Canonical value |
 |---|---|
-| Search Console property | `sc-domain:rumbatienda.com` |
+| New apex and events URLs | `sc-domain:rumbaexperience.co` |
+| Legacy history, tienda and cali2026 | `sc-domain:rumbatienda.com` |
 | Property type | Domain property |
 | Verified owner | `jnowakowski@gmail.com` |
-| Julian | `ojvillac@gmail.com`, Full user |
+| Julian | `ojvillac@gmail.com`, Full user on the legacy property; confirm new property access with Janusz |
 | Direct link | [Open the canonical property](https://search.google.com/search-console?resource_id=sc-domain%3Arumbatienda.com) |
 
-The domain property already includes every protocol and every subdomain,
-including:
+Each domain property includes every protocol and subdomain of its own domain.
+The old property covers:
 
-* `https://rumbatienda.com/`
+* `https://rumbatienda.com/` (legacy apex; 301 to `rumbaexperience.co` when live)
 * `https://cali2026.rumbatienda.com/`
 * `https://tienda.rumbatienda.com/`
-* `https://rumba.rumbatienda.com/`
+* `https://rumba.rumbatienda.com/` (legacy events)
+
+The new property covers `https://rumbaexperience.co/`,
+`https://www.rumbaexperience.co/`, `https://rumba.rumbaexperience.co/` and
+`https://og.rumbaexperience.co/`. Verify access per
+[`domain-switch-runbook.md`](domain-switch-runbook.md). Keep
+`sc-domain:rumbatienda.com` for historical data and sibling hosts that have not
+moved yet.
 
 Do not create or verify another child property for routine SEO work. A separate
 URL prefix property does not improve indexing. Filter the canonical property by
@@ -114,10 +122,10 @@ Change SEO in the repo that serves the affected URL.
 
 | URL | Repository | Main SEO surfaces |
 |---|---|---|
-| `rumbatienda.com` | `jnowakowski/rumbatienda-landing` | `public/index.html`, `public/robots.txt`, `public/sitemap.xml` |
+| `rumbaexperience.co` | `jnowakowski/rumbatienda-landing` | `public/index.html`, `public/robots.txt`, `public/sitemap.xml` |
 | `cali2026.rumbatienda.com` | `jnowakowski/cali2026` | public HTML routes, robots rules, sitemap |
 | `tienda.rumbatienda.com` | `jnowakowski/rumbatienda` | Next.js metadata, robots route, sitemap route, product structured data |
-| `rumba.rumbatienda.com` | The Rumba events site repo | page metadata, event URLs, sitemap, event structured data |
+| `rumba.rumbaexperience.co` | `jnowakowski/rumba-site` | page metadata, event URLs, sitemap, event structured data |
 
 Do not solve a page SEO problem by changing DNS, hosting, or another repo.
 
@@ -137,9 +145,9 @@ Do not solve a page SEO problem by changing DNS, hosting, or another repo.
 10. Use URL Inspection or sitemap submission only when the deployed change
     gives a concrete reason to do so.
 
-For data analysis, query `sc-domain:rumbatienda.com` and filter the `page`
-dimension by hostname. Do not create a child property just to obtain a filtered
-report.
+For data analysis, query the matching domain property and filter the `page`
+dimension by hostname. Use the old property for pre-switch history and the new
+property for new URLs. Do not create a child property just for a filtered report.
 
 ## Coordination rules for shared SEO
 
@@ -280,7 +288,7 @@ parent's own cleanup.
 
 Before SEO work:
 
-* Use `sc-domain:rumbatienda.com`.
+* Use the domain property matching the target URL; keep legacy history in `sc-domain:rumbatienda.com`.
 * Confirm the target hostname and owning repo.
 * Pull first and read current metadata, robots rules, sitemap, and redirects.
 * Use read only Google API scopes.

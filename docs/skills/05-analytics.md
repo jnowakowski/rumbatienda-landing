@@ -33,7 +33,8 @@ use the CURRENT identifiers:
 
 ```
 GA4 property (Rumbatienda CO, unified): 517107083   measurement id G-2K3BYEMTTQ
-GSC property:                           sc-domain:rumbatienda.com
+GSC, new apex/events URLs:              sc-domain:rumbaexperience.co
+GSC, legacy history, tienda/cali2026:    sc-domain:rumbatienda.com
 ```
 
 Legacy note: property `Rumba` (531153655, `G-2D2GBD8R7D`) stopped receiving

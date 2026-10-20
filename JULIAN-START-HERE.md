@@ -20,9 +20,9 @@ remote, not the local folder name.
 
 | Product | Public URL | GitHub repository | Stack and hosting | Normal production path |
 |---|---|---|---|---|
-| Rumba Corp landing | `https://rumbatienda.com/` | `jnowakowski/rumbatienda-landing` | Static HTML, Cloudflare Pages | Green PR, GitHub review from `jnowakowski`, squash merge, GitHub deploy workflow |
+| Rumba Corp landing | `https://rumbaexperience.co/` | `jnowakowski/rumbatienda-landing` | Static HTML, Cloudflare Pages | Green PR, GitHub review from `jnowakowski`, squash merge, GitHub deploy workflow |
 | Cali 2026 trip | `https://cali2026.rumbatienda.com/` | `jnowakowski/cali2026` | Static HTML and Pages Functions, Cloudflare Pages | Green PR, GitHub review from `jnowakowski`, squash merge, GitHub deploy workflow |
-| Medellin events | `https://rumba.rumbatienda.com/` | `jnowakowski/rumba-site` | Server rendered Astro, EmDash, D1 and R2, Cloudflare Workers | Green PR, GitHub review from `jnowakowski`, squash merge, `deploy.yml` |
+| Medellin events | `https://rumba.rumbaexperience.co/` | `jnowakowski/rumba-site` | Server rendered Astro, EmDash, D1 and R2, Cloudflare Workers | Green PR, GitHub review from `jnowakowski`, squash merge, `deploy.yml` |
 | Colombia shop | `https://tienda.rumbatienda.com/` | `jnowakowski/rumbatienda` | Next.js, Neon and Prisma, Vercel | Green PR, GitHub review from `jnowakowski`, squash merge, `vercel-production.yml` |
 
 Current local folders in Janusz's workspace use `com-rumbatienda*` names. A
@@ -69,7 +69,7 @@ Test the public URL independently of the agent's browser:
 curl --fail --silent --show-error --location \
   --output /dev/null \
   --write-out '%{http_code} %{url_effective}\n' \
-  https://rumba.rumbatienda.com/
+  https://rumba.rumbaexperience.co/
 ```
 
 The Rumba events root intentionally redirects to the current Spanish weekday.
@@ -127,15 +127,17 @@ configuration, or production customer data.
 
 ## SEO and Analytics source of truth
 
-All four Rumbatienda hosts share these sources:
+Phase 1 spans two Search Console domain properties and one shared GA4 property:
 
 | Surface | Canonical value | Julian's access |
 |---|---|---|
-| Search Console | `sc-domain:rumbatienda.com` | Full user |
+| Search Console, legacy history, tienda and cali2026 | `sc-domain:rumbatienda.com` | Full user |
+| Search Console, new apex and events URLs | `sc-domain:rumbaexperience.co` | Confirm access with Janusz before querying |
 | GA4 property | `Rumbatienda CO`, property `517107083` | Analyst |
 | GA4 measurement ID | `G-2K3BYEMTTQ` | Shared by the four hosts |
 
-Filter by hostname. Do not create a child Search Console property, a new
+Use the domain property matching the URL and filter by hostname. Keep the old
+property for historical data. Do not create a child Search Console property, a new
 verification token, a separate GA4 property, or another measurement ID for one
 subdomain. Read [`docs/julian-seo-onboarding.md`](docs/julian-seo-onboarding.md)
 before the first data task and [`docs/seo-workflow.md`](docs/seo-workflow.md)
@@ -188,7 +190,7 @@ Julian:
 
 | Service | Public endpoint | Repository | Purpose |
 |---|---|---|---|
-| Rumba image worker | `https://og.rumbatienda.com/` | `jnowakowski/rumba-og-worker` | Event and story image generation |
+| Rumba image worker | `https://og.rumbaexperience.co/` | `jnowakowski/rumba-og-worker` | Event and story image generation |
 | Rumba scheduled worker | No customer facing site | `jnowakowski/rumba-cron` | Weekly story reminder emails |
 
 Julian currently has no GitHub access to these repositories. If a task requires
@@ -239,8 +241,10 @@ and do not ask for a Vercel seat. Ask Janusz for the smallest owner-authored
 follow-up commit on main, same as rumbatienda PR #30. Current shop deploy
 rules are in that repo's AGENTS.md. The 2026-06-12 handshake is historical.
 
-Use sc-domain:rumbatienda.com and GA4 property 517107083 for all four
-Rumbatienda hosts. Do not create properties, ownership tokens, measurement IDs,
+Use sc-domain:rumbaexperience.co for new apex and events URLs, and
+sc-domain:rumbatienda.com for legacy history, tienda and cali2026. Confirm
+access to the new property with Janusz. GA4 property 517107083 stays shared.
+Do not create properties, ownership tokens, measurement IDs,
 DNS records, or production credentials. Keep private conversations, personal
 data, and secrets out of repositories and prompts.
 

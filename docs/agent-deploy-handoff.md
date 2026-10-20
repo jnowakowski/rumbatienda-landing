@@ -9,7 +9,8 @@ folder name.
 
 - GitHub repo: `jnowakowski/rumbatienda-landing`
 - SSH clone: `git@github.com:jnowakowski/rumbatienda-landing.git`
-- Production URL: `https://rumbatienda.com`
+- Production URL: `https://rumbaexperience.co` (canonical in `public/`; legacy
+  `https://rumbatienda.com` may still serve until Cloudflare 301)
 - Preview URL pattern: `https://<branch>.rumbatienda-landing.pages.dev`
 - Hosting: Cloudflare Pages through GitHub Actions
 - Not used here: Vercel

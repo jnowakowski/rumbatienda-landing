@@ -61,14 +61,17 @@ cd rumbatienda-landing
 The check must show Analytics rows for property `517107083` and confirm that
 `sc-domain:rumbatienda.com` is available. A child URL prefix property is not a
 substitute.
+Phase 1 URLs on `rumbaexperience.co` require the matching domain property,
+`sc-domain:rumbaexperience.co`. Confirm access with Janusz; the legacy access
+check alone does not verify access to the new property.
 
 ## Repo and deploy map
 
 | Production | Repository | Required local check | Production deploy |
 |---|---|---|---|
-| `rumbatienda.com` | `rumbatienda-landing` | local static preview | merge green PR, Cloudflare Pages workflow |
+| `rumbaexperience.co` | `rumbatienda-landing` | local static preview | merge green PR, Cloudflare Pages workflow |
 | `cali2026.rumbatienda.com` | `cali2026` | `npm test && npm run verify:site:server` | merge green PR, Cloudflare Pages workflow |
-| `rumba.rumbatienda.com` | `rumba-site` | `make build` | merge green PR, Cloudflare Workers workflow |
+| `rumba.rumbaexperience.co` | `rumba-site` | `make build` | merge green PR, Cloudflare Workers workflow |
 | `tienda.rumbatienda.com` | `rumbatienda` | `npx tsc --noEmit` | merge green PR, Vercel workflow |
 
 Branch protection requires a PR and the repository's automated checks.
@@ -95,7 +98,7 @@ need dashboard access or a local production token.
 ## Normal SEO loop
 
 1. Pull all four repos and identify the exact production URL to improve.
-2. Query `sc-domain:rumbatienda.com`, filtered by page hostname.
+2. Query the domain property matching the page hostname: `sc-domain:rumbaexperience.co` for new apex/events URLs, `sc-domain:rumbatienda.com` for legacy URLs, tienda and cali2026.
 3. Query GA4 property `517107083`, filtered by `hostName` and page path.
 4. Read the target repo's `AGENTS.md`, README, current metadata, robots rules,
    sitemap, redirects, structured data, and analytics code.
@@ -125,8 +128,9 @@ Cloudflare/Vercel credentials, payment configuration, or production data.
 
 ## First assignment
 
-Produce a 90 day baseline for all four hosts from the canonical GSC property
-and GA4 property. For each host include clicks, impressions, CTR, average
+Produce a 90 day baseline for all four hosts from both GSC domain properties
+and the shared GA4 property. Keep legacy and new host history identifiable.
+For each host include clicks, impressions, CTR, average
 position, sessions, users, top landing pages, top queries, and the next three
 SEO opportunities. Commit the report under `docs/seo/` in the repo whose work
 it proposes. Do not change ownership or create new properties while producing

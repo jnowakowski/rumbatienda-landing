@@ -8,7 +8,7 @@ We run our own Loki log aggregation. You have full read and write access to it.
 This is the source of truth for runtime behavior, ahead of any assumption.
 
 The reach matters: one token reads the whole ecosystem. The events site you
-work on (rumba.rumbatienda.com) and the Swiss schedule (tumbao.ch) log into the
+work on (rumba.rumbaexperience.co) and the Swiss schedule (tumbao.ch) log into the
 same Loki. So you can see how traffic flows between the parts: tumbao drives
 people somewhere, they land on rumba, rumba links onward. Each part powers the
 others, and the data lets you see that as one picture, not separate islands.
@@ -38,7 +38,7 @@ of the ecosystem you want to read:
 
 | Tenant | Selector | What it is |
 |--------|----------|------------|
-| `default` | `{service="rumba"}` | rumba.rumbatienda.com events site (your main repo) |
+| `default` | `{service="rumba"}` | rumba.rumbaexperience.co events site (your main repo) |
 | `tumbao` | `{app="tumbao"}` | tumbao.ch Swiss schedule + WhatsApp intake |
 | `default` | `{service="llm-gateway"}` | one row per LLM request: spend, tokens, model |
 

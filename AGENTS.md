@@ -1,7 +1,8 @@
 # AGENTS.md — read this on every session start
 
-You are in **`rumbatienda-landing`** (apex landing for `rumbatienda.com`,
-deployed on Cloudflare Pages).
+You are in **`rumbatienda-landing`** (apex landing for `rumbaexperience.co`,
+deployed on Cloudflare Pages). Tienda and Cali 2026 links on the page still use
+`rumbatienda.com` subdomains until their phase.
 
 Julian and Julian's Codex must first read
 [`JULIAN-START-HERE.md`](JULIAN-START-HERE.md). It is the canonical cross repo
@@ -12,9 +13,9 @@ This repo is **one of four** for the Rumba Corp site:
 
 | Repo                  | Domain                          | Stack                          |
 |-----------------------|----------------------------------|--------------------------------|
-| `rumbatienda-landing` (this) | `rumbatienda.com`         | Static HTML on Cloudflare Pages |
+| `rumbatienda-landing` (this) | `rumbaexperience.co`      | Static HTML on Cloudflare Pages |
 | `cali2026`            | `cali2026.rumbatienda.com`       | Static HTML on Cloudflare Pages |
-| `rumba-site`          | `rumba.rumbatienda.com`          | Astro on Cloudflare Workers      |
+| `rumba-site`          | `rumba.rumbaexperience.co`         | Astro on Cloudflare Workers      |
 | `rumbatienda` (shop)  | `tienda.rumbatienda.com`         | Next.js 16 on Vercel            |
 
 The two static landings (apex + cali2026) share the same brand exploration

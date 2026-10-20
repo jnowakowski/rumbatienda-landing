@@ -9,7 +9,7 @@ that produces no log line is a feature you cannot reason about in production.
 
 ## The pattern already in your repo
 
-The rumba.rumbatienda.com repo (`rumba-site`) already ships logs to Loki. Read
+The rumba.rumbaexperience.co repo (`rumba-site`) already ships logs to Loki. Read
 these two files once:
 
 - `src/lib/loki.ts` is the `RequestLogger`: a per-request buffer with `log()`

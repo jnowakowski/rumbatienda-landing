@@ -384,14 +384,14 @@ img, svg { display: block; max-width: 100%; }
           <p data-i18n="routes.city.description">Entdecke, wo du in mehreren Städten Kolumbiens Salsa, Bachata und mehr tanzen kannst. Ein sorgfältig zusammengestellter Guide aus der lokalen Szene.</p>
           <div class="route-link"><span data-i18n="routes.city.link">Zum Guide</span><span aria-hidden="true">↗</span></div>
         </a>
-        <a class="route-card trip" href="https://cali2026.rumbatienda.com" data-reveal>
+        <a class="route-card trip" id="cali-trip-card" href="https://cali2026.rumbatienda.com/?utm_source=rumbaexperience.co&amp;utm_medium=referral&amp;utm_campaign=feria2026&amp;utm_content=route_card" data-reveal>
           <div class="route-top"><span data-i18n="routes.trip.meta">02 · Erlebnis</span><span class="pink" data-i18n="routes.trip.status">Cali</span></div>
           <div class="route-photo"><img src="/images/landing/cali-rumba-concert.webp" alt="Internationale Gruppe bei der Feria de Cali 2024" data-i18n-alt="images.trip" width="1280" height="1707" loading="lazy" /></div>
           <h3 data-i18n="routes.trip.title">Acht Tage in <em>Cali.</em></h3>
           <p data-i18n="routes.trip.description">Eine Salsa-Immersion mit der Feria, Cali-Style-Kursen, ausgewählten Abenden, lokaler Küche und Silvester in San Antonio.</p>
           <div class="route-link"><span data-i18n="routes.trip.link">Reise entdecken</span><span aria-hidden="true">↗</span></div>
         </a>
-        <a class="route-card shop" href="https://tienda.rumbatienda.com" data-reveal>
+        <a class="route-card shop" href="https://tienda.rumbaexperience.co/" data-reveal>
           <div class="route-top"><span data-i18n="routes.shop.meta">03 · Shop</span><span class="cyan" data-i18n="routes.shop.status">Online</span></div>
           <div class="route-photo"><img src="/images/landing/store-group.webp" alt="Gruppe mit Rumba-Tienda-Shirts in La Topa Tolondra" data-i18n-alt="images.shop" width="900" height="1200" loading="lazy" /></div>
           <h3 data-i18n="routes.shop.title">Trag die <em>Bewegung.</em></h3>
@@ -428,7 +428,7 @@ img, svg { display: block; max-width: 100%; }
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand"><a class="brand" href="/">Rumba<span class="brand-mark">.</span></a><p data-i18n="footer.description">Ein Tanzhaus aus Medellín. Gemacht von Menschen, die der Musik folgen.</p></div>
-      <div><h2 class="footer-title" data-i18n="footer.explore">Entdecken</h2><ul class="footer-list"><li><a href="https://rumba.rumbaexperience.co" data-i18n="footer.events">Events</a></li><li><a href="https://cali2026.rumbatienda.com" data-i18n="footer.caliFair">Feria de Cali</a></li><li><a href="https://tienda.rumbatienda.com" data-i18n="footer.shop">Shop</a></li></ul></div>
+      <div><h2 class="footer-title" data-i18n="footer.explore">Entdecken</h2><ul class="footer-list"><li><a href="https://rumba.rumbaexperience.co" data-i18n="footer.events">Events</a></li><li><a id="cali-footer-link" href="https://cali2026.rumbatienda.com/?utm_source=rumbaexperience.co&amp;utm_medium=referral&amp;utm_campaign=feria2026&amp;utm_content=footer" data-i18n="footer.caliFair">Feria de Cali</a></li><li><a href="https://tienda.rumbaexperience.co/" data-i18n="footer.shop">Shop</a></li></ul></div>
       <div><h2 class="footer-title" data-i18n="footer.follow">Folgen</h2><ul class="footer-list"><li><a href="https://www.instagram.com/rumbaexperience/">@rumbaexperience</a></li><li><a href="https://www.instagram.com/janusz.higher/">@janusz.higher</a></li></ul></div>
       <div><h2 class="footer-title" data-i18n="footer.talk">Sprechen</h2><ul class="footer-list"><li><a href="mailto:ojvillac@gmail.com">ojvillac@gmail.com</a></li><li><a href="https://wa.me/573117613548">WhatsApp</a></li></ul></div>
     </div>
@@ -545,6 +545,8 @@ img, svg { display: block; max-width: 100%; }
   // Feria programme on cali2026 in the page language, UTM kept as written in the HTML.
   const caliProgramLink = document.querySelector('#cali-program-link');
   const caliProgramPaths = { es: '/es/program/', en: '/program/', fr: '/fr/program/', de: '/de/program/' };
+  const caliHomeLinks = [document.querySelector('#cali-trip-card'), document.querySelector('#cali-footer-link')].filter(Boolean);
+  const caliHomePaths = { es: '/es/', en: '/', fr: '/fr/', de: '/de/' };
 
   function applyLanguage(language, updateUrl) {
     const activeLanguage = availableLanguages.includes(language) ? language : 'de';
@@ -564,6 +566,7 @@ img, svg { display: block; max-width: 100%; }
       if (typeof value === 'string') image.alt = value;
     });
     caliProgramLink.href = 'https://cali2026.rumbatienda.com' + caliProgramPaths[activeLanguage] + caliProgramLink.search;
+    caliHomeLinks.forEach((link) => { link.href = 'https://cali2026.rumbatienda.com' + caliHomePaths[activeLanguage] + new URL(link.href).search; });
     select.value = activeLanguage;
     try { localStorage.setItem('rumba-lang-v2', activeLanguage); } catch (error) { /* storage can be unavailable */ }
     if (updateUrl) {

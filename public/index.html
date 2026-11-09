@@ -304,6 +304,7 @@ img, svg { display: block; max-width: 100%; }
 .scene-intro { max-width: 35ch; margin: 24px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
 .social-link { color: var(--pink); font: 700 12px/1 var(--mono); letter-spacing: .08em; }
 .social-link:hover { color: var(--bone); }
+.route-more { margin: 22px 0 0; }
 .scene-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-template-rows: 180px 180px; gap: 10px; }
 .scene-tile { position: relative; display: flex; align-items: end; padding: 16px; overflow: hidden; border: 1px solid var(--line); background: #15151b; }
 .scene-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.08) contrast(1.04); transition: transform .45s ease, filter .45s ease; }
@@ -383,14 +384,14 @@ img, svg { display: block; max-width: 100%; }
           <p data-i18n="routes.city.description">Entdecke, wo du in mehreren Städten Kolumbiens Salsa, Bachata und mehr tanzen kannst. Ein sorgfältig zusammengestellter Guide aus der lokalen Szene.</p>
           <div class="route-link"><span data-i18n="routes.city.link">Zum Guide</span><span aria-hidden="true">↗</span></div>
         </a>
-        <a class="route-card trip" href="https://cali2026.rumbatienda.com" data-reveal>
+        <a class="route-card trip" id="cali-trip-card" href="https://cali2026.rumbatienda.com/?utm_source=rumbaexperience.co&amp;utm_medium=referral&amp;utm_campaign=feria2026&amp;utm_content=route_card" data-reveal>
           <div class="route-top"><span data-i18n="routes.trip.meta">02 · Erlebnis</span><span class="pink" data-i18n="routes.trip.status">Cali</span></div>
           <div class="route-photo"><img src="/images/landing/cali-rumba-concert.webp" alt="Internationale Gruppe bei der Feria de Cali 2024" data-i18n-alt="images.trip" width="1280" height="1707" loading="lazy" /></div>
           <h3 data-i18n="routes.trip.title">Acht Tage in <em>Cali.</em></h3>
           <p data-i18n="routes.trip.description">Eine Salsa-Immersion mit der Feria, Cali-Style-Kursen, ausgewählten Abenden, lokaler Küche und Silvester in San Antonio.</p>
           <div class="route-link"><span data-i18n="routes.trip.link">Reise entdecken</span><span aria-hidden="true">↗</span></div>
         </a>
-        <a class="route-card shop" href="https://tienda.rumbatienda.com" data-reveal>
+        <a class="route-card shop" href="https://tienda.rumbaexperience.co/" data-reveal>
           <div class="route-top"><span data-i18n="routes.shop.meta">03 · Shop</span><span class="cyan" data-i18n="routes.shop.status">Online</span></div>
           <div class="route-photo"><img src="/images/landing/store-group.webp" alt="Gruppe mit Rumba-Tienda-Shirts in La Topa Tolondra" data-i18n-alt="images.shop" width="900" height="1200" loading="lazy" /></div>
           <h3 data-i18n="routes.shop.title">Trag die <em>Bewegung.</em></h3>
@@ -398,6 +399,7 @@ img, svg { display: block; max-width: 100%; }
           <div class="route-link"><span data-i18n="routes.shop.link">Zum Shop</span><span aria-hidden="true">↗</span></div>
         </a>
       </div>
+      <p class="route-more" data-reveal><a class="social-link" id="cali-program-link" href="https://cali2026.rumbatienda.com/program/?utm_source=rumbaexperience.co&amp;utm_medium=referral&amp;utm_campaign=feria2026&amp;utm_content=program_link"><span data-i18n="routes.program">Programm Feria de Cali 2026</span> ↗</a></p>
     </div>
   </section>
 
@@ -426,7 +428,7 @@ img, svg { display: block; max-width: 100%; }
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand"><a class="brand" href="/">Rumba<span class="brand-mark">.</span></a><p data-i18n="footer.description">Ein Tanzhaus aus Medellín. Gemacht von Menschen, die der Musik folgen.</p></div>
-      <div><h2 class="footer-title" data-i18n="footer.explore">Entdecken</h2><ul class="footer-list"><li><a href="https://rumba.rumbaexperience.co" data-i18n="footer.events">Events</a></li><li><a href="https://cali2026.rumbatienda.com" data-i18n="footer.caliFair">Feria de Cali</a></li><li><a href="https://tienda.rumbatienda.com" data-i18n="footer.shop">Shop</a></li></ul></div>
+      <div><h2 class="footer-title" data-i18n="footer.explore">Entdecken</h2><ul class="footer-list"><li><a href="https://rumba.rumbaexperience.co" data-i18n="footer.events">Events</a></li><li><a id="cali-footer-link" href="https://cali2026.rumbatienda.com/?utm_source=rumbaexperience.co&amp;utm_medium=referral&amp;utm_campaign=feria2026&amp;utm_content=footer" data-i18n="footer.caliFair">Feria de Cali</a></li><li><a href="https://tienda.rumbaexperience.co/" data-i18n="footer.shop">Shop</a></li></ul></div>
       <div><h2 class="footer-title" data-i18n="footer.follow">Folgen</h2><ul class="footer-list"><li><a href="https://www.instagram.com/rumbaexperience/">@rumbaexperience</a></li><li><a href="https://www.instagram.com/janusz.higher/">@janusz.higher</a></li></ul></div>
       <div><h2 class="footer-title" data-i18n="footer.talk">Sprechen</h2><ul class="footer-list"><li><a href="mailto:ojvillac@gmail.com">ojvillac@gmail.com</a></li><li><a href="https://wa.me/573117613548">WhatsApp</a></li></ul></div>
     </div>
@@ -455,7 +457,8 @@ img, svg { display: block; max-width: 100%; }
         intro: 'Una misma energía, tres puertas. Empieza por la ciudad, por el viaje o por lo que te quieres poner esta noche.',
         city: { meta: '01 · Guía semanal', status: 'Activo', title: 'Las ciudades están <em>sonando.</em>', description: 'Descubre dónde bailar salsa, bachata y más en distintas ciudades de Colombia. Una guía local, curada con criterio.', link: 'Ir a la guía' },
         trip: { meta: '02 · Experiencia', status: 'Cali', title: 'Ocho días en <em>Cali.</em>', description: 'Una inmersión salsera con Feria, clases estilo Cali, noches curadas, gastronomía local y Año Nuevo en San Antonio.', link: 'Conocer el viaje' },
-        shop: { meta: '03 · Tienda', status: 'Online', title: 'Viste el <em>movimiento.</em>', description: 'Prendas diseñadas desde Medellín para llevar la cultura de baile contigo, dondequiera que vayas.', link: 'Entrar a la tienda' }
+        shop: { meta: '03 · Tienda', status: 'Online', title: 'Viste el <em>movimiento.</em>', description: 'Prendas diseñadas desde Medellín para llevar la cultura de baile contigo, dondequiera que vayas.', link: 'Entrar a la tienda' },
+        program: 'Programación Feria de Cali 2026'
       },
       manifesto: { eyebrow: 'Manifiesto Rumba', quote: 'El baile no se encuentra. <span>Se sigue.</span>', note: 'Rumba nació entre mensajes de amigos, pistas de baile y ganas de compartir lo que hace especial a Medellín. Lo demás sigue creciendo, con música y con cuidado.' },
       scene: { eyebrow: 'La escena colombiana', title: 'De ciudad en <span class="pink">ciudad.</span>', intro: 'Seguimos el baile por Colombia: Medellín, Cali, Cartagena y Santa Marta.', follow: 'Seguir @rumbaexperience', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centro', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Mar', caliSalsa: 'Cali / Salsa' },
@@ -478,7 +481,8 @@ img, svg { display: block; max-width: 100%; }
         intro: 'One energy, three doors. Start with the city, the trip or what you want to wear tonight.',
         city: { meta: '01 · Weekly guide', status: 'Active', title: 'The cities are <em>humming.</em>', description: 'Discover where to dance salsa, bachata and more across Colombia. A local guide, carefully curated.', link: 'Go to the guide' },
         trip: { meta: '02 · Experience', status: 'Cali', title: 'Eight days in <em>Cali.</em>', description: 'A salsa immersion with the Feria, Cali-style classes, curated nights, local food and New Year’s Eve in San Antonio.', link: 'Discover the trip' },
-        shop: { meta: '03 · Shop', status: 'Online', title: 'Wear the <em>movement.</em>', description: 'Pieces designed in Medellín to carry dance culture with you wherever you go.', link: 'Enter the shop' }
+        shop: { meta: '03 · Shop', status: 'Online', title: 'Wear the <em>movement.</em>', description: 'Pieces designed in Medellín to carry dance culture with you wherever you go.', link: 'Enter the shop' },
+        program: 'Feria de Cali 2026 program'
       },
       manifesto: { eyebrow: 'Rumba Manifesto', quote: 'You do not find the dance. <span>You follow it.</span>', note: 'Rumba was born from messages between friends, dance floors and the desire to share what makes Medellín special. The rest is still growing—with music and care.' },
       scene: { eyebrow: 'The Colombian scene', title: 'From city to <span class="pink">city.</span>', intro: 'Following the dance across Colombia: Medellín, Cali, Cartagena and Santa Marta.', follow: 'Follow @rumbaexperience', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Downtown', cartagena: 'Cartagena / Color', santaMarta: 'Santa Marta / Sea', caliSalsa: 'Cali / Salsa' },
@@ -501,7 +505,8 @@ img, svg { display: block; max-width: 100%; }
         intro: 'Une même énergie, trois portes. Commence par la ville, le voyage ou ce que tu veux porter ce soir.',
         city: { meta: '01 · Guide hebdomadaire', status: 'Actif', title: 'Les villes <em>résonnent.</em>', description: 'Découvre où danser la salsa, la bachata et plus encore dans plusieurs villes de Colombie. Un guide local pensé avec soin.', link: 'Voir le guide' },
         trip: { meta: '02 · Expérience', status: 'Cali', title: 'Huit jours à <em>Cali.</em>', description: 'Une immersion dans la salsa avec la Feria, des cours à la caleña, des soirées bien choisies, la gastronomie locale et le Nouvel An à San Antonio.', link: 'Découvrir le voyage' },
-        shop: { meta: '03 · Boutique', status: 'En ligne', title: 'Porte le <em>mouvement.</em>', description: 'Des pièces conçues à Medellín pour emporter la culture de la danse partout avec toi.', link: 'Entrer dans la boutique' }
+        shop: { meta: '03 · Boutique', status: 'En ligne', title: 'Porte le <em>mouvement.</em>', description: 'Des pièces conçues à Medellín pour emporter la culture de la danse partout avec toi.', link: 'Entrer dans la boutique' },
+        program: 'Programme Feria de Cali 2026'
       },
       manifesto: { eyebrow: 'Manifeste Rumba', quote: 'On ne trouve pas la danse. <span>On la suit.</span>', note: 'Rumba est née de messages entre amis, de pistes de danse et de l’envie de partager ce qui rend Medellín unique. Le reste grandit encore, en musique et avec soin.' },
       scene: { eyebrow: 'La scène colombienne', title: 'De ville en <span class="pink">ville.</span>', intro: 'Suivre la danse à travers la Colombie : Medellín, Cali, Cartagena et Santa Marta.', follow: 'Suivre @rumbaexperience', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Centre', cartagena: 'Cartagena / Couleur', santaMarta: 'Santa Marta / Mer', caliSalsa: 'Cali / Salsa' },
@@ -524,7 +529,8 @@ img, svg { display: block; max-width: 100%; }
         intro: 'Eine Energie, drei Türen. Starte mit der Stadt, der Reise oder dem, was du heute Abend tragen willst.',
         city: { meta: '01 · Wochen-Guide', status: 'Aktiv', title: 'Die Städte <em>klingen.</em>', description: 'Entdecke, wo du in mehreren Städten Kolumbiens Salsa, Bachata und mehr tanzen kannst. Ein sorgfältig zusammengestellter Guide aus der lokalen Szene.', link: 'Zum Guide' },
         trip: { meta: '02 · Erlebnis', status: 'Cali', title: 'Acht Tage in <em>Cali.</em>', description: 'Eine Salsa-Immersion mit der Feria, Cali-Style-Kursen, ausgewählten Abenden, lokaler Küche und Silvester in San Antonio.', link: 'Reise entdecken' },
-        shop: { meta: '03 · Shop', status: 'Online', title: 'Trag die <em>Bewegung.</em>', description: 'Kleidung aus Medellín, die dich überallhin mit der Tanzkultur begleitet.', link: 'Zum Shop' }
+        shop: { meta: '03 · Shop', status: 'Online', title: 'Trag die <em>Bewegung.</em>', description: 'Kleidung aus Medellín, die dich überallhin mit der Tanzkultur begleitet.', link: 'Zum Shop' },
+        program: 'Programm Feria de Cali 2026'
       },
       manifesto: { eyebrow: 'Rumba-Manifest', quote: 'Man findet den Tanz nicht. <span>Man folgt ihm.</span>', note: 'Rumba entstand aus Nachrichten unter Freunden, Tanzflächen und dem Wunsch, das Besondere an Medellín zu teilen. Alles andere wächst weiter – mit Musik und Sorgfalt.' },
       scene: { eyebrow: 'Die kolumbianische Szene', title: 'Von Stadt zu <span class="pink">Stadt.</span>', intro: 'Wir folgen dem Tanz durch Kolumbien: Medellín, Cali, Cartagena und Santa Marta.', follow: '@rumbaexperience folgen', comuna13: 'Medellín / Comuna 13', caliCenter: 'Cali / Zentrum', cartagena: 'Cartagena / Farbe', santaMarta: 'Santa Marta / Meer', caliSalsa: 'Cali / Salsa' },
@@ -536,6 +542,11 @@ img, svg { display: block; max-width: 100%; }
   const getValue = (source, path) => path.split('.').reduce((value, key) => value && value[key], source);
   const availableLanguages = Object.keys(translations);
   const select = document.querySelector('#language-select');
+  // Feria programme on cali2026 in the page language, UTM kept as written in the HTML.
+  const caliProgramLink = document.querySelector('#cali-program-link');
+  const caliProgramPaths = { es: '/es/program/', en: '/program/', fr: '/fr/program/', de: '/de/program/' };
+  const caliHomeLinks = [document.querySelector('#cali-trip-card'), document.querySelector('#cali-footer-link')].filter(Boolean);
+  const caliHomePaths = { es: '/es/', en: '/', fr: '/fr/', de: '/de/' };
 
   function applyLanguage(language, updateUrl) {
     const activeLanguage = availableLanguages.includes(language) ? language : 'de';
@@ -554,6 +565,8 @@ img, svg { display: block; max-width: 100%; }
       const value = getValue(copy, image.dataset.i18nAlt);
       if (typeof value === 'string') image.alt = value;
     });
+    caliProgramLink.href = 'https://cali2026.rumbatienda.com' + caliProgramPaths[activeLanguage] + caliProgramLink.search;
+    caliHomeLinks.forEach((link) => { link.href = 'https://cali2026.rumbatienda.com' + caliHomePaths[activeLanguage] + new URL(link.href).search; });
     select.value = activeLanguage;
     try { localStorage.setItem('rumba-lang-v2', activeLanguage); } catch (error) { /* storage can be unavailable */ }
     if (updateUrl) {
